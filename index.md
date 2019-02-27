@@ -4,7 +4,7 @@ ___
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page]({% link /Users/pearse/VAPOR-GitHubPage/sphinx/_build/index.html %})
+[Link to another page]({% link /sphinx/_build/index.html %})
 
 There should be whitespace between paragraphs.
 
