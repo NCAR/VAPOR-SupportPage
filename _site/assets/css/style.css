@@ -317,3 +317,19 @@ a:hover { text-decoration: underline; }
 .site-footer-owner { display: block; font-weight: bold; }
 
 .site-footer-credits { color: #819198; }
+
+.content { padding-right: 2rem; }
+
+.mobile-logo { padding: .8em; }
+
+.nav { text-align: left; }
+
+.ncar .page-header { background-color: #007fa3; background-image: none; }
+.ncar .page-header a, .ncar .page-header a:hover { color: #fff; }
+
+.page-header { padding: 0; }
+
+.project-name { padding-top: 1rem; }
+
+.sidebar-breadcrumb { margin-bottom: 2rem; }
+.sidebar-breadcrumb h5 { margin: 0 1rem .5rem; }

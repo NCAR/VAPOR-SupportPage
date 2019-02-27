@@ -1,0 +1,261 @@
+# Conversion process
+
+-- Working from Revision 12951 (12945 on rma_trunk and trunk)
+
+## 1. Move from Subversion server to Github. 
+
+### A. In docker container use git svn clone to create a local Git clone of the desired   Subversion branch/trunk.
+
+>> Example:
+>>		
+>> $ docker run -it niemacka/shpinx-git 
+>>
+>> $ git svn clone https://svn-dares-dart.cgd.ucar.edu/DART/trunk/ --no-metadata  --no-minimize-url
+>>		
+>> * Use --revision ##### to pull from a given revision number forward
+>>
+>> * For classic/trunk use revision 9994
+	
+###	B. Create an empty GitHub repository under the desired account at github.com.
+		
+###	C. Push local git clone to GitHub repo.
+		
+>> Example:
+>>		
+>> $ git push --all https://github.com/account-name/repo-name
+>>		
+>> * Correct GitHub repo url will be at the top of empty repository. 
+>>
+>> * This will always push to the Master branch of the repo.
+>>
+>> * Will require GitHub username and password
+	
+### D. It is possible that there will be an error that causes the push to fail because GitHub    does not allow files bigger than 100 MB. If that is the case these files will have to be removed in order to push to GitHub (They can be added later to the latest commit/revision but their commit/revision history cannot be kept). Use the git filter-branch command to remove necessary files.
+		
+>> Example:
+>>
+>> $ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch filename' --prune-empty --tag-name-filter cat -- --all
+>>		
+>> * For each file over 100 MB then...
+>>
+>> $ git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin
+>>
+>> $ git reflog expire --expire=now --all
+>>
+>> $ git gc --prune=now
+
+### E. Now push to GitHub again and there should be no issues. (Use the —force option with git push).
+		
+>> Example:
+>>		
+>> $ git push --force --all  https://github.com/account-name/repo-name
+
+
+
+### F. If the Subversion branch was not the current working branch create a new branch in Github cloned from the Master branch.
+		
+>> Example:
+>>		
+>> -- Move 'trunk' to GitHub using the above steps. Then if trunk is not the current working branch click branch dropdown in top left of GitHub repository and type a new branch name (for example 'classic') that describes the branch. Then press enter. The new branch should now appear in the dropdown.
+>>		
+>> * At this point the master branch can be deleted if you so choose, or you can overwrite it by pushing another branch from subversion to GitHub using the steps above.
+>>
+>> * To overwrite the master branch use the --force option with git push
+
+## 2. Convert existing documentation to sphinx-doc style documentation. (This could be done either before or after the SVN branches have been pushed to GitHub.)
+
+###	A. From the local machine create a clone of the new Github repository.
+		
+>> Example:
+>>
+>> $ git clone https://github.com/account-name/repo-name
+
+### B. Move all desired html files (or other convertible filetypes) that relate to documentation to a single directory.
+	
+###	C. To convert the html file to markdown (.md) which is used by sphinx use pandoc.
+		
+>> Example:
+>>		
+>> $ docker run -v `pwd`:/source jagregory/pandoc -f html -t markdown myfile.html -o myfile.md
+>>		
+>> * If there are a large number of files enter the file names you want to convert into a txt file with one name per line. Then use a python script to convert them.
+>>
+>> * Once the desired files are converted in pandoc you can delete the redundant html files.
+
+###	D. Next push the changes to GitHub.
+		
+>> Example:
+>> 
+>> $ git add —all
+>>
+>> $ git commit -m “converted html to md with pandoc”
+>>		
+>> * git commits require a message
+>>
+>> $ git push -u origin master
+>>
+>> * Once the changes have been pushed to GitHub the local repository can be deleted if you so choose. 
+
+###	E. Open an interactive docker container and clone the new Github repo.
+		
+>> Example:
+>>
+>> $ docker run -it niemacka/sphinx
+>>
+>> $ git clone https://github.com/account-name/repo-name
+	
+### F. Choose a location for the sphinx-doc setup. Note that file paths are important for sphinx and particularly for the auto-documenting features. Sphinx likes to use paths relative to the location of the conf.py and index.rst files so it may be simplest to set these up in the root directory, although there is a way to setup an absolute path in the config (which I haven’t gotten to work with GitHub).
+
+### G. Once in the desired directory use the sphinx quickstart command to start an interactive process that will generate all the required files for sphinx-doc.
+		
+>> Example: 
+>>
+>> $ sphinx-quickstart
+>>		
+>> -- answer the questions presented and enable any feature that you intend to use
+>>
+>> * Many elements can be left as default with no issues. 
+>>
+>> * It is important to enable the python auto-doc extension 
+>>
+>> * Enable github pages integration
+>>
+>> * It is important to create the Unix makefile
+
+### H. There should now be a conf.py file that contains the configuration info that was set up during the quickstart. To allow sphinx to read markdown files add ‘recommonmark’ to the sphinx extensions section of the conf.py file. This should be near the top of the file.
+
+>> Eample:
+>>
+>> extensions = [
+>>
+>> 'sphinx.ext.autodoc',
+>>
+>> 'sphinx.ext.githubpages',
+>> 
+>> ‘recommonmark’,
+>>
+>> ]
+
+### I. There is also an index.rst file (or whatever name it was given during the quick start). This file contains the Table of Contents Tree (toctree) which is where you can list the markdown files that you wish to include in your documentation using their relative path to the index.rst file and excluding the .md extension.
+		
+>> Example:
+>>
+>> * First install vim in the container
+>>
+>> $ apt-get update
+>>
+>> $ apt-get install vim -y
+>>
+>> $ vi index.rst
+>>
+>> -- Should see something like this…
+>>		
+>> .. toctree::
+>>  :maxdepth: 2
+>>		
+>> -- Just list the files you want to include…
+>>
+>> .. toctree::
+>>  .:maxdepth: 2
+>>
+>> usage/installation
+>>   		   
+>> usage/quickstart
+>>
+>> ... 
+	
+### J. Once the toctree has been updated. Use the commands from the makefile to create an html version and a pdf version of the documents.
+		
+>> Example:
+>>		
+>> $ make html
+>>
+>> $ make latexpdf
+>>
+>> * If no other changes have been made to the documents both of these commands could generate a lot of warnings (which should be related to incorrect references to other internal documentation and images) They will build if you are running in an interactive container but these errors will stop circleci so it is important to check all references and images in a document and confirm there are no errors before integration with circleci. 
+>>
+>> * You can verify that they built by checking the _build directory for a latex and html subdirectory. 
+>>
+>> * Some issue may be resolved by running make html or make latexpdf multiple times.
+
+###	K. Push the changes to GitHub like in step d.
+
+>> * When you try to commit from within a docker container you will get a message asking you to set an email and name to assign to the commit by adding to the git config.
+>>
+>> Example:
+>>
+>> $ git config --global user.email "you@example.com"
+>>
+>> $ git config --global user.name "Your Name"
+
+
+## 3. Set up the sphinx-fortran extension. (This can all be done on GitHub or in a local clone of the repository but the process is the same.)
+
+### A. Open the conf.py configuration file and add the sphinx fortran extensions to the list of sphinx extensions this should be near the top of the document.
+		
+>> Example:
+>>
+>> -- It should look something like this…
+>> extensions = [
+>>
+>> 'sphinx.ext.autodoc',
+>>
+>> 'sphinx.ext.todo',
+>>
+>> 'sphinx.ext.githubpages',
+>> ]
+>>
+>> -- Then add sphinxfortran.fortran_domain and sphinxfortran.fortran_autodoc…
+>>		extensions = [
+>>
+>>    'sphinx.ext.autodoc',
+>>
+>>    'sphinx.ext.todo',
+>>
+>>    'sphinx.ext.githubpages',
+>>
+>>    'sphinxfortran.fortran_domain',
+>>
+>>    'sphinxfortran.fortran_autodoc',
+>>
+>> ]
+
+### B. Below the extensions add a source for the fortran files to be parsed. This can be a list of files or a relative path using wildcards.
+		
+>> Example:
+>>
+>> fortran_src = [‘relativepath1/specific-file.f90’, ‘relativepath2/specific-file2.f90’]
+>>
+>> or
+>>
+>> fortran_src = [‘relativepath/*.f90’]
+
+### C. All setup should now be complete and the sphinx-fortran extension commands can now be used to document fortran programs, modules, etc… 
+		
+>> Example:
+>>
+>> -- In a md document that is included in the toctree add a line like the examples below to auto-document that element.
+>>		
+>> .. f:autoprogram:: program-name
+>>
+>> .. f:autofunction:: [modname]/funcname
+>>
+>> .. f:autosubroutine:: [modname/]/subrname
+>>		
+>> -- To document all programs, functions, and subroutines in a source file you can use…
+>>		
+>> ..f:autosrcfile:: pathname
+>>
+>> * Important to note auto-documenting will include descriptive comments about the element but only if they start on the line immediately below where the element is being declared.
+		
+* program example 
+* !> example description must start here or it will not be included in the  
+* !> documentation.
+		
+>> 	program example
+>>
+>> 	!> This doesn’t work
+
+### D. Now when the html or pdf sphinx files are generated the auto-documentation should be included.
+
+>> * You may need to use the make html and make latexpdf commands multiple times.

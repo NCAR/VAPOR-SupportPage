@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Vertical Conversion of Observations &mdash; DART 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DART
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Lanai_diffs_from_Kodiak.html">DART Lanai Differences from Kodiak Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto-doc.html">Fortran</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Process.html">Conversion process</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DART</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Vertical Conversion of Observations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/vertical_conversion.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vertical-conversion-of-observations">
+<h1>Vertical Conversion of Observations<a class="headerlink" href="#vertical-conversion-of-observations" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&nbsp;</td>
+<td><div class="first last line-block">
+<div class="line">Jump to <a class="reference external" href="../index.html">DART Documentation Main
+Index</a></div>
+<div class="line">version information for this file:</div>
+<div class="line">$Id$</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>In Lanai vertical conversion of observations occurs in get_close_obs.
+The Lanai code in filter_assim is as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SEQUENTIAL_OBS</span> <span class="n">do</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">obs_ens_handle</span><span class="o">%</span><span class="n">num_vars</span>
+   <span class="o">...</span>
+   <span class="n">broadcast</span> <span class="n">increments</span> <span class="k">for</span> <span class="n">observation</span> <span class="n">i</span>
+   <span class="n">call</span> <span class="n">get_close_obs</span><span class="p">()</span>
+   <span class="n">call</span> <span class="n">convert_vertical_location</span><span class="p">(</span><span class="n">observation</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="n">enddo</span>
+</pre></div>
+</div>
+<p>If this algorithm was followed in RMA DART, all processors would have to
+communicate to calculate the location of observation i. This is a huge
+amount of contention since all processors are doing exactly the same
+calculation so need to access exactly the same state elements. This
+causes the code to run very slowly, for example 1 minute for 1000
+observations, versus 5 seconds for 1000 observations for Lanai.</p>
+<p>However, there is no need to calculate the vertical conversion inside
+the SEQUENTIAL_OBS do loop, since the mean state vector used is not
+updated during the loop. (In Lanai it is the array passed to the
+model_mod by ens_mean_for_model in filter_main). Also this
+calculation does not scale, because all processors do the same
+calculation.</p>
+<p>In DART RMA the owner of an observation converts the vertical location
+of an observation and broacasts it to all other processors as part of
+the broadcast in the SEQUENTIAL_OBS do loop.</p>
+<p>The DART RMA code calculates the vertical of all observations before the
+loop. This potentially scales better because processors only calculate
+their own observation conversions, but does require model_mod
+interfaces for vertical conversion.</p>
+<p>The DART RMA code in filter_assim is as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">do</span> <span class="n">i</span> <span class="o">=</span><span class="p">,</span> <span class="n">obs_ens_handle</span><span class="o">%</span><span class="n">my_num_vars</span>
+   <span class="n">call</span> <span class="n">convert_vertical_location</span><span class="p">(</span><span class="n">my_obs_loc</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="n">end</span> <span class="n">do</span>
+<span class="n">SEQUENTIAL_OBS</span> <span class="n">do</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">obs_ens_handle</span><span class="o">%</span><span class="n">num_vars</span>
+   <span class="o">...</span>
+   <span class="n">broadcast</span> <span class="n">increments</span> <span class="ow">and</span> <span class="n">vertical</span> <span class="n">location</span> <span class="k">for</span> <span class="n">observation</span> <span class="n">i</span>
+   <span class="o">...</span>
+<span class="n">enddo</span>
+</pre></div>
+</div>
+<div class="section" id="bitwise-problem">
+<h2>Bitwise Problem<a class="headerlink" href="#bitwise-problem" title="Permalink to this headline">¶</a></h2>
+<p>Moving the <code class="docutils literal"><span class="pre">convert_vertical_location</span></code> changes the number of
+<code class="docutils literal"><span class="pre">get/set</span> <span class="pre">location</span></code> calls. There is a bitwise creep of the location
+when you do this. This is in the conversion from degrees to radians and
+back again. If you want to do the exact number of <code class="docutils literal"><span class="pre">get/set</span> <span class="pre">location</span></code>
+you can change the line lanai_bitwise = .false. to lanai_bitwise =
+.true. in assim_tools_mod.f90. Note this is not a namelist option
+because production code should not be run with lanai_bitwise = .true.
+For more detail on running bitwise with Lanai see <a class="reference external" href="bitwise_considerations.html">bitwise
+considerations</a>.</p>
+<div class="top"><p>[<a class="reference external" href="#">top</a>]</p>
+</div><hr class="docutils" />
+<div class="section" id="terms-of-use">
+<h3>Terms of Use<a class="headerlink" href="#terms-of-use" title="Permalink to this headline">¶</a></h3>
+<p>DART software - Copyright UCAR. This open source software is provided by
+UCAR, &#8220;as is&#8221;, without charge, subject to all terms of use at
+<a class="reference external" href="http://www.image.ucar.edu/DAReS/DART/DART_download">http://www.image.ucar.edu/DAReS/DART/DART_download</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Contact:</td>
+<td>DART core group</td>
+</tr>
+<tr class="row-even"><td>Revision:</td>
+<td>$Revision$</td>
+</tr>
+<tr class="row-odd"><td>Source:</td>
+<td>$URL$</td>
+</tr>
+<tr class="row-even"><td>Change Date:</td>
+<td>$Date$</td>
+</tr>
+<tr class="row-odd"><td>Change&nbsp;history:</td>
+<td>try &#8220;svn&nbsp;log&#8221; or &#8220;svn&nbsp;diff&#8221;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, DART Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: ''
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

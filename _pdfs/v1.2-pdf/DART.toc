@@ -1,0 +1,40 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}DART Lanai Differences from Kodiak Release Notes}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Overview}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Changes to Core DART routines}{3}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}\textbar {}}{4}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}New Models or Changes to Existing Models}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}New or changed Forward Operators}{6}{section.1.4}
+\contentsline {section}{\numberline {1.5}Observation Converters}{7}{section.1.5}
+\contentsline {section}{\numberline {1.6}New or updated DART Diagnostics}{8}{section.1.6}
+\contentsline {section}{\numberline {1.7}Tutorial, Scripting, Setup, Builds}{9}{section.1.7}
+\contentsline {section}{\numberline {1.8}Terms of Use}{9}{section.1.8}
+\contentsline {chapter}{\numberline {2}Fortran}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}Closest Member Tool}{11}{section.2.1}
+\contentsline {chapter}{\numberline {3}Conversion process}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}1. Move from Subversion server to Github.}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}A. In docker container use git svn clone to create a local Git clone of the desired Subversion branch/trunk.}{13}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}B. Create an empty GitHub repository under the desired account at github.com.}{13}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}C. Push local git clone to GitHub repo.}{13}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}D. It is possible that there will be an error that causes the push to fail because GitHub does not allow files bigger than 100 MB. If that is the case these files will have to be removed in order to push to GitHub (They can be added later to the latest commit/revision but their commit/revision history cannot be kept). Use the git filter-branch command to remove necessary files.}{13}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}E. Now push to GitHub again and there should be no issues. (Use the \IeC {\textemdash }force option with git push).}{14}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}F. If the Subversion branch was not the current working branch create a new branch in Github cloned from the Master branch.}{14}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}2. Convert existing documentation to sphinx-doc style documentation. (This could be done either before or after the SVN branches have been pushed to GitHub.)}{14}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}A. From the local machine create a clone of the new Github repository.}{14}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}B. Move all desired html files (or other convertible filetypes) that relate to documentation to a single directory.}{14}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}C. To convert the html file to markdown (.md) which is used by sphinx use pandoc.}{14}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}D. Next push the changes to GitHub.}{15}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}E. Open an interactive docker container and clone the new Github repo.}{15}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}F. Choose a location for the sphinx-doc setup. Note that file paths are important for sphinx and particularly for the auto-documenting features. Sphinx likes to use paths relative to the location of the conf.py and index.rst files so it may be simplest to set these up in the root directory, although there is a way to setup an absolute path in the config (which I haven\IeC {\textquoteright }t gotten to work with GitHub).}{15}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}G. Once in the desired directory use the sphinx quickstart command to start an interactive process that will generate all the required files for sphinx-doc.}{15}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}H. There should now be a conf.py file that contains the configuration info that was set up during the quickstart. To allow sphinx to read markdown files add \IeC {\textquoteleft }recommonmark\IeC {\textquoteright } to the sphinx extensions section of the conf.py file. This should be near the top of the file.}{16}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}I. There is also an index.rst file (or whatever name it was given during the quick start). This file contains the Table of Contents Tree (toctree) which is where you can list the markdown files that you wish to include in your documentation using their relative path to the index.rst file and excluding the .md extension.}{16}{subsection.3.2.9}
+\contentsline {subsection}{\numberline {3.2.10}J. Once the toctree has been updated. Use the commands from the makefile to create an html version and a pdf version of the documents.}{16}{subsection.3.2.10}
+\contentsline {subsection}{\numberline {3.2.11}K. Push the changes to GitHub like in step d.}{17}{subsection.3.2.11}
+\contentsline {section}{\numberline {3.3}3. Set up the sphinx-fortran extension. (This can all be done on GitHub or in a local clone of the repository but the process is the same.)}{17}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}A. Open the conf.py configuration file and add the sphinx fortran extensions to the list of sphinx extensions this should be near the top of the document.}{17}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}B. Below the extensions add a source for the fortran files to be parsed. This can be a list of files or a relative path using wildcards.}{17}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}C. All setup should now be complete and the sphinx-fortran extension commands can now be used to document fortran programs, modules, etc\IeC {\textellipsis }}{18}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}D. Now when the html or pdf sphinx files are generated the auto-documentation should be included.}{18}{subsection.3.3.4}
+\contentsline {chapter}{\numberline {4}Indices and tables}{19}{chapter.4}
+\contentsline {chapter}{Index}{21}{section*.4}

@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Forward Operator &mdash; DART 2.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DART 2.0.0 documentation" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="forward-operator">
+<h1>Forward Operator<a class="headerlink" href="#forward-operator" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&nbsp;</td>
+<td><div class="first last line-block">
+<div class="line">Jump to <a class="reference external" href="../index.html">DART Documentation Main
+Index</a></div>
+<div class="line">version information for this file:</div>
+<div class="line">$Id$</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>In Lanai the forward operator is performed by the first ens_size
+processors. This was because access to the whole state vector is
+required for the forward operator, and only the first ens_size
+processors had the whole state vector. The distributed state forward
+operator has a diffent loop structure to Lanai because all processors
+can do the foward operator for their observations.</p>
+<ul class="simple">
+<li>Lanai: the first ens_size processors loop around ALL OBSERVATIONS.</li>
+<li>Distributed state: ALL PROCESSORS loop around
+observations/num_procs.</li>
+</ul>
+<p>The forward operator is performed in <code class="docutils literal"><span class="pre">get_obs_ens_distrb_state</span></code>. A
+limited call tree for <code class="docutils literal"><span class="pre">get_obs_ens_distrb_state</span></code> is shown below.</p>
+<p><img alt="image1" src="docs/../Graphs/forward_operator.gv.svg" /></p>
+<p>The QC_LOOP is in <code class="docutils literal"><span class="pre">get_obs_ens_distrb_state</span></code> because the qc across
+the ensemble is known. This removes the need for a transpose of the
+forward_op_ens_handle. Note this is different from Lanai. The window
+opening and closing in <code class="docutils literal"><span class="pre">get_obs_ens_distrb_state</span></code> is as follows:</p>
+<ol class="arabic simple">
+<li>State window created (processors can access other processor&#8217;s memory)</li>
+<li>Forward operator called</li>
+<li>QC calculated</li>
+<li>State window destroyed (processors can no longer access other
+processor&#8217;s memory)</li>
+</ol>
+<p>However, there may be occasions where having only the first ens_size
+processors perform the forward operator. For example, if the forward
+operator is being read from a file, or the forward operator uses a large
+portion of the state. Or when debugging it may be easier to have 1 task
+per ensemble member.</p>
+<p>To transpose and do the forward operators like Lanai, you can use the
+filter_nml namelist option distribute_state = .false. The process is
+the same as above except the window creation and destruction are
+transposing the state.</p>
+<ol class="arabic simple">
+<li>State window created (state ensemble is transposed var complete)</li>
+<li>Forward operator called</li>
+<li>QC calculated</li>
+<li>State window destroyed (state ensemble is tranaposed to copy
+complete)</li>
+</ol>
+<p>Note, that if you have fewer tasks than ensemble members some tasks will
+still be doing vectorized forward operators (because they own more than
+one ensemble member).</p>
+<div class="section" id="state-access">
+<h2>State Access<a class="headerlink" href="#state-access" title="Permalink to this headline">¶</a></h2>
+<p>Model_mod routines no longer get an array containing the state. The
+state is accessed through the function <code class="docutils literal"><span class="pre">get_state</span></code>.</p>
+<p>`` x = get_state(i, state_handle)``</p>
+<p>where x is the state at index i. <code class="docutils literal"><span class="pre">state_handle</span></code> is passed from above.
+During model_interpolate <code class="docutils literal"><span class="pre">get_state</span></code> returns an array. Durring
+<code class="docutils literal"><span class="pre">get_state</span></code> returns a single value (the mean state).</p>
+<div class="top"><p>[<a class="reference external" href="#">top</a>]</p>
+</div></div>
+<hr class="docutils" />
+<div class="section" id="terms-of-use">
+<h2>Terms of Use<a class="headerlink" href="#terms-of-use" title="Permalink to this headline">¶</a></h2>
+<p>DART software - Copyright UCAR. This open source software is provided by
+UCAR, &#8220;as is&#8221;, without charge, subject to all terms of use at
+<a class="reference external" href="http://www.image.ucar.edu/DAReS/DART/DART_download">http://www.image.ucar.edu/DAReS/DART/DART_download</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Contact:</td>
+<td>DART core group</td>
+</tr>
+<tr class="row-even"><td>Revision:</td>
+<td>$Revision$</td>
+</tr>
+<tr class="row-odd"><td>Source:</td>
+<td>$URL$</td>
+</tr>
+<tr class="row-even"><td>Change Date:</td>
+<td>$Date$</td>
+</tr>
+<tr class="row-odd"><td>Change&nbsp;history:</td>
+<td>try &#8220;svn&nbsp;log&#8221; or &#8220;svn&nbsp;diff&#8221;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Forward Operator</a><ul>
+<li><a class="reference internal" href="#state-access">State Access</a></li>
+<li><a class="reference internal" href="#terms-of-use">Terms of Use</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/docs/forward_operator.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, DART Team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/docs/forward_operator.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

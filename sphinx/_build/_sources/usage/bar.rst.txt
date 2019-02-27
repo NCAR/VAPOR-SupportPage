@@ -1,6 +1,0 @@
-=================
-bar
-=================
-
-.. doxygennamespace:: VAPoR
-    :project: myproject
