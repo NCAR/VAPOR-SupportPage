@@ -96,7 +96,7 @@
                   <li class="cell"><a class="cell" href="/index.html">Home</a></li>
                   {% for page in pages %}
                   {% if page.menu contains 'main' %}
-                  <li class="cell"><a class="cell home" href="/{{page.url }}">
+                  <li class="cell"><a class="cell home" href="{{ page.url }}">
                     {{ page.title }}
                   </a></li>
                   {% endif %}
