@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Bitwise Considerations &mdash; DART 2.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DART 2.0.0 documentation" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="bitwise-considerations">
+<h1>Bitwise Considerations<a class="headerlink" href="#bitwise-considerations" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&nbsp;</td>
+<td><div class="first last line-block">
+<div class="line">Jump to <a class="reference external" href="../index.html">DART Documentation Main
+Index</a></div>
+<div class="line">version information for this file:</div>
+<div class="line">$Id$</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>By bitwise we mean bit for bit identical results in the output
+obs_sequence file and the restarts (netcdf-to-netcdf or DART
+format-to-dart format) when comparing one version of the code to
+another. For testing the code to be bitwise with Lanai there are several
+things to change/set in Manhattan and your mkmf:</p>
+<ol class="arabic simple">
+<li>assim_tools_mod.f90:
+<code class="docutils literal"><span class="pre">lanai_bitwise</span> <span class="pre">=</span> <span class="pre">.true.</span></code> This is hard coded to false because it is
+very slow to be bitwise with Lanai. <code class="docutils literal"><span class="pre">lanai_bitwise</span> <span class="pre">=</span> <span class="pre">.true.</span></code> causes
+the vertical conversion of observations to be done in get_close_obs
+inside the sequential obs do loop. See <a class="reference external" href="vertical_conversion.html">vertical
+conversion</a> for details about this
+change.</li>
+<li>filter_nml:
+<code class="docutils literal"><span class="pre">output_forward_op_errors</span> <span class="pre">=</span> <span class="pre">.true.</span></code> This will cause the forward
+operator code to calculate all forward operators, even if some
+ensemble members fail.</li>
+<li>mkmf:
+ifort fp-model precise
+In general use the debugging FLAGS in the mkmfs provided with DART.</li>
+<li>sampling_error_correction:
+Use the sampling_error_correction_table.Lanai.nc from the
+assimilation_code/programs/system_simulation/work directory. These
+values are identical to the Lanai release.</li>
+<li>posterior inflation:
+Try to avoid testing cases which use posterior inflation. The
+posterior inflation has additional code in the Manhattan version
+compared to Lanai. If you need to test a case that has posterior,
+copy assim_tools/assim_tools_mod.f90 from the &#8216;classic&#8217; release to
+your Lanai build, and run your test against that version.</li>
+</ol>
+<div class="section" id="important">
+<h2>Important<a class="headerlink" href="#important" title="Permalink to this headline">¶</a></h2>
+<p>The <em>CAM</em> and <em>bgrid_solo</em> model_mods have been altered so the state
+is in a different order inside filter. Thus DART format restarts will
+<strong>not</strong> be bitwise with Lanai DART format restarts, but netcdf files
+will be (after running dart_to_cam).</p>
+<div class="top"><p>[<a class="reference external" href="#">top</a>]</p>
+</div><hr class="docutils" />
+<div class="section" id="terms-of-use">
+<h3>Terms of Use<a class="headerlink" href="#terms-of-use" title="Permalink to this headline">¶</a></h3>
+<p>DART software - Copyright UCAR. This open source software is provided by
+UCAR, &#8220;as is&#8221;, without charge, subject to all terms of use at
+<a class="reference external" href="http://www.image.ucar.edu/DAReS/DART/DART_download">http://www.image.ucar.edu/DAReS/DART/DART_download</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Contact:</td>
+<td>DART core group</td>
+</tr>
+<tr class="row-even"><td>Revision:</td>
+<td>$Revision$</td>
+</tr>
+<tr class="row-odd"><td>Source:</td>
+<td>$URL$</td>
+</tr>
+<tr class="row-even"><td>Change Date:</td>
+<td>$Date$</td>
+</tr>
+<tr class="row-odd"><td>Change&nbsp;history:</td>
+<td>try &#8220;svn&nbsp;log&#8221; or &#8220;svn&nbsp;diff&#8221;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Bitwise Considerations</a><ul>
+<li><a class="reference internal" href="#important">Important</a><ul>
+<li><a class="reference internal" href="#terms-of-use">Terms of Use</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/docs/bitwise_considerations.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, DART Team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/docs/bitwise_considerations.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

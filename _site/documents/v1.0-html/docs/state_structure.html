@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>State Stucture &mdash; DART 2.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DART 2.0.0 documentation" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="state-stucture">
+<h1>State Stucture<a class="headerlink" href="#state-stucture" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&nbsp;</td>
+<td><div class="first last line-block">
+<div class="line">Jump to <a class="reference external" href="../index.html">DART Documentation Main
+Index</a></div>
+<div class="line">version information for this file:</div>
+<div class="line">$Id$</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>State_structure_mod is a module that holds all the domain, variable,
+dimension info about the model_mods in the state. Note it stores only
+<em>metadata</em> about the state, not the actual state variables themselves.</p>
+<p>It is the foundation for two parts of the code:</p>
+<ul class="simple">
+<li>Read/write state variables from/to netcdf files</li>
+<li>Calculate DART index from x,y,z variable indices and the inverse:
+x,y,z, variable from DART index.</li>
+</ul>
+<p>Inside <code class="docutils literal"><span class="pre">static_init_model</span></code> a call is made to <code class="docutils literal"><span class="pre">add_domain</span></code>. This call
+is <em>required</em> as it communicates to the state structure that a new
+domain has been added to the state. The state structure keeps track of
+the number of domains in the state. These may be multiple domains in one
+model_mod, e.g. nested domains in WRF, or multiple model_mods, e.g.
+POP coupled with CAM. The minimum amount of information <code class="docutils literal"><span class="pre">add_domain</span></code>
+needs is model size which means vector of length model size has been
+added to the state. This equivalent to Lanai where the only information
+filter has is that the model is a vector of length model_size. For
+models with netcdf restart files you supply <code class="docutils literal"><span class="pre">add_domain</span></code> with:</p>
+<ul class="simple">
+<li>a netcdf file</li>
+<li>the number of variables to read from the file</li>
+<li>the name of the variables</li>
+<li>Optionally:<ul>
+<li>the DART KINDS of the variables</li>
+<li>clamping upper and lower bounds</li>
+<li>update/not update this variable</li>
+</ul>
+</li>
+</ul>
+<p>For models that are spun up in perfect_model_obs you can manually
+describe the variables so you can create netcdf files containing the
+varibles in the model state, e.g. Temperature, Surface Pressure, etc.
+There are 3 steps to this process:</p>
+<ol class="arabic simple">
+<li>Supply <code class="docutils literal"><span class="pre">add_domain</span></code> with almost the same arguments as you would for
+a netcdf file, but skip the first arguement (netcdf filename).</li>
+<li>For each variable, loop around the required number of dimensions and
+call <code class="docutils literal"><span class="pre">add_dimension_to_variable</span></code></li>
+<li>Call <code class="docutils literal"><span class="pre">finished_adding_domain</span></code> to let the state structure know that
+you have finished adding dimensions to variables.</li>
+</ol>
+<div class="section" id="dart-index">
+<h2>DART index<a class="headerlink" href="#dart-index" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">To get the dart index for an i,j,k,variable in a domain use:</div>
+<div class="line"><code class="docutils literal"><span class="pre">get_dart_vector_index(i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">dom_id,</span> <span class="pre">var_id)</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">To get the i,j,k, variable, domain from the dart index use:</div>
+<div class="line"><code class="docutils literal"><span class="pre">get_model_variable_indices(dart_index,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">var_id,</span>&nbsp; <span class="pre">dom_id)</span></code></div>
+</div>
+<p><strong>Note</strong> That (i,j,k) needs to be converted to (lon, lat, lev) or to
+whatever grid the variable is on. <code class="docutils literal"><span class="pre">get_dim_name</span></code> can be used to get
+the dimension name from i,j,k if needed.</p>
+</div>
+<div class="section" id="unlimited-dimensions-io-vs-model-mod-routines">
+<h2>Unlimited Dimensions: IO vs model_mod routines.<a class="headerlink" href="#unlimited-dimensions-io-vs-model-mod-routines" title="Permalink to this headline">¶</a></h2>
+<p>Some model restart files have an unlimited dimension. For IO purposes,
+e.g. creating netcdf files, the unlimited dimension is used. For state
+structure accessor functions called be the model_mod the unlimited
+dimension is ignored. So if you have a variable TEMPARATURE in your
+netcdf file, with dimensions (lon, lat, level, time) the IO routines
+will see a 4D variable, but <code class="docutils literal"><span class="pre">get_num_dims</span></code> used in model_mod will
+return 3D.</p>
+<div class="top"><p>[<a class="reference external" href="#">top</a>]</p>
+</div><hr class="docutils" />
+<div class="section" id="terms-of-use">
+<h3>Terms of Use<a class="headerlink" href="#terms-of-use" title="Permalink to this headline">¶</a></h3>
+<p>DART software - Copyright UCAR. This open source software is provided by
+UCAR, &#8220;as is&#8221;, without charge, subject to all terms of use at
+<a class="reference external" href="http://www.image.ucar.edu/DAReS/DART/DART_download">http://www.image.ucar.edu/DAReS/DART/DART_download</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Contact:</td>
+<td>DART core group</td>
+</tr>
+<tr class="row-even"><td>Revision:</td>
+<td>$Revision$</td>
+</tr>
+<tr class="row-odd"><td>Source:</td>
+<td>$URL$</td>
+</tr>
+<tr class="row-even"><td>Change Date:</td>
+<td>$Date$</td>
+</tr>
+<tr class="row-odd"><td>Change&nbsp;history:</td>
+<td>try &#8220;svn&nbsp;log&#8221; or &#8220;svn&nbsp;diff&#8221;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">State Stucture</a><ul>
+<li><a class="reference internal" href="#dart-index">DART index</a></li>
+<li><a class="reference internal" href="#unlimited-dimensions-io-vs-model-mod-routines">Unlimited Dimensions: IO vs model_mod routines.</a><ul>
+<li><a class="reference internal" href="#terms-of-use">Terms of Use</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/docs/state_structure.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, DART Team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/docs/state_structure.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
