@@ -1,4 +1,5 @@
-theme: jekyll-theme-cayman
+remote_theme: ncar/jekyll-koru@0.2.10
+#theme: jekyll-theme-cayman
 collections: 
   documents:
     output: true
