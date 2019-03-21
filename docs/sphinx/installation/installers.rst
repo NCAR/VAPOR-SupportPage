@@ -1,3 +1,12 @@
+=================
+Installation
+=================
+
+.. toctree::
+    :caption: Installing VAPOR:
+
+    installation/buildFromSource
+
 .. _installers:
 
 =================

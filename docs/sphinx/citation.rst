@@ -7,6 +7,8 @@ VAPOR is developed as an Open Source application by the National Center for Atmo
 For journal articles, proceedings, etc
 We request:
 
+::
+
     Clyne, J., Mininni, P., Norton, A., and Rast, M. "Interactive desktop analysis of high resolution simulations:
      application to turbulent plume dynamics and current sheet formation", New Journal of Physics 9 (2007) 301.
 
@@ -32,13 +34,20 @@ We request:
     }
 
 or
+
+::
+
     www.vapor.ucar.edu
 
 For presentations, posters, etc:
 We suggest:
 
+::
+
     Imagery produced by VAPOR (www.vapor.ucar.edu), a product of the Computational Information Systems Laboratory at the National Center for Atmospheric Research
 
 or simply the URL when space does not permit otherwise:
 
-    www.vapor.ucar.edu
+:: 
+
+   www.vapor.ucar.edu
