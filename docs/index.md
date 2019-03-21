@@ -14,6 +14,11 @@ VAPOR is a product of the National Center for Atmospheric Research's Computation
 
 ![Alt text goes here](/assets/images/vapor_banner.png){:class="img-responsive "}
 
+[documents/index.html](_documents/html/index.html)
+
 [sphinx/build/index.html](sphinx/build/index.html)
+
 [test.html](test.html)
+
 [sphinx/test2.html](sphinx/test2.html)
+

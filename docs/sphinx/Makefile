@@ -2,10 +2,12 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
+SPHINXOPTS    = -b html
+#SPHINXBUILD   = sphinx-build
+SPHINXBUILD   = /usr/local/Cellar/sphinx-doc/1.8.4/bin/sphinx-build
 SOURCEDIR     = .
-BUILDDIR      = _build
+#BUILDDIR      = _build
+BUILDDIR      = ../_documents
 
 # Put it first so that "make" without argument is like "make help".
 help:
