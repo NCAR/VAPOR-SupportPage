@@ -1,5 +1,0 @@
-=================
-Contour Renderer
-=================
-
-contours
