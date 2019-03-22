@@ -84,12 +84,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#quickstart-guide">QuickStart Guide</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#start-vapor3">Start Vapor3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#import-or-load-data">Import or Load Data</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#data-ingestion">Data Ingestion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-in-vapor3">Data in Vapor3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#vapor-data-collection-vdc">Vapor Data Collection (VDC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wrf">WRF</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#netcdf-cf">NetCDF-CF</a></li>
@@ -194,51 +189,13 @@
   <div class="section" id="usage">
 <span id="id1"></span><h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
 <p>Vapor3 is comprised of a set of tools called Renderers.  Each Renderer depicts your data in different ways based on your specifications, which you specify through Vapor’s user interface.</p>
-<p>We recommend that all users either watch our <a class="reference internal" href="tutorials.html#introtutorial"><span class="std std-ref">Introductory Tutorial</span></a> or work through <a class="reference internal" href="#quickstartguide"><span class="std std-ref">The QuickStart Guide</span></a> which will show you how to install Vapor3, load some data, and create your first renderer.  The next step is to then learn about the Variables, Appearance, Geometry, and Annotation tabs, which are used to specify Renderer behavior.  From here, we document each renderer individually, noting their behavior and unique attributes that they may exhibit.</p>
+<p>We recommend that all users either watch our <a class="reference internal" href="tutorials.html#introtutorial"><span class="std std-ref">Introductory Tutorial</span></a> or work through the <a class="reference internal" href="tutorials.html#quickstartguide"><span class="std std-ref">QuickStart Guide</span></a> which will show you how to install Vapor3, load some data, and create your first <span class="xref std std-ref">Renderer</span>.  The next step is to then learn about the Variables, Appearance, Geometry, and Annotation tabs, which are used to specify Renderer behavior.  From here, we document each renderer individually, noting their behavior and unique attributes that they may exhibit.</p>
 <p>We then cover some computational and diagnostic tools included in Vapor3.  Finally, we talk about Vapor3’s supported data formats, and the VDC data format which can greatly reduce Renderer computation time and enable easier data exploration.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="section" id="quickstart-guide">
-<span id="quickstartguide"></span><h2>QuickStart Guide<a class="headerlink" href="#quickstart-guide" title="Permalink to this headline">¶</a></h2>
-<p>First, install the version of Vapor3 for your computer’s operating system from our <a class="reference internal" href="installation.html#downloads"><span class="std std-ref">downloads</span></a> page.  Updating your graphics drivers at this point can’t hurt.</p>
-<p>If you don’t have <a class="reference internal" href="#dataingestion"><span class="std std-ref">data that’s supported</span></a> by Vapor3 yet, you can <a class="reference internal" href="installation.html#sampledata"><span class="std std-ref">download a sample</span></a> to get started with.</p>
-<div class="section" id="start-vapor3">
-<h3>Start Vapor3<a class="headerlink" href="#start-vapor3" title="Permalink to this headline">¶</a></h3>
-<p>After following the <a class="reference internal" href="installation.html#installationinstructions"><span class="std std-ref">installation instructions</span></a> for Vapor3, open it by doing the following:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Linux:</th><td class="field-body"><p class="first">From a BASH shell, navigate to the directory you installed Vapor3 into.  Then issue the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@localhost:~/$ sh VAPOR3-3.0.0.beta-RH7.sh
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">OSX:</th><td class="field-body"><p class="first">Vapor3 will be located within your Applications folder.  Double click on Vapor3’s icon.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Windows:</th><td class="field-body"><p class="first last">Unless otherwise specified, Vapor3 will exist in C:Program FilesVAPORvapor.exe.  Double click on the executable.</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="import-or-load-data">
-<h3>Import or Load Data<a class="headerlink" href="#import-or-load-data" title="Permalink to this headline">¶</a></h3>
-<p>There are two ways to get data into Vapor3:</p>
-<ol class="arabic simple">
-<li>Load your data after converting it into <a class="reference internal" href="#vdc"><span class="std std-ref">Vapor Data Collection (VDC)</span></a></li>
-<li>Import your data, if it’s one of the natively supported data types (<a class="reference internal" href="#wrf"><span class="std std-ref">WRF</span></a>, <a class="reference internal" href="#netcdf-cf"><span class="std std-ref">NetCDF-CF</span></a>, <a class="reference internal" href="#mpas"><span class="std std-ref">MPAS</span></a>)</li>
-</ol>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-</div>
-</div>
-<div class="section" id="data-ingestion">
-<span id="dataingestion"></span><h2>Data Ingestion<a class="headerlink" href="#data-ingestion" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-in-vapor3">
+<span id="data"></span><h2>Data in Vapor3<a class="headerlink" href="#data-in-vapor3" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="vapor-data-collection-vdc">
 <span id="vdc"></span><h3>Vapor Data Collection (VDC)<a class="headerlink" href="#vapor-data-collection-vdc" title="Permalink to this headline">¶</a></h3>
 </div>
@@ -258,7 +215,7 @@
 <div class="section" id="user-interface-basics">
 <h2>User Interface Basics<a class="headerlink" href="#user-interface-basics" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="variables-tab">
-<h3>Variables Tab<a class="headerlink" href="#variables-tab" title="Permalink to this headline">¶</a></h3>
+<span id="variablestab"></span><h3>Variables Tab<a class="headerlink" href="#variables-tab" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>foo</li>
@@ -267,7 +224,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="appearance-tab">
-<h3>Appearance Tab<a class="headerlink" href="#appearance-tab" title="Permalink to this headline">¶</a></h3>
+<span id="appearancetab"></span><h3>Appearance Tab<a class="headerlink" href="#appearance-tab" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>foo</li>
@@ -276,7 +233,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="geometry-tab">
-<h3>Geometry Tab<a class="headerlink" href="#geometry-tab" title="Permalink to this headline">¶</a></h3>
+<span id="geometrytab"></span><h3>Geometry Tab<a class="headerlink" href="#geometry-tab" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>foo</li>
@@ -285,7 +242,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="annotation-tab">
-<h3>Annotation Tab<a class="headerlink" href="#annotation-tab" title="Permalink to this headline">¶</a></h3>
+<span id="annotationtab"></span><h3>Annotation Tab<a class="headerlink" href="#annotation-tab" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>foo</li>
@@ -298,7 +255,7 @@
 </div>
 </div>
 <div class="section" id="renderers">
-<h2>Renderers<a class="headerlink" href="#renderers" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Renderers<a class="headerlink" href="#renderers" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="volume-renderer">
 <h3>Volume Renderer<a class="headerlink" href="#volume-renderer" title="Permalink to this headline">¶</a></h3>
 </div>
