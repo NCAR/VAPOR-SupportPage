@@ -30,6 +30,7 @@ VAPOR is a product of the National Center for Atmospheric Research’s Computati
    installation
    usage
    tutorials
+   community
    citation
    license
 ..   usage/renderers
