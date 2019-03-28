@@ -1,0 +1,11 @@
+menu:
+  - title: Software
+    url: pages/documentation.html
+  - title: Documentation
+    url: pages/documentation.html
+  - title: Contributing
+    url: pages/documentation.html
+  - title: Images
+    url: pages/documentation.html
+  - title: Help
+    url: pages/documentation.html
