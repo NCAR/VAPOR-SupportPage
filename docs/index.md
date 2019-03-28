@@ -6,7 +6,7 @@ menu: [main]
 
 [Gallery](https://visgallery.ucar.edu/category/visualization-software/vapor/)
 
-[Documentation](_documents/html/index.html)
+[Documentation](sphinx/build/index.html)
 
 [Get the software](_documents/html/installation.html)
 
