@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: pearse@ucar.edu
+title: VAPOR
+email: geinosky@ucar.edu
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -25,10 +25,14 @@ github_username:  geinosky
 
 # Build settings
 markdown: kramdown
-remote_theme: ncar/koru-jekyll@0.2.12
+remote_theme: ncar/koru-jekyll@1.0.7
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+
+include:
+#  - _build/
+  - sphinx/_build
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
