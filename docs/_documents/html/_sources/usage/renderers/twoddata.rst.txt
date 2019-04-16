@@ -1,5 +1,0 @@
-=================
-TwoDData Renderer
-=================
-
-TwoDData

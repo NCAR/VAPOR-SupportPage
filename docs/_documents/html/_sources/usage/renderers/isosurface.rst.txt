@@ -1,5 +1,0 @@
-===================
-Isosurface Renderer
-===================
-
-Isosurfaces
