@@ -6,7 +6,8 @@ SPHINXOPTS    = -b html
 SPHINXBUILD   = /usr/local/Cellar/sphinx-doc/1.8.4/bin/sphinx-build
 SOURCEDIR     = .
 #BUILDDIR     = ../_site/sphinxDocuments
-BUILDDIR     = sphinxDocuments
+#BUILDDIR     = sphinxDocuments
+BUILDDIR     = .
 
 # Put it first so that "make" without argument is like "make help".
 help:
