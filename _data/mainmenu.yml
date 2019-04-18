@@ -1,11 +1,11 @@
 menu:
   - title: Software
-    url: /jekyll-koru-test/pages/software.html
+    url: https://sgpearse.github.io/VAPOR-Sphinx/installation.html
   - title: Documentation
-    url: /jekyll-koru-test/pages/documentation.html
+    url: https://sgpearse.github.io/VAPOR-Sphinx/index.html
   - title: Contributing
-    url: /jekyll-koru-test/pages/contributing.html
-  - title: Images
-    url: https://google.com
+    url: https://sgpearse.github.io/VAPOR-Sphinx/community.html#contributing
+  - title: Gallery
+    url: https://visgallery.ucar.edu/
   - title: Help
-    url: /jekyll-koru-test/pages/help.html
+    url: https://sgpearse.github.io/VAPOR-Sphinx/community.html#get-help
