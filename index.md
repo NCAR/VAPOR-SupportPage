@@ -2,7 +2,7 @@
 layout: frontpage
 title: Home
 banner-title: VAPOR 3.1.RC0 is live
-banner-description: The Vapor team is excited to go public with a Release Candidate for Vapor 3.1.  In this release, support for 3D variables have been added and can be visualized with the new DVR, Isosurface, and Slice renderers.  Support for derived variables through a new Python interface has been included as well.
+banner-description: In Vapor 3.1, support for 3D variables have been added and can be visualized with the new DVR, Isosurface, and Slice renderers.  Support for derived variables through a new Python interface has been included as well.
 banner-button-text: Download
 banner-button-url: https://google.com
 ---
