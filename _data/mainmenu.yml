@@ -1,11 +1,9 @@
 menu:
-  - title: Software
-    url: https://sgpearse.github.io/VAPOR-Sphinx/installation.html
+  - title: Get Started
+    url: https://sgpearse.github.io/VAPOR-Sphinx/quickStartGuide.html
   - title: Documentation
     url: https://sgpearse.github.io/VAPOR-Sphinx/index.html
-  - title: Contributing
-    url: https://sgpearse.github.io/VAPOR-Sphinx/community.html#contributing
   - title: Gallery
     url: https://visgallery.ucar.edu/
-  - title: Help
-    url: https://sgpearse.github.io/VAPOR-Sphinx/community.html#get-help
+  - title: Get Help
+    url: https://sgpearse.github.io/VAPOR-Sphinx/contactAndContribute.html#gethelp
