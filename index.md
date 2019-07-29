@@ -1,6 +1,10 @@
 ---
 layout: frontpage
 title: Home
+banner-title: VAPOR 3.1.0 is live
+banner-description: In Vapor 3.1, support for 3D variables have been added and can be visualized with the new DVR, Isosurface, and Slice renderers.  Support for derived variables through a new Python interface has been included as well.
+banner-button-text: Download
+banner-button-url: https://sgpearse.github.io/VAPOR-Sphinx/installation.html
 ---
 
 # Welcome
