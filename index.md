@@ -1,10 +1,6 @@
 ---
 layout: frontpage
 title: Home
-banner-title: VAPOR 3.1.0 is live
-banner-description: 
-banner-button-text: Download
-banner-button-url: https://sgpearse.github.io/VAPOR-Sphinx/installation.html
 ---
 
 # Welcome
