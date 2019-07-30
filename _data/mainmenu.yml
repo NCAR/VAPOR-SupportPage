@@ -1,9 +1,9 @@
 menu:
   - title: Get Started
-    url: https://sgpearse.github.io/VAPOR-Sphinx/quickStartGuide.html
+    url: https://ncar.github.io/VAPOR/quickStartGuide.html
   - title: Documentation
-    url: https://sgpearse.github.io/VAPOR-Sphinx/index.html
+    url: https://ncar.github.io/VAPOR/index.html
   - title: Gallery
     url: https://visgallery.ucar.edu/category/visualization-software/vapor
   - title: Get Help
-    url: https://sgpearse.github.io/VAPOR-Sphinx/contactAndContribute.html#gethelp
+    url: https://ncar.github.io/VAPOR/contactAndContribute.html
