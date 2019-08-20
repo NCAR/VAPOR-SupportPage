@@ -20,4 +20,4 @@ Project homepage and binary releases can be found at [https://www.vapor.ucar.edu
 - Niklas Roeber
 - Pamela Gillman
 
-![Vapor Banner](share/images/vapor_banner.png)
+![Vapor Banner](vapor_banner.png)
