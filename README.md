@@ -1,48 +1,23 @@
-# Using the koru-jekyll theme
+# Welcome
 
-This is a theme based on UCAR/NCAR's custom 'koru' design. It is built on top the Foundation framework. This provides users and developers with responsiveness and accessibility.
+**VAPOR** is the **V**isualization and **A**nalysis **P**latform for **O**cean, Atmosphere, and Solar **R**esearchers.  VAPOR provides an interactive 3D visualization environment that can also produce animations and still frame images.  VAPOR runs on most UNIX and Windows systems equipped with modern 3D graphics cards.
 
-* [Layouts](#layouts)
-* [Main Menu](#main-menu)
-* [Local Development](#local-development)
+The VAPOR Data Collection (**VDC**) data model allows users progressively access the fidelity of their data, allowing for the visualization of terascale data sets on commodity hardware.  VAPOR can also directly import data formats including WRF, MOM, POP, ROMS, and some GRIB and NetCDF files.
 
-## Layouts
-### Default
+Users can perform ad-hoc analysis with VAPOR's interactive Python interpreter; which allows for the creation, modification, and visualization of new variables based on input model data.
 
-The only front matter information required for default pages is:
+VAPOR is a product of the **National Center for Atmospheric Research's Computational and Information Systems Lab**. Support for VAPOR is provided by the U.S. **National Science Foundation** (grants # 03-25934 and 09-06379, ACI-14-40412), and by the **Korea Institute of Science and Technology Information**
 
-```yml
----
-layout:
-title:
----
-```
+Project homepage and binary releases can be found at [https://www.vapor.ucar.edu/](https://www.vapor.ucar.edu/)
 
-### Front page
+## Project Members:
 
-Front matter options for the front page are:
+- John Clyne
+- Scott Pearse
+- Samuel Li
+- Stanislaw Jaroszynski
+- Kenny Gruchalla
+- Niklas Roeber
+- Pamela Gillman
 
-```yml
----
-layout:
-title:
-banner-title:
-banner-description:
-banner-button-text:
-banner-button-url:
----
-```
-
-## Main menu
-
-The main menu is set in the mainmenu.yml file in the _data directory. Paths can be both absolute and relative in the menu. The structure for creating a menu is:
-
-```yml
-menu:
-  - title: Software
-    url: /pages/documentation.html
-```
-
-## Local Development
-
-Run `docker-compose up --build` to (re)build the jekyll images and run the container.
+![Vapor Banner](share/images/vapor_banner.png)
