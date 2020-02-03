@@ -1,8 +1,8 @@
 ---
 layout: frontpage
 title: Home
-banner-title: VAPOR 3.2.0 is live
-banner-description: View the full release notes at the link below.
+banner-title: February 3, 2020 - VAPOR 3.2.0 is live
+banner-description: 
 banner-button-text: Download
 banner-button-url: https://ncar.github.io/VAPOR/downloads.html
 ---
