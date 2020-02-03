@@ -1,8 +1,8 @@
 ---
 layout: frontpage
 title: Home
-banner-title: VAPOR 3.1.0 is live
-banner-description: In Vapor 3.1, support for 3D variables have been added and can be visualized with the new DVR, Isosurface, and Slice renderers.  Support for derived variables through a new Python interface has been included as well.
+banner-title: VAPOR 3.2.0 is live
+banner-description: View the full release notes at the link below.
 banner-button-text: Download
 banner-button-url: https://ncar.github.io/VAPOR/downloads.html
 ---
