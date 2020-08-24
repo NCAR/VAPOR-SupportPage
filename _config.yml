@@ -16,13 +16,12 @@
 title: VAPOR
 email: pearse@ucar.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+VAPOR is the Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers.  VAPOR provides an interactive 3D visualization environment that can also produce animations and still frame images.  VAPOR runs on most UNIX and Windows systems equipped with modern 3D graphics cards.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  sgpearse
 analytics: UA-332815-27
+#analytics: UA-332815-8
 
 # Build settings
 markdown: kramdown
