@@ -3,6 +3,8 @@ menu:
     url: https://ncar.github.io/VAPOR/quickStartGuide.html
   - title: Documentation
     url: https://ncar.github.io/VAPOR/index.html
+  - title: Documentation v2
+    url: https://vapor.readthedocs.io/en/readthedocs/#
   - title: Gallery
     url: https://visgallery.ucar.edu/category/visualization-software/vapor
   - title: Get Help
