@@ -5,7 +5,7 @@ menu:
     url: https://vapor.readthedocs.io/en/readthedocs/#
   - title: Gallery
     url: https://visgallery.ucar.edu/category/visualization-software/vapor
-  - title: GitHub Repo
-    url: https://https://github.com/NCAR/VAPOR
+  - title: Source Code 
+    url: https://github.com/NCAR/VAPOR
   - title: Get Help
     url: https://vapor.discourse.group
