@@ -1,6 +1,6 @@
 menu:
   - title: Get Started
-    url: https://ncar.github.io/VAPOR/quickStartGuide.html
+    url: https://vapor.readthedocs.io/en/readthedocs/quickStartGuide.html
   - title: Documentation
     url: https://vapor.readthedocs.io/en/readthedocs/#
   - title: Gallery
