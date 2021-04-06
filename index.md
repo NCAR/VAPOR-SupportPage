@@ -1,8 +1,8 @@
 ---
 layout: frontpage
 title: Home
-banner-title: VAPOR 3.3.0 is now live!
-banner-description: Released on December 17, 2020
+banner-title: VAPOR 3.4.0 is now live!
+banner-description: Released on April 6, 2021
 banner-button-text: Download
 banner-button-url: https://docs.google.com/forms/d/e/1FAIpQLSfl6Hqh8nPWDnFYGkelf_p5UAqP6ikIKvmLhOOT6cYQePwSnA/viewform?usp=sf_link
 ---
