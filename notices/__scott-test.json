@@ -3,7 +3,7 @@
 
     "_comment-2": "This is the date at which the notice will be displayed to users",
     "_comment-3": "The time format is yyyy-MM-dd by Qt's specification",
-    "date": "2021-06-06",
+    "date": "2021-06-01",
 
     "_comment-4": "This is the date at which the notice will no longer be displayed to users",
     "until": "2021-09-27",
