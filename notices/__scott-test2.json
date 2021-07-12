@@ -11,5 +11,5 @@
 
     "_comment-5": "This is the content of the notice. It uses a subset of HTML that is supported by QTextBrowser",
 
-	"content": "<br> <center><h1>Notice</h1></center> <hr> <br> <h2>Vapor's homepage (scott2): <a href='http://www.vapor.ucar.edu'>Link</a></h2>"
+	"content": "<br> <center><h1>Notice</h1></center> <hr> <br> <h2>Vapor's homepage (__scott-test2.json): <a href='http://www.vapor.ucar.edu'>Link</a></h2>"
 }
