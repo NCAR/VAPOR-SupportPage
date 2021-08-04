@@ -1,10 +1,10 @@
 ---
 layout: frontpage
 title: Home
-banner-title: We need your feedback!
-banner-description: We need our users to fill out a 5 minute survey so we can determine new features for Vapor 3.6.  This is your opportunity to get what YOU need into Vapor.  The deadline for providing feedback is June 11.
-banner-button-text: New Feature Survey
-banner-button-url: https://docs.google.com/forms/d/e/1FAIpQLSeZWvuAXaRiWyFrQ16zO25bfy8AANp8C8HpVXeMk83uQPdTLA/viewform?usp=sf_link
+banner-title: Vapor 3.5 is now live!
+banner-description: Vapor 3.5.0 supports particle data, bookmarks, an improved GUI, and makes it easier to read raw, binary data, and more.
+banner-button-text: Read our release notes here
+banner-button-url: https://vapor.readthedocs.io/en/readthedocs/index.html
 ---
 
 # Welcome
