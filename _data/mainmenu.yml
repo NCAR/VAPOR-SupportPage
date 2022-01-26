@@ -1,6 +1,6 @@
 menu:
   - title: Download
-    url: https://vapor.readthedocs.io/en/readthedocs/downloads.html
+    url: https://vapor.readthedocs.io/en/readthedocs/downloads/downloads.html
   - title: Quick Start Guide
     url: https://vapor.readthedocs.io/en/readthedocs/quickStartGuide.html
   - title: Documentation
