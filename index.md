@@ -1,8 +1,8 @@
 ---
 layout: frontpage
 title: Home
-banner-title: Vapor 3.5 is now live!
-banner-description: Vapor 3.5.0 supports particle data, bookmarks, an improved GUI, and makes it easier to read raw, binary data, and more.
+banner-title: Vapor 3.6 is now live!
+banner-description: Vapor 3.6.0 adds support for orientable Slice and Contour Renderers, and new analysis tools for Flow integration.
 banner-button-text: Read our release notes here
 banner-button-url: https://vapor.readthedocs.io/en/readthedocs/index.html
 ---
