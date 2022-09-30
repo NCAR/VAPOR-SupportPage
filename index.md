@@ -1,10 +1,11 @@
 ---
 layout: frontpage
 title: Home
-banner-title: 2022 Summer Vapor Tutorial
-banner-description: Join us Tuesday, August 23 from 10:00am to 11:30am (MDT) for a virtual tutorial for Vapor's upcoming 3.7 release.  Vapor's workflow will be reviewed, along with principles for visualizing 3D simulation data.  There will be discussion on how to get your data into Vapor, as well as how to use its new Python API that allows for scripted visualizations that can run alongside simulation processes.
-banner-button-text: Register here
-banner-button-url: https://docs.google.com/forms/d/1ky7v8lhtjeREZtNuKZtBpdFoJf9MQbxtyPWqfYKl6Kc/edit
+banner-title: Vapor 3.7.0 is now live!
+banner-description: Vapor can now be scripted with its Python API, new enhanced rendering for visualization of Lagrangian particle tracking, the display of dataset metadata, and 93 other enhancements and bug fixes.  
+
+banner-button-text: Download here
+banner-button-url: https://forms.gle/rnzKVafbKJQYY9xp8
 ---
 
 # Welcome
