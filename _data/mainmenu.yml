@@ -7,14 +7,14 @@ menu:
       - title: VAPOR Python
         url: /pages/vaporPythonDownloads.html
   - title: Quick Start Guide
-    url: 
+    url: /pages/QuickStartPage.html
     submenu:
       - title: VAPOR GUI Quick Start
         url: https://vapor.readthedocs.io/en/readthedocs/quickStartGuide.html
       - title: VAPOR Python Quick Start
         url: /pages/vaporPythonDownloads.html
   - title: Documentation
-    url: 
+    url: /pages/DocumentationPage.html
     submenu:
       - title: VAPOR GUI Documentation
         url: https://vapor.readthedocs.io/en/readthedocs/#
