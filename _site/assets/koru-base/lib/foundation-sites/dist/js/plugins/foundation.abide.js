@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("./foundation.core"), require("./foundation.core.plugin"), require("./foundation.core.utils"), require("jquery"));
+		module.exports = factory(require("./foundation.core"), require("jquery"));
 	else if(typeof define === 'function' && define.amd)
-		define(["./foundation.core", "./foundation.core.plugin", "./foundation.core.utils", "jquery"], factory);
+		define(["./foundation.core", "jquery"], factory);
 	else if(typeof exports === 'object')
-		exports["foundation.abide"] = factory(require("./foundation.core"), require("./foundation.core.plugin"), require("./foundation.core.utils"), require("jquery"));
+		exports["foundation.abide"] = factory(require("./foundation.core"), require("jquery"));
 	else
-		root["__FOUNDATION_EXTERNAL__"] = root["__FOUNDATION_EXTERNAL__"] || {}, root["__FOUNDATION_EXTERNAL__"]["foundation.abide"] = factory(root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["jQuery"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE__foundation_core__, __WEBPACK_EXTERNAL_MODULE__foundation_core_plugin__, __WEBPACK_EXTERNAL_MODULE__foundation_core_utils__, __WEBPACK_EXTERNAL_MODULE_jquery__) {
+		root["__FOUNDATION_EXTERNAL__"] = root["__FOUNDATION_EXTERNAL__"] || {}, root["__FOUNDATION_EXTERNAL__"]["foundation.abide"] = factory(root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["jQuery"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE__foundation_core__, __WEBPACK_EXTERNAL_MODULE_jquery__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -107,59 +107,26 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core__;
 
 /***/ }),
 
-/***/ "./foundation.core.plugin":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** external {"root":["__FOUNDATION_EXTERNAL__","foundation.core"],"amd":"./foundation.core.plugin","commonjs":"./foundation.core.plugin","commonjs2":"./foundation.core.plugin"} ***!
-  \*************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core_plugin__;
-
-/***/ }),
-
-/***/ "./foundation.core.utils":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** external {"root":["__FOUNDATION_EXTERNAL__","foundation.core"],"amd":"./foundation.core.utils","commonjs":"./foundation.core.utils","commonjs2":"./foundation.core.utils"} ***!
-  \**********************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core_utils__;
-
-/***/ }),
-
 /***/ "./js/entries/plugins/foundation.abide.js":
 /*!************************************************!*\
   !*** ./js/entries/plugins/foundation.abide.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Foundation, Abide */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _foundation_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foundation.core */ "./foundation.core");
+/* harmony import */ var _foundation_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_foundation_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Foundation", function() { return _foundation_core__WEBPACK_IMPORTED_MODULE_0__["Foundation"]; });
+
+/* harmony import */ var _foundation_abide__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../foundation.abide */ "./js/foundation.abide.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Abide", function() { return _foundation_abide__WEBPACK_IMPORTED_MODULE_1__["Abide"]; });
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Foundation", {
-  enumerable: true,
-  get: function get() {
-    return _foundation.Foundation;
-  }
-});
-Object.defineProperty(exports, "Abide", {
-  enumerable: true,
-  get: function get() {
-    return _foundation2.Abide;
-  }
-});
 
-var _foundation = __webpack_require__(/*! ./foundation.core */ "./foundation.core");
+_foundation_core__WEBPACK_IMPORTED_MODULE_0__["Foundation"].plugin(_foundation_abide__WEBPACK_IMPORTED_MODULE_1__["Abide"], 'Abide');
 
-var _foundation2 = __webpack_require__(/*! ../../foundation.abide */ "./js/foundation.abide.js");
-
-_foundation.Foundation.plugin(_foundation2.Abide, 'Abide');
 
 /***/ }),
 
@@ -167,24 +134,17 @@ _foundation.Foundation.plugin(_foundation2.Abide, 'Abide');
 /*!********************************!*\
   !*** ./js/foundation.abide.js ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Abide */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Abide", function() { return Abide; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./foundation.core.plugin */ "./foundation.core");
+/* harmony import */ var _foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__);
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Abide = void 0;
-
-var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "jquery"));
-
-var _foundationCore = __webpack_require__(/*! ./foundation.core.plugin */ "./foundation.core.plugin");
-
-var _foundationCore2 = __webpack_require__(/*! ./foundation.core.utils */ "./foundation.core.utils");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -204,10 +164,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+
+
+
 /**
  * Abide module.
  * @module foundation.abide
  */
+
 var Abide =
 /*#__PURE__*/
 function (_Plugin) {
@@ -233,7 +197,9 @@ function (_Plugin) {
     value: function _setup(element) {
       var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       this.$element = element;
-      this.options = _jquery.default.extend(true, {}, Abide.defaults, this.$element.data(), options);
+      this.options = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.extend(true, {}, Abide.defaults, this.$element.data(), options);
+      this.isEnabled = true;
+      this.formnovalidate = null;
       this.className = 'Abide'; // ie9 back compat
 
       this._init();
@@ -248,18 +214,19 @@ function (_Plugin) {
     value: function _init() {
       var _this2 = this;
 
-      this.$inputs = _jquery.default.merge( // Consider as input to validate:
-      this.$element.find('input').not('[type=submit]'), // * all input fields expect submit
+      this.$inputs = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.merge( // Consider as input to validate:
+      this.$element.find('input').not('[type="submit"]'), // * all input fields expect submit
       this.$element.find('textarea, select') // * all textareas and select fields
       );
+      this.$submits = this.$element.find('[type="submit"]');
       var $globalErrors = this.$element.find('[data-abide-error]'); // Add a11y attributes to all fields
 
       if (this.options.a11yAttributes) {
         this.$inputs.each(function (i, input) {
-          return _this2.addA11yAttributes((0, _jquery.default)(input));
+          return _this2.addA11yAttributes(jquery__WEBPACK_IMPORTED_MODULE_0___default()(input));
         });
         $globalErrors.each(function (i, error) {
-          return _this2.addGlobalErrorA11yAttributes((0, _jquery.default)(error));
+          return _this2.addGlobalErrorA11yAttributes(jquery__WEBPACK_IMPORTED_MODULE_0___default()(error));
         });
       }
 
@@ -280,22 +247,30 @@ function (_Plugin) {
       }).on('submit.zf.abide', function () {
         return _this3.validateForm();
       });
+      this.$submits.off('click.zf.abide keydown.zf.abide').on('click.zf.abide keydown.zf.abide', function (e) {
+        if (!e.key || e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          _this3.formnovalidate = e.target.getAttribute('formnovalidate') !== null;
+
+          _this3.$element.submit();
+        }
+      });
 
       if (this.options.validateOn === 'fieldChange') {
         this.$inputs.off('change.zf.abide').on('change.zf.abide', function (e) {
-          _this3.validateInput((0, _jquery.default)(e.target));
+          _this3.validateInput(jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target));
         });
       }
 
       if (this.options.liveValidate) {
         this.$inputs.off('input.zf.abide').on('input.zf.abide', function (e) {
-          _this3.validateInput((0, _jquery.default)(e.target));
+          _this3.validateInput(jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target));
         });
       }
 
       if (this.options.validateOnBlur) {
         this.$inputs.off('blur.zf.abide').on('blur.zf.abide', function (e) {
-          _this3.validateInput((0, _jquery.default)(e.target));
+          _this3.validateInput(jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target));
         });
       }
     }
@@ -308,6 +283,44 @@ function (_Plugin) {
     key: "_reflow",
     value: function _reflow() {
       this._init();
+    }
+    /**
+     * Checks whether the submitted form should be validated or not, consodering formnovalidate and isEnabled
+     * @returns {Boolean}
+     * @private
+     */
+
+  }, {
+    key: "_validationIsDisabled",
+    value: function _validationIsDisabled() {
+      if (this.isEnabled === false) {
+        // whole validation disabled
+        return true;
+      } else if (typeof this.formnovalidate === 'boolean') {
+        // triggered by $submit
+        return this.formnovalidate;
+      } else {
+        // triggered by Enter in non-submit input
+        return this.$submits.length ? this.$submits[0].getAttribute('formnovalidate') !== null : false;
+      }
+    }
+    /**
+     * Enables the whole validation
+     */
+
+  }, {
+    key: "enableValidation",
+    value: function enableValidation() {
+      this.isEnabled = true;
+    }
+    /**
+     * Disables the whole validation
+     */
+
+  }, {
+    key: "disableValidation",
+    value: function disableValidation() {
+      this.isEnabled = false;
     }
     /**
      * Checks whether or not a form element has the required attribute and if it's checked or not
@@ -355,7 +368,7 @@ function (_Plugin) {
   }, {
     key: "findFormError",
     value: function findFormError($el) {
-      var id = $el[0].id;
+      var id = $el.length ? $el[0].id : '';
       var $error = $el.siblings(this.options.formErrorSelector);
 
       if (!$error.length) {
@@ -409,12 +422,39 @@ function (_Plugin) {
         var $label = _this4.$element.find("label[for=\"".concat(id, "\"]"));
 
         if (!$label.length) {
-          $label = (0, _jquery.default)(el).closest('label');
+          $label = jquery__WEBPACK_IMPORTED_MODULE_0___default()(el).closest('label');
         }
 
         return $label[0];
       });
-      return (0, _jquery.default)(labels);
+      return jquery__WEBPACK_IMPORTED_MODULE_0___default()(labels);
+    }
+    /**
+     * Get the set of labels associated with a set of checkbox els in this order
+     * 2. The <label> with the attribute `[for="someInputId"]`
+     * 3. The `.closest()` <label>
+     *
+     * @param {Object} $el - jQuery object to check for required attribute
+     * @returns {Boolean} Boolean value depends on whether or not attribute is checked or empty
+     */
+
+  }, {
+    key: "findCheckboxLabels",
+    value: function findCheckboxLabels($els) {
+      var _this5 = this;
+
+      var labels = $els.map(function (i, el) {
+        var id = el.id;
+
+        var $label = _this5.$element.find("label[for=\"".concat(id, "\"]"));
+
+        if (!$label.length) {
+          $label = jquery__WEBPACK_IMPORTED_MODULE_0___default()(el).closest('label');
+        }
+
+        return $label[0];
+      });
+      return jquery__WEBPACK_IMPORTED_MODULE_0___default()(labels);
     }
     /**
      * Adds the CSS error class as specified by the Abide settings to the label, input, and the form
@@ -459,7 +499,7 @@ function (_Plugin) {
         var errorId = $error.attr('id');
 
         if (typeof errorId === 'undefined') {
-          errorId = (0, _foundationCore2.GetYoDigits)(6, 'abide-error');
+          errorId = Object(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__["GetYoDigits"])(6, 'abide-error');
           $error.attr('id', errorId);
         }
 
@@ -472,21 +512,21 @@ function (_Plugin) {
         var elemId = $el.attr('id');
 
         if (typeof elemId === 'undefined') {
-          elemId = (0, _foundationCore2.GetYoDigits)(6, 'abide-input');
+          elemId = Object(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__["GetYoDigits"])(6, 'abide-input');
           $el.attr('id', elemId);
         }
 
         ; // For each label targeting $el, set [for] if it is not set.
 
         $labels.each(function (i, label) {
-          var $label = (0, _jquery.default)(label);
+          var $label = jquery__WEBPACK_IMPORTED_MODULE_0___default()(label);
           if (typeof $label.attr('for') === 'undefined') $label.attr('for', elemId);
         });
       } // For each error targeting $el, set [role=alert] if it is not set.
 
 
       $errors.each(function (i, label) {
-        var $label = (0, _jquery.default)(label);
+        var $label = jquery__WEBPACK_IMPORTED_MODULE_0___default()(label);
         if (typeof $label.attr('role') === 'undefined') $label.attr('role', 'alert');
       }).end();
     }
@@ -527,6 +567,32 @@ function (_Plugin) {
       });
     }
     /**
+     * Remove CSS error classes etc from an entire checkbox group
+     * @param {String} groupName - A string that specifies the name of a checkbox group
+     *
+     */
+
+  }, {
+    key: "removeCheckboxErrorClasses",
+    value: function removeCheckboxErrorClasses(groupName) {
+      var $els = this.$element.find(":checkbox[name=\"".concat(groupName, "\"]"));
+      var $labels = this.findCheckboxLabels($els);
+      var $formErrors = this.findFormError($els);
+
+      if ($labels.length) {
+        $labels.removeClass(this.options.labelErrorClass);
+      }
+
+      if ($formErrors.length) {
+        $formErrors.removeClass(this.options.formErrorClass);
+      }
+
+      $els.removeClass(this.options.inputErrorClass).attr({
+        'data-invalid': null,
+        'aria-invalid': null
+      });
+    }
+    /**
      * Removes CSS error class as specified by the Abide settings from the label, input, and the form
      * @param {Object} $el - jQuery object to remove the class from
      */
@@ -537,7 +603,10 @@ function (_Plugin) {
       // radios need to clear all of the els
       if ($el[0].type == 'radio') {
         return this.removeRadioErrorClasses($el.attr('name'));
-      }
+      } // checkboxes need to clear all of the els
+      else if ($el[0].type == 'checkbox') {
+          return this.removeCheckboxErrorClasses($el.attr('name'));
+        }
 
       var $label = this.findLabel($el);
       var $formError = this.findFormError($el);
@@ -571,7 +640,12 @@ function (_Plugin) {
           validated = false,
           customValidator = true,
           validator = $el.attr('data-validator'),
-          equalTo = true; // don't validate ignored inputs or hidden inputs or disabled inputs
+          equalTo = true; // skip validation if disabled
+
+      if (this._validationIsDisabled()) {
+        return true;
+      } // don't validate ignored inputs or hidden inputs or disabled inputs
+
 
       if ($el.is('[data-abide-ignore]') || $el.is('[type="hidden"]') || $el.is('[disabled]')) {
         return true;
@@ -583,7 +657,8 @@ function (_Plugin) {
           break;
 
         case 'checkbox':
-          validated = clearRequire;
+          validated = this.validateCheckbox($el.attr('name'));
+          clearRequire = true;
           break;
 
         case 'select':
@@ -615,8 +690,8 @@ function (_Plugin) {
           var _this = this;
 
           dependentElements.each(function () {
-            if ((0, _jquery.default)(this).val()) {
-              _this.validateInput((0, _jquery.default)(this));
+            if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val()) {
+              _this.validateInput(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
             }
           });
         }
@@ -643,20 +718,38 @@ function (_Plugin) {
   }, {
     key: "validateForm",
     value: function validateForm() {
-      var _this5 = this;
+      var _this6 = this;
 
       var acc = [];
 
       var _this = this;
 
+      var checkboxGroupName; // Remember first form submission to prevent specific checkbox validation (more than one required) until form got initially submitted
+
+      if (!this.initialized) {
+        this.initialized = true;
+      } // skip validation if disabled
+
+
+      if (this._validationIsDisabled()) {
+        this.formnovalidate = null;
+        return true;
+      }
+
       this.$inputs.each(function () {
-        acc.push(_this.validateInput((0, _jquery.default)(this)));
+        // Only use one checkbox per group since validateCheckbox() iterates over all associated checkboxes
+        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0].type === 'checkbox') {
+          if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('name') === checkboxGroupName) return true;
+          checkboxGroupName = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('name');
+        }
+
+        acc.push(_this.validateInput(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)));
       });
       var noError = acc.indexOf(false) === -1;
       this.$element.find('[data-abide-error]').each(function (i, elem) {
-        var $elem = (0, _jquery.default)(elem); // Ensure a11y attributes are set
+        var $elem = jquery__WEBPACK_IMPORTED_MODULE_0___default()(elem); // Ensure a11y attributes are set
 
-        if (_this5.options.a11yAttributes) _this5.addGlobalErrorA11yAttributes($elem); // Show or hide the error
+        if (_this6.options.a11yAttributes) _this6.addGlobalErrorA11yAttributes($elem); // Show or hide the error
 
         $elem.css('display', noError ? 'none' : 'block');
       });
@@ -681,7 +774,7 @@ function (_Plugin) {
     key: "validateText",
     value: function validateText($el, pattern) {
       // A pattern can be passed to this function, or it will be infered from the input's "pattern" attribute, or it's "type" attribute
-      pattern = pattern || $el.attr('pattern') || $el.attr('type');
+      pattern = pattern || $el.attr('data-pattern') || $el.attr('pattern') || $el.attr('type');
       var inputText = $el.val();
       var valid = false;
 
@@ -718,7 +811,7 @@ function (_Plugin) {
           required = false; // For the group to be required, at least one radio needs to be required
 
       $group.each(function (i, e) {
-        if ((0, _jquery.default)(e).attr('required')) {
+        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(e).attr('required')) {
           required = true;
         }
       });
@@ -727,13 +820,73 @@ function (_Plugin) {
       if (!valid) {
         // For the group to be valid, at least one radio needs to be checked
         $group.each(function (i, e) {
-          if ((0, _jquery.default)(e).prop('checked')) {
+          if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(e).prop('checked')) {
             valid = true;
           }
         });
       }
 
       ;
+      return valid;
+    }
+    /**
+     * Determines whether or a not a checkbox input is valid based on whether or not it is required and checked. Although the function targets a single `<input>`, it validates by checking the `required` and `checked` properties of all checkboxes in its group.
+     * @param {String} groupName - A string that specifies the name of a checkbox group
+     * @returns {Boolean} Boolean value depends on whether or not at least one checkbox input has been checked (if it's required)
+     */
+
+  }, {
+    key: "validateCheckbox",
+    value: function validateCheckbox(groupName) {
+      var _this7 = this;
+
+      // If at least one checkbox in the group has the `required` attribute, the group is considered required
+      // Per W3C spec, all checkboxes in a group should have `required`, but we're being nice
+      var $group = this.$element.find(":checkbox[name=\"".concat(groupName, "\"]"));
+      var valid = false,
+          required = false,
+          minRequired = 1,
+          checked = 0; // For the group to be required, at least one checkbox needs to be required
+
+      $group.each(function (i, e) {
+        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(e).attr('required')) {
+          required = true;
+        }
+      });
+      if (!required) valid = true;
+
+      if (!valid) {
+        // Count checked checkboxes within the group
+        // Use data-min-required if available (default: 1)
+        $group.each(function (i, e) {
+          if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(e).prop('checked')) {
+            checked++;
+          }
+
+          if (typeof jquery__WEBPACK_IMPORTED_MODULE_0___default()(e).attr('data-min-required') !== 'undefined') {
+            minRequired = parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()(e).attr('data-min-required'));
+          }
+        }); // For the group to be valid, the minRequired amount of checkboxes have to be checked
+
+        if (checked >= minRequired) {
+          valid = true;
+        }
+      }
+
+      ; // Skip validation if more than 1 checkbox have to be checked AND if the form hasn't got submitted yet (otherwise it will already show an error during the first fill in)
+
+      if (this.initialized !== true && minRequired > 1) {
+        return true;
+      } // Refresh error class for all input
+
+
+      $group.each(function (i, e) {
+        if (!valid) {
+          _this7.addErrorClasses(jquery__WEBPACK_IMPORTED_MODULE_0___default()(e));
+        } else {
+          _this7.removeErrorClasses(jquery__WEBPACK_IMPORTED_MODULE_0___default()(e));
+        }
+      });
       return valid;
     }
     /**
@@ -747,11 +900,11 @@ function (_Plugin) {
   }, {
     key: "matchValidation",
     value: function matchValidation($el, validators, required) {
-      var _this6 = this;
+      var _this8 = this;
 
       required = required ? true : false;
       var clear = validators.split(' ').map(function (v) {
-        return _this6.options.validators[v]($el, required, $el.parent());
+        return _this8.options.validators[v]($el, required, $el.parent());
       });
       return clear.indexOf(false) === -1;
     }
@@ -765,19 +918,19 @@ function (_Plugin) {
     value: function resetForm() {
       var $form = this.$element,
           opts = this.options;
-      (0, _jquery.default)(".".concat(opts.labelErrorClass), $form).not('small').removeClass(opts.labelErrorClass);
-      (0, _jquery.default)(".".concat(opts.inputErrorClass), $form).not('small').removeClass(opts.inputErrorClass);
-      (0, _jquery.default)("".concat(opts.formErrorSelector, ".").concat(opts.formErrorClass)).removeClass(opts.formErrorClass);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".".concat(opts.labelErrorClass), $form).not('small').removeClass(opts.labelErrorClass);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".".concat(opts.inputErrorClass), $form).not('small').removeClass(opts.inputErrorClass);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("".concat(opts.formErrorSelector, ".").concat(opts.formErrorClass)).removeClass(opts.formErrorClass);
       $form.find('[data-abide-error]').css('display', 'none');
-      (0, _jquery.default)(':input', $form).not(':button, :submit, :reset, :hidden, :radio, :checkbox, [data-abide-ignore]').val('').attr({
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(':input', $form).not(':button, :submit, :reset, :hidden, :radio, :checkbox, [data-abide-ignore]').val('').attr({
         'data-invalid': null,
         'aria-invalid': null
       });
-      (0, _jquery.default)(':input:radio', $form).not('[data-abide-ignore]').prop('checked', false).attr({
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(':input:radio', $form).not('[data-abide-ignore]').prop('checked', false).attr({
         'data-invalid': null,
         'aria-invalid': null
       });
-      (0, _jquery.default)(':input:checkbox', $form).not('[data-abide-ignore]').prop('checked', false).attr({
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(':input:checkbox', $form).not('[data-abide-ignore]').prop('checked', false).attr({
         'data-invalid': null,
         'aria-invalid': null
       });
@@ -800,19 +953,19 @@ function (_Plugin) {
 
       this.$element.off('.abide').find('[data-abide-error]').css('display', 'none');
       this.$inputs.off('.abide').each(function () {
-        _this.removeErrorClasses((0, _jquery.default)(this));
+        _this.removeErrorClasses(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
       });
+      this.$submits.off('.abide');
     }
   }]);
 
   return Abide;
-}(_foundationCore.Plugin);
+}(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__["Plugin"]);
 /**
  * Default settings for plugin
  */
 
 
-exports.Abide = Abide;
 Abide.defaults = {
   /**
    * The default event to validate inputs. Checkboxes and radios validate immediately.
@@ -937,10 +1090,11 @@ Abide.defaults = {
    */
   validators: {
     equalTo: function equalTo(el, required, parent) {
-      return (0, _jquery.default)("#".concat(el.attr('data-equalto'))).val() === el.val();
+      return jquery__WEBPACK_IMPORTED_MODULE_0___default()("#".concat(el.attr('data-equalto'))).val() === el.val();
     }
   }
 };
+
 
 /***/ }),
 
@@ -951,7 +1105,7 @@ Abide.defaults = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ncoden/Documents/Documents/Projects/Programmation/Web/2016/Foundation/foundation-sites/js/entries/plugins/foundation.abide.js */"./js/entries/plugins/foundation.abide.js");
+module.exports = __webpack_require__(/*! /Volumes/Data/Development/Foundation/foundation-sites/js/entries/plugins/foundation.abide.js */"./js/entries/plugins/foundation.abide.js");
 
 
 /***/ }),

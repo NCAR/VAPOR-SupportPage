@@ -1,0 +1,54 @@
+.stay-connected {
+  padding: 20px;
+
+  > div {
+    height: 100%;
+  }
+
+  a {
+    &:hover {
+      i {
+        color: map-get($base-colors, 'dark-blue');
+      }
+    }
+  }
+
+  h5 {
+    color: map-get($base-colors, 'white');
+  }
+
+  .newsletter-signup {
+    margin: auto;
+    width: 75%;
+
+    form {
+      margin: 0;
+
+      &::after {
+        border-color: transparent map-get($base-colors, 'dark-blue');
+      }
+    }
+
+    input {
+      &.button {
+        background: map-get($base-colors, 'dark-blue');
+      }
+    }
+  }
+
+  @media only screen and (min-width: map-get($custom-breakpoints, 'mlarge')) {
+    h5 {
+      margin-top: 0;
+    }
+
+    .newsletter-signup {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: map-get($custom-breakpoints, 'xlarge')) {
+    .newsletter-signup {
+      width: 75%;
+    }
+  }
+}

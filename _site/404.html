@@ -3,17 +3,30 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="title" content="Jekyll Koru">
+  <meta name="title" content="">
   <meta name="description" content="UCAR">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta class="foundation-mq">
   <link rel="canonical" href="https://www.ucar.edu/">
+  <link rel="shortcut icon" href="/assets/koru-base/img/app-favicons/ncar/favicon.ico">
 
-  <title>Jekyll Koru</title>
+  <title> | VAPOR</title>
 
-  <link rel="stylesheet" href="/assets/koru-base/css/main.min.css" media="all">
+  <link rel="stylesheet" href="/assets/koru-base/lib/font-awesome/css/font-awesome.min.css" media="all">
+  <link rel="stylesheet" href="/assets/koru-base/lib/icomoon/style.css" media="all">
+  <link rel="stylesheet" href="/assets/koru-base/css/foundation.min.css" media="all">
   <link rel="stylesheet" href="/assets/css/styles.css" media="all">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Poppins:400,600,700" media="all">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-332815-27"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-332815-27');
+  </script>
+
 </head>
 
 
@@ -58,21 +71,70 @@
                 <button class="fa fa-chevron-down" type="button" data-toggle="main-nav"></button>
             </div>
             <div class="main-nav hide-for-print" id="main-nav">
-                <nav class="cell">
-                    <ul class="vertical mlarge-horizontal menu" data-responsive-menu="accordion mlarge-menu">
+                <div class="grid-x">
+                <nav class="cell center mlarge-10 large-7">
+                    <ul class="menu icons icon-left" data-responsive-menu="accordion mlarge-dropdown">
                         
-                        <li aria-label="Software"><a class="text-center" href="/jekyll-koru-test/pages/software.html">Software</a></li>
+                        <li aria-label="Download">
+                            <a class="text-center" href="/pages/DownloadsPage.html">Download</a>
+                            
+                            <ul class="menu">
+                                <li aria-label="Download"><a class="text-center" href="/pages/DownloadsPage.html">Overview</a></li>
+                                
+                                <li aria-label="VAPOR GUI"><a class="text-left" href="https://docs.google.com/forms/d/e/1FAIpQLSdej3yFMIIqtgW0JIpmzntzfTfmgCujnWmzocmi40WZiRO9kA/viewform">VAPOR GUI</a></li>
+                                
+                                <li aria-label="VAPOR Python"><a class="text-left" href="/pages/vaporPythonDownloads.html">VAPOR Python</a></li>
+                                
+                            </ul>
+                            
+                        </li>
                         
-                        <li aria-label="Documentation"><a class="text-center" href="/jekyll-koru-test/pages/documentation.html">Documentation</a></li>
+                        <li aria-label="Quick Start Guide">
+                            <a class="text-center" href="">Quick Start Guide</a>
+                            
+                            <ul class="menu">
+                                <li aria-label="Quick Start Guide"><a class="text-center" href="">Overview</a></li>
+                                
+                                <li aria-label="VAPOR GUI Quick Start"><a class="text-left" href="https://vapor.readthedocs.io/en/readthedocs/quickStartGuide.html">VAPOR GUI Quick Start</a></li>
+                                
+                                <li aria-label="VAPOR Python Quick Start"><a class="text-left" href="/pages/vaporPythonDownloads.html">VAPOR Python Quick Start</a></li>
+                                
+                            </ul>
+                            
+                        </li>
                         
-                        <li aria-label="Contributing"><a class="text-center" href="/jekyll-koru-test/pages/contributing.html">Contributing</a></li>
+                        <li aria-label="Documentation">
+                            <a class="text-center" href="">Documentation</a>
+                            
+                            <ul class="menu">
+                                <li aria-label="Documentation"><a class="text-center" href="">Overview</a></li>
+                                
+                                <li aria-label="VAPOR GUI Documentation"><a class="text-left" href="https://vapor.readthedocs.io/en/readthedocs/#">VAPOR GUI Documentation</a></li>
+                                
+                                <li aria-label="VAPOR Python Documentation"><a class="text-left" href="/pages/pythonDocumentation.html">VAPOR Python Documentation</a></li>
+                                
+                            </ul>
+                            
+                        </li>
                         
-                        <li aria-label="Images"><a class="text-center" href="https://google.com">Images</a></li>
+                        <li aria-label="Gallery">
+                            <a class="text-center" href="https://visgallery.ucar.edu/category/visualization-software/vapor">Gallery</a>
+                            
+                        </li>
                         
-                        <li aria-label="Help"><a class="text-center" href="/jekyll-koru-test/pages/help.html">Help</a></li>
+                        <li aria-label="Source Code">
+                            <a class="text-center" href="https://github.com/NCAR/VAPOR">Source Code</a>
+                            
+                        </li>
+                        
+                        <li aria-label="Get Help">
+                            <a class="text-center" href="https://vapor.discourse.group">Get Help</a>
+                            
+                        </li>
                         
                     </ul>
                 </nav>
+                </div>
             </div>
         </div>
     </div>
@@ -115,7 +177,8 @@
         <div class="cell text-center">
             <small>©  UCAR</small>
             <ul class="menu vertical">
-                <li><a href="https://www.ucar.edu/privacy-policy">Privacy Policy</a></li>
+                <li><a href="https://www.ucar.edu/privacy-notice">Privacy</a></li>
+                <li><a href="https://www.ucar.edu/cookie-other-tracking-technologies-notice">Cookies</a></li>
                 <li><a href="https://www.ucar.edu/terms-of-use">Terms of Use</a></li>
                 <li><a href="https://www.ucar.edu/notification-copyright-infringement-digital-millenium-copyright-act">Copyright Issues</a></li>
                 <li><a href="https://nsf.gov">Sponsored by NSF</a></li>

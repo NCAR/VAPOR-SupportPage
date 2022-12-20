@@ -5,7 +5,7 @@ banner-title: Vapor 3.7.0 is now live!
 banner-description: Vapor can now be scripted with its Python API, new enhanced rendering for visualization of Lagrangian particle tracking, the display of dataset metadata, and 93 other enhancements and bug fixes.  
 
 banner-button-text: Download here
-banner-button-url: https://forms.gle/R4URVRR475tJzWUo8
+banner-button-url: /pages/DownloadsPage.html
 ---
 
 # Welcome

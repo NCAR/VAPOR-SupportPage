@@ -1,0 +1,37 @@
+.featured-section {
+  @include flex;
+  @include radial-gradient(map-get($base-colors, 'gray'), map-get($base-colors, 'dark-gray'));
+  justify-content: center;
+  min-height: 10.3125rem;
+
+  &:hover {
+    h4 {
+      color: map-get($base-colors, 'white');
+    }
+  }
+
+  h4 {
+    color: map-get($base-colors, 'lime-green');
+    font-size: map-get($font-sizes, 'xxxxsmall');
+    margin-bottom: 0;
+  }
+
+  i {
+    color: map-get($base-colors, 'white');
+    font-size: map-get($font-sizes, 'xxxxlarge');
+  }
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'medium')) {
+  .featured-section {
+    min-height: 13.4375rem;
+
+    h4 {
+      font-size: map-get($font-sizes, 'default');
+    }
+
+    i {
+      font-size: map-get($font-sizes, 'xxxxxxxlarge');
+    }
+  }
+}

@@ -1,0 +1,213 @@
+.acronym-wrapper {
+  h1,
+  p {
+    &:first-child {
+      padding-bottom: 5px;
+    }
+  }
+}
+
+.is-stuck {
+  .logo-wrapper {
+    .acronym-definition {
+      h1,
+      p {
+        line-height: 1.3;
+      }
+    }
+
+    .acronym-wrapper {
+      h1 {
+        padding: 0;
+
+        a {
+          &::after {
+            top: 4px;
+          }
+        }
+      }
+
+      p {
+        display: none;
+      }
+    }
+  }
+}
+
+.logo-wrapper {
+  a {
+    color: map-get($base-colors, 'dark-blue');
+    display: block;
+    outline: none;
+
+    &:link,
+    &:visited {
+      color: map-get($base-colors, 'dark-blue');
+    }
+
+    &:hover,
+    &:active {
+      color: map-get($base-colors, 'dark-blue');
+    }
+  }
+
+  h1,
+  p {
+    margin: 0;
+  }
+
+  .acronym-definition {
+    padding-left: 25px;
+
+    h1,
+    p {
+      @include sentence-case;
+      color: map-get($base-colors, 'dark-blue');
+      font-weight: map-get($font-weights, 'semi-bold');
+    }
+  }
+
+  .acronym-wrapper {
+    border-right: solid 3px map-get($base-colors, 'dark-blue');
+
+    h1,
+    p {
+      a {
+        padding-right: 5px;
+        position: relative;
+
+        &::after {
+          @include pseudo-element;
+          @include button-arrow(transparent map-get($base-colors, 'dark-blue'), 9px 0 9px 9px);
+          display: none;
+          height: 0;
+          right: -12px;
+          top: 0;
+          width: 0;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.mobile-logo {
+  background-color: map-get($base-colors, 'white');
+  width: 100%;
+
+  .acronym {
+    border-right: solid 2px map-get($base-colors, 'dark-blue');
+    position: relative;
+
+    &::after {
+      @include pseudo-element;
+      @include button-arrow(transparent map-get($base-colors, 'dark-blue'), 9px 0 9px 12px);
+      height: 0;
+      right: -12px;
+      top: 4px;
+      width: 0;
+    }
+  }
+
+  .description {
+    @include sentence-case;
+    color: map-get($base-colors, 'dark-blue');
+    font-size: map-get($font-sizes, 'xxxsmall');
+    margin-left: .7rem;
+  }
+}
+
+.top-bar {
+  .top-bar-title {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'mlarge')) {
+  .logo-wrapper {
+    .acronym-definition {
+      h1,
+      p {
+        line-height: 1.6;
+      }
+
+      h1 {
+        font-size: map-get($font-sizes, 'xxxsmall');
+      }
+    }
+
+    .acronym-wrapper {
+      h1,
+      p {
+        a {
+          &::after {
+            top: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  .top-bar {
+    @include xy-grid-container(85rem, 1.875rem);
+
+    .top-bar-title {
+      @include flex;
+      margin-right: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'large')) {
+  .logo-wrapper {
+    .acronym-definition {
+      h1,
+      p {
+        line-height: 1.8;
+      }
+
+      h1 {
+        font-size: map-get($font-sizes, 'small');
+      }
+    }
+
+    .acronym-wrapper {
+      h1,
+      p {
+        a {
+          &::after {
+            top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'xlarge')) {
+  .is-stuck {
+    .logo-wrapper {
+      .acronym-wrapper {
+        h1 {
+          a {
+            &::after {
+              top: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .logo-wrapper {
+    .acronym-definition {
+      h1,
+      p {
+        font-size: map-get($font-sizes, 'default');
+      }
+    }
+  }
+}

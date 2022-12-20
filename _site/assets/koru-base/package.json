@@ -1,66 +1,71 @@
 {
-  "_args": [
-    [
-      "koru-base@2.1.16",
-      "/project"
-    ]
-  ],
-  "_from": "koru-base@2.1.16",
-  "_id": "koru-base@2.1.16",
+  "_from": "@ncar/koru-base@2.1.99",
+  "_id": "@ncar/koru-base@2.1.99",
   "_inBundle": false,
-  "_integrity": "sha1-SJBfAFjv8LGkaTN0idOXb+Vmlxo=",
-  "_location": "/koru-base",
+  "_integrity": "sha512-tVwQDCicMCG2ufmLnXgDfWugO/gI9Bv50i2d5mMDBmVSLcHb8+9DCgS2v5tt4b8KOqSQhKNXF7gF/8lWCmdGTw==",
+  "_location": "/@ncar/koru-base",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "koru-base@2.1.16",
-    "name": "koru-base",
-    "escapedName": "koru-base",
-    "rawSpec": "2.1.16",
+    "raw": "@ncar/koru-base@2.1.99",
+    "name": "@ncar/koru-base",
+    "escapedName": "@ncar%2fkoru-base",
+    "scope": "@ncar",
+    "rawSpec": "2.1.99",
     "saveSpec": null,
-    "fetchSpec": "2.1.16"
+    "fetchSpec": "2.1.99"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://repo.ucar.edu/artifactory/api/npm/npm-virtual/koru-base/-/koru-base-2.1.16.tgz",
-  "_spec": "2.1.16",
-  "_where": "/project",
+  "_resolved": "https://npm.pkg.github.com/download/@ncar/koru-base/2.1.99/e49c3b23064b947952841e583420ecd8ff634556004909320cb8ad7f5e7318e1",
+  "_shasum": "69fe2e407f6ff0729de50fc393f0935ebf6ab133",
+  "_spec": "@ncar/koru-base@2.1.99",
+  "_where": "/home/circleci/project",
   "bugs": {
-    "url": "https://github.com/NCAR/koru-base/issues"
+    "url": "https://github.com/ncar/koru-base/issues"
   },
-  "devDependencies": {
-    "backstopjs": "^3.5.2",
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ncar/icomoon": "^1.0.10",
+    "core-js": "^3.6.1",
     "font-awesome": "^4.7.0",
-    "foundation-sites": "^6.5.0-rc.2",
-    "grunt": "^1.0.3",
-    "grunt-autoprefixer": "^3.0.4",
-    "grunt-browser-sync": "^2.2.0",
-    "grunt-bump": "^0.8.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^3.3.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-php": "^1.5.1",
-    "grunt-sass-lint": "^0.2.2",
-    "grunt-shell": "^2.1.0",
-    "jquery": "^3.1.1"
+    "foundation-sites": "^6.6.1",
+    "jquery": "^3.4.1"
   },
-  "homepage": "https://github.com/NCAR/koru-base#readme",
+  "deprecated": false,
+  "devDependencies": {
+    "backstopjs": "^4.4.2",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-bump": "^3.1.3",
+    "gulp-ci": "0.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-tag-version": "^1.3.1",
+    "gulp-uglify": "^3.0.2",
+    "what-input": "^5.2.6"
+  },
+  "homepage": "https://github.com/ncar/koru-base#readme",
   "license": "UNLICENSED",
-  "name": "koru-base",
+  "name": "@ncar/koru-base",
   "publishConfig": {
-    "registry": "https://repo.ucar.edu/artifactory/api/npm/npm-local-private/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NCAR/koru-base.git"
+    "url": "git+https://github.com/ncar/koru-base.git"
   },
   "scripts": {
     "serve": "php -S localhost:8000 -t .",
     "test": "backstop test"
   },
-  "version": "2.1.16"
+  "version": "2.1.99"
 }

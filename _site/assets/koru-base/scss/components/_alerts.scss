@@ -1,0 +1,22 @@
+.alert {
+  a {
+    &:link {
+      color: map-get($notification-colors, 'warning');
+    }
+  }
+
+  .close-button {
+    color: map-get($base-colors, 'white');
+  }
+}
+
+.alert-box {
+  font-size: 1.125rem;
+  margin: auto;
+  max-width: 85rem;
+}
+
+.highlighted {
+  color: map-get($notification-colors, 'alert');
+  font-weight: map-get($font-weights, 'bold');
+}

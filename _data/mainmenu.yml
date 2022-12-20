@@ -1,10 +1,25 @@
 menu:
   - title: Download
-    url: https://vapor.readthedocs.io/en/readthedocs/downloads/downloads.html
+    url: /pages/DownloadsPage.html
+    submenu:
+      - title: VAPOR GUI
+        url: https://docs.google.com/forms/d/e/1FAIpQLSdej3yFMIIqtgW0JIpmzntzfTfmgCujnWmzocmi40WZiRO9kA/viewform
+      - title: VAPOR Python
+        url: /pages/vaporPythonDownloads.html
   - title: Quick Start Guide
-    url: https://vapor.readthedocs.io/en/readthedocs/quickStartGuide.html
+    url: 
+    submenu:
+      - title: VAPOR GUI Quick Start
+        url: https://vapor.readthedocs.io/en/readthedocs/quickStartGuide.html
+      - title: VAPOR Python Quick Start
+        url: /pages/vaporPythonDownloads.html
   - title: Documentation
-    url: https://vapor.readthedocs.io/en/readthedocs/#
+    url: 
+    submenu:
+      - title: VAPOR GUI Documentation
+        url: https://vapor.readthedocs.io/en/readthedocs/#
+      - title: VAPOR Python Documentation
+        url: /pages/pythonDocumentation.html
   - title: Gallery
     url: https://visgallery.ucar.edu/category/visualization-software/vapor
   - title: Source Code 

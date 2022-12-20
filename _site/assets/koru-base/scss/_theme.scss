@@ -1,0 +1,169 @@
+* {
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  img {
+    border: 0;
+    outline: none;
+  }
+}
+
+body {
+  background-color: map-get($base-colors, 'lightest-gray');
+  font-family: map-get($font-families, 'default');
+  font-size: map-get($font-sizes, 'default');
+  overflow-x: hidden;
+}
+
+body,
+html {
+  color: map-get($base-colors, 'darkest-gray');
+  height: 100%;
+}
+
+blockquote,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+cite {
+  color: map-get($base-colors, 'white');
+
+  &::before {
+    display: none;
+  }
+}
+
+hr {
+  background: map-get($base-colors, 'darkest-gray');
+  border: 0;
+  color: map-get($base-colors, 'darkest-gray');
+  height: 1px;
+}
+
+iframe {
+  border: 0;
+}
+
+pre {
+  code {
+    display: block;
+    overflow-x: auto;
+    padding: 1rem 4rem 1rem 1rem;
+  }
+}
+
+::selection {
+  background: map-get($base-colors, 'lime-green');
+  color: map-get($base-colors, 'darkest-gray');
+}
+
+.body-content {
+  flex: 1 0 auto;
+}
+
+.content {
+  a {
+    text-decoration: underline;
+  }
+
+  figure {
+    @include button-arrow(map-get($base-colors, 'darkest-gray'), 10px);
+    margin: 1.5rem 0;
+
+    figcaption {
+      background: map-get($base-colors, 'darkest-gray');
+      color: map-get($base-colors, 'white');
+      padding: 10px 10px 1px;
+      right: 0;
+
+      &.image-download {
+        a {
+          color: map-get($base-colors, 'lime-green');
+          font-size: map-get($font-sizes, 'xxsmall');
+          text-decoration: none;
+
+          &:hover,
+          &:active {
+            color: map-get($base-colors, 'lime-green');
+            text-decoration: underline;
+          }
+        }
+
+        p {
+          margin-top: 10px;
+        }
+      }
+
+      p {
+        font-size: map-get($font-sizes, 'xxsmall');
+        margin: 0;
+
+        a {
+          color: map-get($base-colors, 'lime-green');
+
+          &:link,
+          &:visited {
+            color: map-get($base-colors, 'lime-green');
+          }
+
+          &:hover,
+          &:active {
+            color: map-get($base-colors, 'lime-green');
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    img {
+      margin-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  img {
+    margin-bottom: 1.5rem;
+
+    &.align-left {
+      margin-right: 1.5rem;
+    }
+
+    &.align-right {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.panel {
+  padding: 40px 0;
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'mlarge')) {
+  .content {
+    figure {
+      border-width: 14px;
+    }
+  }
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'xlarge')) {
+  .content {
+    p {
+      font-size: map-get($font-sizes, 'medium');
+    }
+  }
+}

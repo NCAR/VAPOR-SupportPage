@@ -5,7 +5,6 @@
       "/home/circleci/project"
     ]
   ],
-  "_development": true,
   "_from": "font-awesome@4.7.0",
   "_id": "font-awesome@4.7.0",
   "_inBundle": false,
@@ -23,7 +22,7 @@
     "fetchSpec": "4.7.0"
   },
   "_requiredBy": [
-    "#DEV:/"
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz",
   "_spec": "4.7.0",

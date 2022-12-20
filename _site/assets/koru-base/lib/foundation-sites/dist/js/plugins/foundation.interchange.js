@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("./foundation.core"), require("./foundation.core.plugin"), require("./foundation.core.utils"), require("./foundation.util.mediaQuery"), require("jquery"));
+		module.exports = factory(require("./foundation.core"), require("./foundation.util.mediaQuery"), require("jquery"));
 	else if(typeof define === 'function' && define.amd)
-		define(["./foundation.core", "./foundation.core.plugin", "./foundation.core.utils", "./foundation.util.mediaQuery", "jquery"], factory);
+		define(["./foundation.core", "./foundation.util.mediaQuery", "jquery"], factory);
 	else if(typeof exports === 'object')
-		exports["foundation.interchange"] = factory(require("./foundation.core"), require("./foundation.core.plugin"), require("./foundation.core.utils"), require("./foundation.util.mediaQuery"), require("jquery"));
+		exports["foundation.interchange"] = factory(require("./foundation.core"), require("./foundation.util.mediaQuery"), require("jquery"));
 	else
-		root["__FOUNDATION_EXTERNAL__"] = root["__FOUNDATION_EXTERNAL__"] || {}, root["__FOUNDATION_EXTERNAL__"]["foundation.interchange"] = factory(root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["__FOUNDATION_EXTERNAL__"]["foundation.util.mediaQuery"], root["jQuery"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE__foundation_core__, __WEBPACK_EXTERNAL_MODULE__foundation_core_plugin__, __WEBPACK_EXTERNAL_MODULE__foundation_core_utils__, __WEBPACK_EXTERNAL_MODULE__foundation_util_mediaQuery__, __WEBPACK_EXTERNAL_MODULE_jquery__) {
+		root["__FOUNDATION_EXTERNAL__"] = root["__FOUNDATION_EXTERNAL__"] || {}, root["__FOUNDATION_EXTERNAL__"]["foundation.interchange"] = factory(root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["__FOUNDATION_EXTERNAL__"]["foundation.util.mediaQuery"], root["jQuery"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE__foundation_core__, __WEBPACK_EXTERNAL_MODULE__foundation_util_mediaQuery__, __WEBPACK_EXTERNAL_MODULE_jquery__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -107,28 +107,6 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core__;
 
 /***/ }),
 
-/***/ "./foundation.core.plugin":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** external {"root":["__FOUNDATION_EXTERNAL__","foundation.core"],"amd":"./foundation.core.plugin","commonjs":"./foundation.core.plugin","commonjs2":"./foundation.core.plugin"} ***!
-  \*************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core_plugin__;
-
-/***/ }),
-
-/***/ "./foundation.core.utils":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** external {"root":["__FOUNDATION_EXTERNAL__","foundation.core"],"amd":"./foundation.core.utils","commonjs":"./foundation.core.utils","commonjs2":"./foundation.core.utils"} ***!
-  \**********************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core_utils__;
-
-/***/ }),
-
 /***/ "./foundation.util.mediaQuery":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** external {"root":["__FOUNDATION_EXTERNAL__","foundation.util.mediaQuery"],"amd":"./foundation.util.mediaQuery","commonjs":"./foundation.util.mediaQuery","commonjs2":"./foundation.util.mediaQuery"} ***!
@@ -144,33 +122,22 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_util_mediaQuery__;
 /*!******************************************************!*\
   !*** ./js/entries/plugins/foundation.interchange.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Foundation, Interchange */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _foundation_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foundation.core */ "./foundation.core");
+/* harmony import */ var _foundation_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_foundation_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Foundation", function() { return _foundation_core__WEBPACK_IMPORTED_MODULE_0__["Foundation"]; });
+
+/* harmony import */ var _foundation_interchange__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../foundation.interchange */ "./js/foundation.interchange.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Interchange", function() { return _foundation_interchange__WEBPACK_IMPORTED_MODULE_1__["Interchange"]; });
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Foundation", {
-  enumerable: true,
-  get: function get() {
-    return _foundation.Foundation;
-  }
-});
-Object.defineProperty(exports, "Interchange", {
-  enumerable: true,
-  get: function get() {
-    return _foundation2.Interchange;
-  }
-});
 
-var _foundation = __webpack_require__(/*! ./foundation.core */ "./foundation.core");
+_foundation_core__WEBPACK_IMPORTED_MODULE_0__["Foundation"].plugin(_foundation_interchange__WEBPACK_IMPORTED_MODULE_1__["Interchange"], 'Interchange');
 
-var _foundation2 = __webpack_require__(/*! ../../foundation.interchange */ "./js/foundation.interchange.js");
-
-_foundation.Foundation.plugin(_foundation2.Interchange, 'Interchange');
 
 /***/ }),
 
@@ -178,26 +145,19 @@ _foundation.Foundation.plugin(_foundation2.Interchange, 'Interchange');
 /*!**************************************!*\
   !*** ./js/foundation.interchange.js ***!
   \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Interchange */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Interchange", function() { return Interchange; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./foundation.util.mediaQuery */ "./foundation.util.mediaQuery");
+/* harmony import */ var _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _foundation_core_plugin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./foundation.core.plugin */ "./foundation.core");
+/* harmony import */ var _foundation_core_plugin__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_2__);
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Interchange = void 0;
-
-var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "jquery"));
-
-var _foundationUtil = __webpack_require__(/*! ./foundation.util.mediaQuery */ "./foundation.util.mediaQuery");
-
-var _foundationCore = __webpack_require__(/*! ./foundation.core.plugin */ "./foundation.core.plugin");
-
-var _foundationCore2 = __webpack_require__(/*! ./foundation.core.utils */ "./foundation.core.utils");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -217,11 +177,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+
+
+
+
 /**
  * Interchange module.
  * @module foundation.interchange
  * @requires foundation.util.mediaQuery
  */
+
 var Interchange =
 /*#__PURE__*/
 function (_Plugin) {
@@ -246,7 +211,7 @@ function (_Plugin) {
      */
     value: function _setup(element, options) {
       this.$element = element;
-      this.options = _jquery.default.extend({}, Interchange.defaults, options);
+      this.options = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.extend({}, Interchange.defaults, this.$element.data(), options);
       this.rules = [];
       this.currentPath = '';
       this.className = 'Interchange'; // ie9 back compat
@@ -264,13 +229,15 @@ function (_Plugin) {
   }, {
     key: "_init",
     value: function _init() {
-      _foundationUtil.MediaQuery._init();
+      _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_1__["MediaQuery"]._init();
 
-      var id = this.$element[0].id || (0, _foundationCore2.GetYoDigits)(6, 'interchange');
+      var id = this.$element[0].id || Object(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_2__["GetYoDigits"])(6, 'interchange');
       this.$element.attr({
         'data-resize': id,
         'id': id
       });
+
+      this._parseOptions();
 
       this._addBreakpoints();
 
@@ -287,10 +254,10 @@ function (_Plugin) {
   }, {
     key: "_events",
     value: function _events() {
-      var _this2 = this;
+      var _this = this;
 
       this.$element.off('resizeme.zf.trigger').on('resizeme.zf.trigger', function () {
-        return _this2._reflow();
+        return _this._reflow();
       });
     }
     /**
@@ -319,6 +286,22 @@ function (_Plugin) {
       }
     }
     /**
+     * Check options valifity and set defaults for:
+     * - `data-interchange-type`: if set, enforce the type of replacement (auto, src, background or html)
+     * @function
+     * @private
+     */
+
+  }, {
+    key: "_parseOptions",
+    value: function _parseOptions() {
+      var types = ['auto', 'src', 'background', 'html'];
+      if (typeof this.options.type === 'undefined') this.options.type = 'auto';else if (types.indexOf(this.options.type) === -1) {
+        console.log("Warning: invalid value \"".concat(this.options.type, "\" for Interchange option \"type\""));
+        this.options.type = 'auto';
+      }
+    }
+    /**
      * Gets the Foundation breakpoints and adds them to the Interchange.SPECIAL_QUERIES object.
      * @function
      * @private
@@ -327,9 +310,9 @@ function (_Plugin) {
   }, {
     key: "_addBreakpoints",
     value: function _addBreakpoints() {
-      for (var i in _foundationUtil.MediaQuery.queries) {
-        if (_foundationUtil.MediaQuery.queries.hasOwnProperty(i)) {
-          var query = _foundationUtil.MediaQuery.queries[i];
+      for (var i in _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_1__["MediaQuery"].queries) {
+        if (_foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_1__["MediaQuery"].queries.hasOwnProperty(i)) {
+          var query = _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_1__["MediaQuery"].queries[i];
           Interchange.SPECIAL_QUERIES[query.name] = query.value;
         }
       }
@@ -354,7 +337,7 @@ function (_Plugin) {
         rules = this.$element.data('interchange');
       }
 
-      rules = typeof rules === 'string' ? rules.match(/\[.*?\]/g) : rules;
+      rules = typeof rules === 'string' ? rules.match(/\[.*?, .*?\]/g) : rules;
 
       for (var i in rules) {
         if (rules.hasOwnProperty(i)) {
@@ -385,29 +368,34 @@ function (_Plugin) {
   }, {
     key: "replace",
     value: function replace(path) {
+      var _this2 = this;
+
       if (this.currentPath === path) return;
+      var trigger = 'replaced.zf.interchange';
+      var type = this.options.type;
 
-      var _this = this,
-          trigger = 'replaced.zf.interchange'; // Replacing images
+      if (type === 'auto') {
+        if (this.$element[0].nodeName === 'IMG') type = 'src';else if (path.match(/\.(gif|jpe?g|png|svg|tiff)([?#].*)?/i)) type = 'background';else type = 'html';
+      } // Replacing images
 
 
-      if (this.$element[0].nodeName === 'IMG') {
+      if (type === 'src') {
         this.$element.attr('src', path).on('load', function () {
-          _this.currentPath = path;
+          _this2.currentPath = path;
         }).trigger(trigger);
       } // Replacing background images
-      else if (path.match(/\.(gif|jpg|jpeg|png|svg|tiff)([?#].*)?/i)) {
+      else if (type === 'background') {
           path = path.replace(/\(/g, '%28').replace(/\)/g, '%29');
           this.$element.css({
             'background-image': 'url(' + path + ')'
           }).trigger(trigger);
         } // Replacing HTML
-        else {
-            _jquery.default.get(path, function (response) {
-              _this.$element.html(response).trigger(trigger);
+        else if (type === 'html') {
+            jquery__WEBPACK_IMPORTED_MODULE_0___default.a.get(path, function (response) {
+              _this2.$element.html(response).trigger(trigger);
 
-              (0, _jquery.default)(response).foundation();
-              _this.currentPath = path;
+              jquery__WEBPACK_IMPORTED_MODULE_0___default()(response).foundation();
+              _this2.currentPath = path;
             });
           }
       /**
@@ -430,13 +418,12 @@ function (_Plugin) {
   }]);
 
   return Interchange;
-}(_foundationCore.Plugin);
+}(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_2__["Plugin"]);
 /**
  * Default settings for plugin
  */
 
 
-exports.Interchange = Interchange;
 Interchange.defaults = {
   /**
    * Rules to be applied to Interchange elements. Set with the `data-interchange` array notation.
@@ -444,13 +431,26 @@ Interchange.defaults = {
    * @type {?array}
    * @default null
    */
-  rules: null
+  rules: null,
+
+  /**
+   * Type of the responsive ressource to replace. It can take the following options:
+   * - `auto` (default): choose the type according to the element tag or the ressource extension,
+   * - `src`: replace the `[src]` attribute, recommended for images `<img>`.
+   * - `background`: replace the `background-image` CSS property.
+   * - `html`: replace the element content.
+   * @option
+   * @type {string}
+   * @default 'auto'
+   */
+  type: 'auto'
 };
 Interchange.SPECIAL_QUERIES = {
   'landscape': 'screen and (orientation: landscape)',
   'portrait': 'screen and (orientation: portrait)',
   'retina': 'only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)'
 };
+
 
 /***/ }),
 
@@ -461,7 +461,7 @@ Interchange.SPECIAL_QUERIES = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ncoden/Documents/Documents/Projects/Programmation/Web/2016/Foundation/foundation-sites/js/entries/plugins/foundation.interchange.js */"./js/entries/plugins/foundation.interchange.js");
+module.exports = __webpack_require__(/*! /Volumes/Data/Development/Foundation/foundation-sites/js/entries/plugins/foundation.interchange.js */"./js/entries/plugins/foundation.interchange.js");
 
 
 /***/ }),
