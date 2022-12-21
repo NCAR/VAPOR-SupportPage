@@ -9,7 +9,7 @@ title: Download
 #### Download and Install
 
 The easiest way to download and install VAPOR Python is using [conda](https://docs.conda.io/en/latest/).
-1. Create a new conda environment. In the example below we create a new environment named ```vapor_python ```.
+1. It is recommended to start with a new conda environment. Create a new conda environment. In the example below we create a new environment named ```vapor_python ```.
 ```yml
 conda create -n vapor_python
 ```
@@ -25,6 +25,14 @@ conda install -c conda-forge -c ncar-vapor vapor
 
 #### Quick Start Guide
 
-1. Example notebooks are provided with the package. For instance, if installed using conda on a local machine, they can be found at: ``` /opt/miniconda3/envs/vapor_python/lib/python3.9/site-packages/vapor/example_notebooks/ ```
+Examples to get started are provided with the package. If installed using conda on a local machine, they can be found in the following directories:
+
+1. Jupyter Notebooks:
+
+ ``` $CONDA_PREFIX/lib/python3.9/site-packages/vapor/example_notebooks/ ```
+
+2. Python Scripts:
+
+``` $CONDA_PREFIX/lib/python3.9/site-packages/vapor/examples/ ```
 
 
