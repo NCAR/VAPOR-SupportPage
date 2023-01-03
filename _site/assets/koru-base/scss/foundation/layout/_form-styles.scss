@@ -1,0 +1,7 @@
+form {
+  &.general-styles {
+    background-color: rgba(map-get($base-colors, 'white'), .5);
+    margin-bottom: 2rem;
+    padding: 20px;
+  }
+}

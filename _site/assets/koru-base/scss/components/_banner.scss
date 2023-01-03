@@ -1,0 +1,76 @@
+.banner {
+  padding: 1.5rem 0;
+
+  &.with-image {
+    h1,
+    h2 {
+      @include text-shadow(rgba(map-get($base-colors, 'black'), .5));
+    }
+  }
+
+  > div {
+    height: 100%;
+  }
+
+  h1 {
+    color: map-get($base-colors, 'lime-green');
+    font-size: map-get($font-sizes, 'large');
+    font-weight: map-get($font-weights, 'semi-bold');
+    margin-bottom: .25rem;
+  }
+
+  h2 {
+    color: map-get($base-colors, 'white');
+    font-weight: map-get($font-weights, 'bold');
+    line-height: 1;
+  }
+
+  h1,
+  h2 {
+    margin: 0;
+  }
+
+  ol,
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .banner-content {
+    margin: auto;
+    max-width: 60rem;
+    padding: 2.5rem 0;
+    transition: opacity 300ms ease-out;
+  }
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'medium')) {
+  .banner {
+    padding: 3rem 0;
+  }
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'mlarge')) {
+  .banner {
+    h1 {
+      font-size: map-get($font-sizes, 'xxlarge');
+    }
+  }
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'large')) {
+  .banner {
+    &.with-image {
+      padding: 5rem 0;
+    }
+  }
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'xxlarge')) {
+  .banner {
+    h2 {
+      font-size: map-get($font-sizes, 'xxxxxxxxlarge');
+    }
+  }
+}

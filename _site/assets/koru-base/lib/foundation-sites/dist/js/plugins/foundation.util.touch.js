@@ -111,39 +111,26 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core__;
 /*!*****************************************************!*\
   !*** ./js/entries/plugins/foundation.util.touch.js ***!
   \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Foundation, Touch */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _foundation_util_touch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../foundation.util.touch */ "./js/foundation.util.touch.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Touch", function() { return _foundation_util_touch__WEBPACK_IMPORTED_MODULE_1__["Touch"]; });
+
+/* harmony import */ var _foundation_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./foundation.core */ "./foundation.core");
+/* harmony import */ var _foundation_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_foundation_core__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Foundation", function() { return _foundation_core__WEBPACK_IMPORTED_MODULE_2__["Foundation"]; });
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Touch", {
-  enumerable: true,
-  get: function get() {
-    return _foundationUtil.Touch;
-  }
-});
-Object.defineProperty(exports, "Foundation", {
-  enumerable: true,
-  get: function get() {
-    return _foundation.Foundation;
-  }
-});
 
-var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "jquery"));
+_foundation_util_touch__WEBPACK_IMPORTED_MODULE_1__["Touch"].init(jquery__WEBPACK_IMPORTED_MODULE_0___default.a);
+window.Foundation.Touch = _foundation_util_touch__WEBPACK_IMPORTED_MODULE_1__["Touch"];
 
-var _foundationUtil = __webpack_require__(/*! ../../foundation.util.touch */ "./js/foundation.util.touch.js");
 
-var _foundation = __webpack_require__(/*! ./foundation.core */ "./foundation.core");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_foundationUtil.Touch.init(_jquery.default);
-
-window.Foundation.Touch = _foundationUtil.Touch;
 
 /***/ }),
 
@@ -151,44 +138,50 @@ window.Foundation.Touch = _foundationUtil.Touch;
 /*!*************************************!*\
   !*** ./js/foundation.util.touch.js ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Touch */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Touch = void 0;
-
-var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "jquery"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Touch", function() { return Touch; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+//**************************************************
+//**Work inspired by multiple jquery swipe plugins**
+//**Done by Yohai Ararat ***************************
+//**************************************************
+
 var Touch = {};
-exports.Touch = Touch;
 var startPosX,
     startPosY,
     startTime,
     elapsedTime,
-    isMoving = false;
+    startEvent,
+    isMoving = false,
+    didMoved = false;
 
-function onTouchEnd() {
-  //  alert(this);
+function onTouchEnd(e) {
   this.removeEventListener('touchmove', onTouchMove);
-  this.removeEventListener('touchend', onTouchEnd);
+  this.removeEventListener('touchend', onTouchEnd); // If the touch did not move, consider it as a "tap"
+
+  if (!didMoved) {
+    var tapEvent = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.Event('tap', startEvent || e);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).trigger(tapEvent);
+  }
+
+  startEvent = null;
   isMoving = false;
+  didMoved = false;
 }
 
 function onTouchMove(e) {
-  if (_jquery.default.spotSwipe.preventDefault) {
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default.a.spotSwipe.preventDefault) {
     e.preventDefault();
   }
 
@@ -198,9 +191,10 @@ function onTouchMove(e) {
     var dx = startPosX - x;
     var dy = startPosY - y;
     var dir;
+    didMoved = true;
     elapsedTime = new Date().getTime() - startTime;
 
-    if (Math.abs(dx) >= _jquery.default.spotSwipe.moveThreshold && elapsedTime <= _jquery.default.spotSwipe.timeThreshold) {
+    if (Math.abs(dx) >= jquery__WEBPACK_IMPORTED_MODULE_0___default.a.spotSwipe.moveThreshold && elapsedTime <= jquery__WEBPACK_IMPORTED_MODULE_0___default.a.spotSwipe.timeThreshold) {
       dir = dx > 0 ? 'left' : 'right';
     } // else if(Math.abs(dy) >= $.spotSwipe.moveThreshold && elapsedTime <= $.spotSwipe.timeThreshold) {
     //   dir = dy > 0 ? 'down' : 'up';
@@ -209,8 +203,8 @@ function onTouchMove(e) {
 
     if (dir) {
       e.preventDefault();
-      onTouchEnd.call(this);
-      (0, _jquery.default)(this).trigger('swipe', dir).trigger("swipe".concat(dir));
+      onTouchEnd.apply(this, arguments);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).trigger(jquery__WEBPACK_IMPORTED_MODULE_0___default.a.Event('swipe', Object.assign({}, e)), dir).trigger(jquery__WEBPACK_IMPORTED_MODULE_0___default.a.Event("swipe".concat(dir), Object.assign({}, e)));
     }
   }
 }
@@ -219,7 +213,9 @@ function onTouchStart(e) {
   if (e.touches.length == 1) {
     startPosX = e.touches[0].pageX;
     startPosY = e.touches[0].pageY;
+    startEvent = e;
     isMoving = true;
+    didMoved = false;
     startTime = new Date().getTime();
     this.addEventListener('touchmove', onTouchMove, false);
     this.addEventListener('touchend', onTouchEnd, false);
@@ -255,6 +251,9 @@ function () {
     value: function _init() {
       var $ = this.$;
       $.event.special.swipe = {
+        setup: init
+      };
+      $.event.special.tap = {
         setup: init
       };
       $.each(['left', 'up', 'down', 'right'], function () {
@@ -334,6 +333,8 @@ Touch.init = function ($) {
   }
 };
 
+
+
 /***/ }),
 
 /***/ 28:
@@ -343,7 +344,7 @@ Touch.init = function ($) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ncoden/Documents/Documents/Projects/Programmation/Web/2016/Foundation/foundation-sites/js/entries/plugins/foundation.util.touch.js */"./js/entries/plugins/foundation.util.touch.js");
+module.exports = __webpack_require__(/*! /Volumes/Data/Development/Foundation/foundation-sites/js/entries/plugins/foundation.util.touch.js */"./js/entries/plugins/foundation.util.touch.js");
 
 
 /***/ }),

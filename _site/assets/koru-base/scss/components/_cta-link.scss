@@ -1,0 +1,128 @@
+a {
+  &.cta-link {
+    text-decoration: none;
+  }
+}
+
+.cta-link {
+  @include uppercase;
+  border: 3px solid map-get($base-colors, 'dark-blue') ;
+  color: map-get($base-colors, 'dark-blue');
+  display: inline-block;
+  font-size: map-get($font-sizes, 'xxxxsmall');
+  font-weight: map-get($font-weights, 'semi-bold');
+  line-height: 1.2;
+  padding: 7px 10px;
+  position: relative;
+  transition: 200ms ease-in-out;
+
+  &::after,
+  &::before {
+    @include pseudo-element;
+    border-style: solid;
+    height: 0;
+    right: -18px;
+    top: 0;
+    transition: 200ms ease-in-out;
+    width: 0;
+  }
+
+  &::after {
+    border-color: transparent map-get($base-colors, 'lightest-gray');
+    border-width: 13px 0 13px 13px;
+    right: -13px;
+  }
+
+  &::before {
+    border-color: transparent map-get($base-colors, 'dark-blue');
+    border-width: 15px 0 15px 15px;
+    right: -18px;
+    top: -2px;
+  }
+
+  &:link,
+  &:hover,
+  &:visited,
+  &:active {
+    color: map-get($base-colors, 'dark-blue');
+  }
+
+  &.back-button {
+    margin-left: 1rem;
+
+    &::after {
+      border-width: 13px 13px 13px 0;
+      left: -13px;
+    }
+
+    &::before {
+      border-width: 15px 15px 15px 0;
+      left: -18px;
+    }
+  }
+
+  &.lime-green-on-gray {
+    background: map-get($base-colors, 'gray');
+    border-color: map-get($base-colors, 'white');
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: map-get($base-colors, 'white');
+    }
+
+    &::before {
+      border-color: transparent map-get($base-colors, 'white');
+    }
+
+    &::after {
+      border-color: transparent map-get($base-colors, 'gray');
+    }
+  }
+
+  &.white-on-color {
+    border-color: map-get($base-colors, 'white');
+
+    &::before {
+      border-color: transparent map-get($base-colors, 'white');
+    }
+
+    &:link,
+    &:visited {
+      color: map-get($base-colors, 'white');
+    }
+  }
+
+  @media only screen and (min-width: map-get($custom-breakpoints, 'mlarge')) {
+    &.large {
+      font-size: map-get($font-sizes, 'medium');
+      height: 46px;
+      padding: 10px 15px;
+
+      &::after {
+        border-width: 20px 0 20px 18px;
+        right: -18px;
+      }
+
+      &::before {
+        border-width: 22px 0 22px 19px;
+        right: -22px;
+      }
+
+      &.back-button {
+        margin-left: 1.2rem;
+
+        &::after {
+          border-width: 20px 18px 20px 0;
+          left: -18px;
+        }
+
+        &::before {
+          border-width: 22px 19px 22px 0;
+          left: -22px;
+        }
+      }
+    }
+  }
+}

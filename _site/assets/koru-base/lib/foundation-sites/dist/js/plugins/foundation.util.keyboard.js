@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("./foundation.core"), require("./foundation.core.utils"), require("jquery"));
+		module.exports = factory(require("./foundation.core"), require("jquery"));
 	else if(typeof define === 'function' && define.amd)
-		define(["./foundation.core", "./foundation.core.utils", "jquery"], factory);
+		define(["./foundation.core", "jquery"], factory);
 	else if(typeof exports === 'object')
-		exports["foundation.util.keyboard"] = factory(require("./foundation.core"), require("./foundation.core.utils"), require("jquery"));
+		exports["foundation.util.keyboard"] = factory(require("./foundation.core"), require("jquery"));
 	else
-		root["__FOUNDATION_EXTERNAL__"] = root["__FOUNDATION_EXTERNAL__"] || {}, root["__FOUNDATION_EXTERNAL__"]["foundation.util.keyboard"] = factory(root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["jQuery"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE__foundation_core__, __WEBPACK_EXTERNAL_MODULE__foundation_core_utils__, __WEBPACK_EXTERNAL_MODULE_jquery__) {
+		root["__FOUNDATION_EXTERNAL__"] = root["__FOUNDATION_EXTERNAL__"] || {}, root["__FOUNDATION_EXTERNAL__"]["foundation.util.keyboard"] = factory(root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["jQuery"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE__foundation_core__, __WEBPACK_EXTERNAL_MODULE_jquery__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -107,48 +107,26 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core__;
 
 /***/ }),
 
-/***/ "./foundation.core.utils":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** external {"root":["__FOUNDATION_EXTERNAL__","foundation.core"],"amd":"./foundation.core.utils","commonjs":"./foundation.core.utils","commonjs2":"./foundation.core.utils"} ***!
-  \**********************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core_utils__;
-
-/***/ }),
-
 /***/ "./js/entries/plugins/foundation.util.keyboard.js":
 /*!********************************************************!*\
   !*** ./js/entries/plugins/foundation.util.keyboard.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Foundation, Keyboard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _foundation_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foundation.core */ "./foundation.core");
+/* harmony import */ var _foundation_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_foundation_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Foundation", function() { return _foundation_core__WEBPACK_IMPORTED_MODULE_0__["Foundation"]; });
+
+/* harmony import */ var _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../foundation.util.keyboard */ "./js/foundation.util.keyboard.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Keyboard", function() { return _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_1__["Keyboard"]; });
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Foundation", {
-  enumerable: true,
-  get: function get() {
-    return _foundation.Foundation;
-  }
-});
-Object.defineProperty(exports, "Keyboard", {
-  enumerable: true,
-  get: function get() {
-    return _foundationUtil.Keyboard;
-  }
-});
 
-var _foundation = __webpack_require__(/*! ./foundation.core */ "./foundation.core");
+_foundation_core__WEBPACK_IMPORTED_MODULE_0__["Foundation"].Keyboard = _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_1__["Keyboard"];
 
-var _foundationUtil = __webpack_require__(/*! ../../foundation.util.keyboard */ "./js/foundation.util.keyboard.js");
-
-_foundation.Foundation.Keyboard = _foundationUtil.Keyboard;
 
 /***/ }),
 
@@ -156,10 +134,16 @@ _foundation.Foundation.Keyboard = _foundationUtil.Keyboard;
 /*!****************************************!*\
   !*** ./js/foundation.util.keyboard.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Keyboard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Keyboard", function() { return Keyboard; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _foundation_core_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./foundation.core.utils */ "./foundation.core");
+/* harmony import */ var _foundation_core_utils__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_foundation_core_utils__WEBPACK_IMPORTED_MODULE_1__);
 /*******************************************
  *                                         *
  * This util was created by Marius Olbertz *
@@ -169,16 +153,7 @@ _foundation.Foundation.Keyboard = _foundationUtil.Keyboard;
  ******************************************/
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Keyboard = void 0;
 
-var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "jquery"));
-
-var _foundationCore = __webpack_require__(/*! ./foundation.core.utils */ "./foundation.core.utils");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var keyCodes = {
   9: 'TAB',
@@ -200,7 +175,7 @@ function findFocusable($element) {
   }
 
   return $element.find('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]').filter(function () {
-    if (!(0, _jquery.default)(this).is(':visible') || (0, _jquery.default)(this).attr('tabindex') < 0) {
+    if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).is(':visible') || jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('tabindex') < 0) {
       return false;
     } //only have visible elements and those that have a tabindex greater or equal 0
 
@@ -244,30 +219,31 @@ var Keyboard = {
         cmds,
         command,
         fn;
-    if (!commandList) return console.warn('Component not defined!');
+    if (!commandList) return console.warn('Component not defined!'); // Ignore the event if it was already handled
+
+    if (event.zfIsKeyHandled === true) return; // This component does not differentiate between ltr and rtl
 
     if (typeof commandList.ltr === 'undefined') {
-      // this component does not differentiate between ltr and rtl
       cmds = commandList; // use plain list
     } else {
       // merge ltr and rtl: if document is rtl, rtl overwrites ltr and vice versa
-      if ((0, _foundationCore.rtl)()) cmds = _jquery.default.extend({}, commandList.ltr, commandList.rtl);else cmds = _jquery.default.extend({}, commandList.rtl, commandList.ltr);
+      if (Object(_foundation_core_utils__WEBPACK_IMPORTED_MODULE_1__["rtl"])()) cmds = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.extend({}, commandList.ltr, commandList.rtl);else cmds = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.extend({}, commandList.rtl, commandList.ltr);
     }
 
     command = cmds[keyCode];
-    fn = functions[command];
+    fn = functions[command]; // Execute the handler if found
 
     if (fn && typeof fn === 'function') {
-      // execute function  if exists
-      var returnValue = fn.apply();
+      var returnValue = fn.apply(); // Mark the event as "handled" to prevent future handlings
+
+      event.zfIsKeyHandled = true; // Execute function when event was handled
 
       if (functions.handled || typeof functions.handled === 'function') {
-        // execute function when event was handled
         functions.handled(returnValue);
       }
     } else {
+      // Execute function when event was not handled
       if (functions.unhandled || typeof functions.unhandled === 'function') {
-        // execute function when event was not handled
         functions.unhandled();
       }
     }
@@ -323,8 +299,6 @@ var Keyboard = {
  * Can be used like Foundation.parseKey(event) === Foundation.keys.SPACE
  */
 
-exports.Keyboard = Keyboard;
-
 function getKeyCodes(kcs) {
   var k = {};
 
@@ -335,6 +309,8 @@ function getKeyCodes(kcs) {
   return k;
 }
 
+
+
 /***/ }),
 
 /***/ 23:
@@ -344,7 +320,7 @@ function getKeyCodes(kcs) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ncoden/Documents/Documents/Projects/Programmation/Web/2016/Foundation/foundation-sites/js/entries/plugins/foundation.util.keyboard.js */"./js/entries/plugins/foundation.util.keyboard.js");
+module.exports = __webpack_require__(/*! /Volumes/Data/Development/Foundation/foundation-sites/js/entries/plugins/foundation.util.keyboard.js */"./js/entries/plugins/foundation.util.keyboard.js");
 
 
 /***/ }),

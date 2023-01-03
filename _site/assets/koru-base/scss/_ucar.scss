@@ -1,0 +1,17 @@
+.ucar {
+  background-image: url('../img/bg-body-ucar-v4.png');
+  background-position: top right;
+  background-repeat: repeat-y;
+
+  .logo-wrapper {
+    .acronym-wrapper {
+      h1 {
+        a {
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

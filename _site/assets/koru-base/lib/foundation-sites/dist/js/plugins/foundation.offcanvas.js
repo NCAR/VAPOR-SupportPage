@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("./foundation.core.utils"), require("./foundation.core"), require("jquery"), require("./foundation.util.keyboard"), require("./foundation.util.mediaQuery"), require("./foundation.core.plugin"), require("./foundation.util.motion"));
+		module.exports = factory(require("./foundation.core"), require("./foundation.util.keyboard"), require("./foundation.util.mediaQuery"), require("./foundation.util.motion"), require("jquery"));
 	else if(typeof define === 'function' && define.amd)
-		define(["./foundation.core.utils", "./foundation.core", "jquery", "./foundation.util.keyboard", "./foundation.util.mediaQuery", "./foundation.core.plugin", "./foundation.util.motion"], factory);
+		define(["./foundation.core", "./foundation.util.keyboard", "./foundation.util.mediaQuery", "./foundation.util.motion", "jquery"], factory);
 	else if(typeof exports === 'object')
-		exports["foundation.offcanvas"] = factory(require("./foundation.core.utils"), require("./foundation.core"), require("jquery"), require("./foundation.util.keyboard"), require("./foundation.util.mediaQuery"), require("./foundation.core.plugin"), require("./foundation.util.motion"));
+		exports["foundation.offcanvas"] = factory(require("./foundation.core"), require("./foundation.util.keyboard"), require("./foundation.util.mediaQuery"), require("./foundation.util.motion"), require("jquery"));
 	else
-		root["__FOUNDATION_EXTERNAL__"] = root["__FOUNDATION_EXTERNAL__"] || {}, root["__FOUNDATION_EXTERNAL__"]["foundation.offcanvas"] = factory(root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["jQuery"], root["__FOUNDATION_EXTERNAL__"]["foundation.util.keyboard"], root["__FOUNDATION_EXTERNAL__"]["foundation.util.mediaQuery"], root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["__FOUNDATION_EXTERNAL__"]["foundation.util.motion"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE__foundation_core_utils__, __WEBPACK_EXTERNAL_MODULE__foundation_core__, __WEBPACK_EXTERNAL_MODULE_jquery__, __WEBPACK_EXTERNAL_MODULE__foundation_util_keyboard__, __WEBPACK_EXTERNAL_MODULE__foundation_util_mediaQuery__, __WEBPACK_EXTERNAL_MODULE__foundation_core_plugin__, __WEBPACK_EXTERNAL_MODULE__foundation_util_motion__) {
+		root["__FOUNDATION_EXTERNAL__"] = root["__FOUNDATION_EXTERNAL__"] || {}, root["__FOUNDATION_EXTERNAL__"]["foundation.offcanvas"] = factory(root["__FOUNDATION_EXTERNAL__"]["foundation.core"], root["__FOUNDATION_EXTERNAL__"]["foundation.util.keyboard"], root["__FOUNDATION_EXTERNAL__"]["foundation.util.mediaQuery"], root["__FOUNDATION_EXTERNAL__"]["foundation.util.motion"], root["jQuery"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE__foundation_core__, __WEBPACK_EXTERNAL_MODULE__foundation_util_keyboard__, __WEBPACK_EXTERNAL_MODULE__foundation_util_mediaQuery__, __WEBPACK_EXTERNAL_MODULE__foundation_util_motion__, __WEBPACK_EXTERNAL_MODULE_jquery__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -107,28 +107,6 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core__;
 
 /***/ }),
 
-/***/ "./foundation.core.plugin":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** external {"root":["__FOUNDATION_EXTERNAL__","foundation.core"],"amd":"./foundation.core.plugin","commonjs":"./foundation.core.plugin","commonjs2":"./foundation.core.plugin"} ***!
-  \*************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core_plugin__;
-
-/***/ }),
-
-/***/ "./foundation.core.utils":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** external {"root":["__FOUNDATION_EXTERNAL__","foundation.core"],"amd":"./foundation.core.utils","commonjs":"./foundation.core.utils","commonjs2":"./foundation.core.utils"} ***!
-  \**********************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_core_utils__;
-
-/***/ }),
-
 /***/ "./foundation.util.keyboard":
 /*!****************************************************************************************************************************************************************************************************!*\
   !*** external {"root":["__FOUNDATION_EXTERNAL__","foundation.util.keyboard"],"amd":"./foundation.util.keyboard","commonjs":"./foundation.util.keyboard","commonjs2":"./foundation.util.keyboard"} ***!
@@ -166,33 +144,22 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__foundation_util_motion__;
 /*!****************************************************!*\
   !*** ./js/entries/plugins/foundation.offcanvas.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Foundation, OffCanvas */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _foundation_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foundation.core */ "./foundation.core");
+/* harmony import */ var _foundation_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_foundation_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Foundation", function() { return _foundation_core__WEBPACK_IMPORTED_MODULE_0__["Foundation"]; });
+
+/* harmony import */ var _foundation_offcanvas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../foundation.offcanvas */ "./js/foundation.offcanvas.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OffCanvas", function() { return _foundation_offcanvas__WEBPACK_IMPORTED_MODULE_1__["OffCanvas"]; });
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Foundation", {
-  enumerable: true,
-  get: function get() {
-    return _foundation.Foundation;
-  }
-});
-Object.defineProperty(exports, "OffCanvas", {
-  enumerable: true,
-  get: function get() {
-    return _foundation2.OffCanvas;
-  }
-});
 
-var _foundation = __webpack_require__(/*! ./foundation.core */ "./foundation.core");
+_foundation_core__WEBPACK_IMPORTED_MODULE_0__["Foundation"].plugin(_foundation_offcanvas__WEBPACK_IMPORTED_MODULE_1__["OffCanvas"], 'OffCanvas');
 
-var _foundation2 = __webpack_require__(/*! ../../foundation.offcanvas */ "./js/foundation.offcanvas.js");
-
-_foundation.Foundation.plugin(_foundation2.OffCanvas, 'OffCanvas');
 
 /***/ }),
 
@@ -200,30 +167,22 @@ _foundation.Foundation.plugin(_foundation2.OffCanvas, 'OffCanvas');
 /*!************************************!*\
   !*** ./js/foundation.offcanvas.js ***!
   \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: OffCanvas */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OffCanvas", function() { return OffCanvas; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./foundation.core.plugin */ "./foundation.core");
+/* harmony import */ var _foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./foundation.util.keyboard */ "./foundation.util.keyboard");
+/* harmony import */ var _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./foundation.util.mediaQuery */ "./foundation.util.mediaQuery");
+/* harmony import */ var _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _foundation_util_triggers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./foundation.util.triggers */ "./js/foundation.util.triggers.js");
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.OffCanvas = void 0;
-
-var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "jquery"));
-
-var _foundationCore = __webpack_require__(/*! ./foundation.core.utils */ "./foundation.core.utils");
-
-var _foundationUtil = __webpack_require__(/*! ./foundation.util.keyboard */ "./foundation.util.keyboard");
-
-var _foundationUtil2 = __webpack_require__(/*! ./foundation.util.mediaQuery */ "./foundation.util.mediaQuery");
-
-var _foundationCore2 = __webpack_require__(/*! ./foundation.core.plugin */ "./foundation.core.plugin");
-
-var _foundationUtil3 = __webpack_require__(/*! ./foundation.util.triggers */ "./js/foundation.util.triggers.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -243,13 +202,20 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+
+
+
+
+
+
 /**
  * OffCanvas module.
- * @module foundation.offcanvas
+ * @module foundation.offCanvas
  * @requires foundation.util.keyboard
  * @requires foundation.util.mediaQuery
  * @requires foundation.util.triggers
  */
+
 var OffCanvas =
 /*#__PURE__*/
 function (_Plugin) {
@@ -278,35 +244,37 @@ function (_Plugin) {
       this.className = 'OffCanvas'; // ie9 back compat
 
       this.$element = element;
-      this.options = _jquery.default.extend({}, OffCanvas.defaults, this.$element.data(), options);
+      this.options = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.extend({}, OffCanvas.defaults, this.$element.data(), options);
       this.contentClasses = {
         base: [],
         reveal: []
       };
-      this.$lastTrigger = (0, _jquery.default)();
-      this.$triggers = (0, _jquery.default)();
+      this.$lastTrigger = jquery__WEBPACK_IMPORTED_MODULE_0___default()();
+      this.$triggers = jquery__WEBPACK_IMPORTED_MODULE_0___default()();
       this.position = 'left';
-      this.$content = (0, _jquery.default)();
-      this.nested = !!this.options.nested; // Defines the CSS transition/position classes of the off-canvas content container.
+      this.$content = jquery__WEBPACK_IMPORTED_MODULE_0___default()();
+      this.nested = !!this.options.nested;
+      this.$sticky = jquery__WEBPACK_IMPORTED_MODULE_0___default()();
+      this.isInCanvas = false; // Defines the CSS transition/position classes of the off-canvas content container.
 
-      (0, _jquery.default)(['push', 'overlap']).each(function (index, val) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(['push', 'overlap']).each(function (index, val) {
         _this2.contentClasses.base.push('has-transition-' + val);
       });
-      (0, _jquery.default)(['left', 'right', 'top', 'bottom']).each(function (index, val) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(['left', 'right', 'top', 'bottom']).each(function (index, val) {
         _this2.contentClasses.base.push('has-position-' + val);
 
         _this2.contentClasses.reveal.push('has-reveal-' + val);
       }); // Triggers init is idempotent, just need to make sure it is initialized
 
-      _foundationUtil3.Triggers.init(_jquery.default);
+      _foundation_util_triggers__WEBPACK_IMPORTED_MODULE_4__["Triggers"].init(jquery__WEBPACK_IMPORTED_MODULE_0___default.a);
 
-      _foundationUtil2.MediaQuery._init();
+      _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_3__["MediaQuery"]._init();
 
       this._init();
 
       this._events();
 
-      _foundationUtil.Keyboard.register('OffCanvas', {
+      _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_2__["Keyboard"].register('OffCanvas', {
         'ESCAPE': 'close'
       });
     }
@@ -323,7 +291,7 @@ function (_Plugin) {
       this.$element.attr('aria-hidden', 'true'); // Find off-canvas content, either by ID (if specified), by siblings or by closest selector (fallback)
 
       if (this.options.contentId) {
-        this.$content = (0, _jquery.default)('#' + this.options.contentId);
+        this.$content = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#' + this.options.contentId);
       } else if (this.$element.siblings('[data-off-canvas-content]').length) {
         this.$content = this.$element.siblings('[data-off-canvas-content]').first();
       } else {
@@ -348,25 +316,25 @@ function (_Plugin) {
 
       this.$element.addClass("is-transition-".concat(this.options.transition, " is-closed")); // Find triggers that affect this element and add aria-expanded to them
 
-      this.$triggers = (0, _jquery.default)(document).find('[data-open="' + id + '"], [data-close="' + id + '"], [data-toggle="' + id + '"]').attr('aria-expanded', 'false').attr('aria-controls', id); // Get position by checking for related CSS class
+      this.$triggers = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).find('[data-open="' + id + '"], [data-close="' + id + '"], [data-toggle="' + id + '"]').attr('aria-expanded', 'false').attr('aria-controls', id); // Get position by checking for related CSS class
 
       this.position = this.$element.is('.position-left, .position-top, .position-right, .position-bottom') ? this.$element.attr('class').match(/position\-(left|top|right|bottom)/)[1] : this.position; // Add an overlay over the content if necessary
 
       if (this.options.contentOverlay === true) {
         var overlay = document.createElement('div');
-        var overlayPosition = (0, _jquery.default)(this.$element).css("position") === 'fixed' ? 'is-overlay-fixed' : 'is-overlay-absolute';
+        var overlayPosition = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$element).css("position") === 'fixed' ? 'is-overlay-fixed' : 'is-overlay-absolute';
         overlay.setAttribute('class', 'js-off-canvas-overlay ' + overlayPosition);
-        this.$overlay = (0, _jquery.default)(overlay);
+        this.$overlay = jquery__WEBPACK_IMPORTED_MODULE_0___default()(overlay);
 
         if (overlayPosition === 'is-overlay-fixed') {
-          (0, _jquery.default)(this.$overlay).insertAfter(this.$element);
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$overlay).insertAfter(this.$element);
         } else {
           this.$content.append(this.$overlay);
         }
       } // Get the revealOn option from the class.
 
 
-      var revealOnRegExp = new RegExp((0, _foundationCore.RegExpEscape)(this.options.revealClass) + '([^\\s]+)', 'g');
+      var revealOnRegExp = new RegExp(Object(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__["RegExpEscape"])(this.options.revealClass) + '([^\\s]+)', 'g');
       var revealOnClass = revealOnRegExp.exec(this.$element[0].className);
 
       if (revealOnClass) {
@@ -383,6 +351,29 @@ function (_Plugin) {
 
       if (this.options.transitionTime) {
         this.$element.css('transition-duration', this.options.transitionTime);
+      } // Find fixed elements that should stay fixed while off-canvas is opened
+
+
+      this.$sticky = this.$content.find('[data-off-canvas-sticky]');
+
+      if (this.$sticky.length > 0 && this.options.transition === 'push') {
+        // If there's at least one match force contentScroll:false because the absolute top value doesn't get recalculated on scroll
+        // Limit to push transition since there's no transform scope for overlap
+        this.options.contentScroll = false;
+      }
+
+      var inCanvasFor = this.$element.attr('class').match(/\bin-canvas-for-(\w+)/);
+
+      if (inCanvasFor && inCanvasFor.length === 2) {
+        // Set `inCanvasOn` option if found in-canvas-for-[BREAKPONT] CSS class
+        this.options.inCanvasOn = inCanvasFor[1];
+      } else if (this.options.inCanvasOn) {
+        // Ensure the CSS class is set
+        this.$element.addClass("in-canvas-for-".concat(this.options.inCanvasOn));
+      }
+
+      if (this.options.inCanvasOn) {
+        this._checkInCanvas();
       } // Initally remove all transition/position CSS classes from off-canvas content container.
 
 
@@ -397,17 +388,25 @@ function (_Plugin) {
   }, {
     key: "_events",
     value: function _events() {
-      this.$element.off('.zf.trigger .zf.offcanvas').on({
+      var _this3 = this;
+
+      this.$element.off('.zf.trigger .zf.offCanvas').on({
         'open.zf.trigger': this.open.bind(this),
         'close.zf.trigger': this.close.bind(this),
         'toggle.zf.trigger': this.toggle.bind(this),
-        'keydown.zf.offcanvas': this._handleKeyboard.bind(this)
+        'keydown.zf.offCanvas': this._handleKeyboard.bind(this)
       });
 
       if (this.options.closeOnClick === true) {
         var $target = this.options.contentOverlay ? this.$overlay : this.$content;
         $target.on({
-          'click.zf.offcanvas': this.close.bind(this)
+          'click.zf.offCanvas': this.close.bind(this)
+        });
+      }
+
+      if (this.options.inCanvasOn) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('changed.zf.mediaquery', function () {
+          _this3._checkInCanvas();
         });
       }
     }
@@ -421,18 +420,32 @@ function (_Plugin) {
     value: function _setMQChecker() {
       var _this = this;
 
-      this.onLoadListener = (0, _foundationCore.onLoad)((0, _jquery.default)(window), function () {
-        if (_foundationUtil2.MediaQuery.atLeast(_this.options.revealOn)) {
+      this.onLoadListener = Object(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__["onLoad"])(jquery__WEBPACK_IMPORTED_MODULE_0___default()(window), function () {
+        if (_foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_3__["MediaQuery"].atLeast(_this.options.revealOn)) {
           _this.reveal(true);
         }
       });
-      (0, _jquery.default)(window).on('changed.zf.mediaquery', function () {
-        if (_foundationUtil2.MediaQuery.atLeast(_this.options.revealOn)) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('changed.zf.mediaquery', function () {
+        if (_foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_3__["MediaQuery"].atLeast(_this.options.revealOn)) {
           _this.reveal(true);
         } else {
           _this.reveal(false);
         }
       });
+    }
+    /**
+     * Checks if InCanvas on current breakpoint and adjust off-canvas accordingly
+     * @private
+     */
+
+  }, {
+    key: "_checkInCanvas",
+    value: function _checkInCanvas() {
+      this.isInCanvas = _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_3__["MediaQuery"].atLeast(this.options.inCanvasOn);
+
+      if (this.isInCanvas === true) {
+        this.close();
+      }
     }
     /**
      * Removes the CSS transition/position classes of the off-canvas content container.
@@ -469,6 +482,57 @@ function (_Plugin) {
       }
     }
     /**
+     * Preserves the fixed behavior of sticky elements on opening an off-canvas with push transition.
+     * Since the off-canvas container has got a transform scope in such a case, it is done by calculating position absolute values.
+     * @private
+     */
+
+  }, {
+    key: "_fixStickyElements",
+    value: function _fixStickyElements() {
+      this.$sticky.each(function (_, el) {
+        var $el = jquery__WEBPACK_IMPORTED_MODULE_0___default()(el); // If sticky element is currently fixed, adjust its top value to match absolute position due to transform scope
+        // Limit to push transition because postion:fixed works without problems for overlap (no transform scope)
+
+        if ($el.css('position') === 'fixed') {
+          // Save current inline styling to restore it if undoing the absolute fixing
+          var topVal = parseInt($el.css('top'), 10);
+          $el.data('offCanvasSticky', {
+            top: topVal
+          });
+          var absoluteTopVal = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).scrollTop() + topVal;
+          $el.css({
+            top: "".concat(absoluteTopVal, "px"),
+            width: '100%',
+            transition: 'none'
+          });
+        }
+      });
+    }
+    /**
+     * Restores the original fixed styling of sticky elements after having closed an off-canvas that got pseudo fixed beforehand.
+     * This reverts the changes of _fixStickyElements()
+     * @private
+     */
+
+  }, {
+    key: "_unfixStickyElements",
+    value: function _unfixStickyElements() {
+      this.$sticky.each(function (_, el) {
+        var $el = jquery__WEBPACK_IMPORTED_MODULE_0___default()(el);
+        var stickyData = $el.data('offCanvasSticky'); // If sticky element has got data object with prior values (meaning it was originally fixed) restore these values once off-canvas is closed
+
+        if (_typeof(stickyData) === 'object') {
+          $el.css({
+            top: "".concat(stickyData.top, "px"),
+            width: '',
+            transition: ''
+          });
+          $el.data('offCanvasSticky', '');
+        }
+      });
+    }
+    /**
      * Handles the revealing/hiding the off-canvas at breakpoints, not the same as open.
      * @param {Boolean} isRevealed - true if element should be revealed.
      * @function
@@ -496,7 +560,8 @@ function (_Plugin) {
       this._addContentClasses(isRevealed);
     }
     /**
-     * Stops scrolling of the body when offcanvas is open on mobile Safari and other troublesome browsers.
+     * Stops scrolling of the body when OffCanvas is open on mobile Safari and other troublesome browsers.
+     * @function
      * @private
      */
 
@@ -504,8 +569,17 @@ function (_Plugin) {
     key: "_stopScrolling",
     value: function _stopScrolling(event) {
       return false;
-    } // Taken and adapted from http://stackoverflow.com/questions/16889447/prevent-full-page-scrolling-ios
-    // Only really works for y, not sure how to extend to x or if we need to.
+    }
+    /**
+     * Tag the element given as context whether it can be scrolled up and down.
+     * Used to allow or prevent it to scroll. See `_stopScrollPropagation`.
+     *
+     * Taken and adapted from http://stackoverflow.com/questions/16889447/prevent-full-page-scrolling-ios
+     * Only really works for y, not sure how to extend to x or if we need to.
+     *
+     * @function
+     * @private
+     */
 
   }, {
     key: "_recordScrollable",
@@ -529,17 +603,40 @@ function (_Plugin) {
       elem.allowDown = elem.scrollTop < elem.scrollHeight - elem.clientHeight;
       elem.lastY = event.originalEvent.pageY;
     }
+    /**
+     * Prevent the given event propagation if the element given as context can scroll.
+     * Used to preserve the element scrolling on mobile (`touchmove`) when the document
+     * scrolling is prevented. See https://git.io/zf-9707.
+     * @function
+     * @private
+     */
+
   }, {
     key: "_stopScrollPropagation",
     value: function _stopScrollPropagation(event) {
       var elem = this; // called from event handler context with this as elem
+
+      var parent; // off-canvas elem if called from inner scrollbox
 
       var up = event.pageY < elem.lastY;
       var down = !up;
       elem.lastY = event.pageY;
 
       if (up && elem.allowUp || down && elem.allowDown) {
-        event.stopPropagation();
+        // It is not recommended to stop event propagation (the user cannot watch it),
+        // but in this case this is the only solution we have.
+        event.stopPropagation(); // If elem is inner scrollbox we are scrolling the outer off-canvas down/up once the box end has been reached
+        // This lets the user continue to touch move the off-canvas without the need to place the finger outside the scrollbox
+
+        if (elem.hasAttribute('data-off-canvas-scrollbox')) {
+          parent = elem.closest('[data-off-canvas], [data-off-canvas-scrollbox-outer]');
+
+          if (elem.scrollTop <= 1 && parent.scrollTop > 0) {
+            parent.scrollTop--;
+          } else if (elem.scrollTop >= elem.scrollHeight - elem.clientHeight - 1 && parent.scrollTop < parent.scrollHeight - parent.clientHeight) {
+            parent.scrollTop++;
+          }
+        }
       } else {
         event.preventDefault();
       }
@@ -556,7 +653,9 @@ function (_Plugin) {
   }, {
     key: "open",
     value: function open(event, trigger) {
-      if (this.$element.hasClass('is-open') || this.isRevealed) {
+      var _this4 = this;
+
+      if (this.$element.hasClass('is-open') || this.isRevealed || this.isInCanvas) {
         return;
       }
 
@@ -584,9 +683,11 @@ function (_Plugin) {
       this.$content.addClass('is-open-' + this.position); // If `contentScroll` is set to false, add class and disable scrolling on touch devices.
 
       if (this.options.contentScroll === false) {
-        (0, _jquery.default)('body').addClass('is-off-canvas-open').on('touchmove', this._stopScrolling);
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('is-off-canvas-open').on('touchmove', this._stopScrolling);
         this.$element.on('touchstart', this._recordScrollable);
         this.$element.on('touchmove', this._stopScrollPropagation);
+        this.$element.on('touchstart', '[data-off-canvas-scrollbox]', this._recordScrollable);
+        this.$element.on('touchmove', '[data-off-canvas-scrollbox]', this._stopScrollPropagation);
       }
 
       if (this.options.contentOverlay === true) {
@@ -598,7 +699,7 @@ function (_Plugin) {
       }
 
       if (this.options.autoFocus === true) {
-        this.$element.one((0, _foundationCore.transitionend)(this.$element), function () {
+        this.$element.one(Object(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__["transitionend"])(this.$element), function () {
           if (!_this.$element.hasClass('is-open')) {
             return; // exit if prematurely closed
           }
@@ -615,8 +716,11 @@ function (_Plugin) {
 
       if (this.options.trapFocus === true) {
         this.$content.attr('tabindex', '-1');
+        _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_2__["Keyboard"].trapFocus(this.$element);
+      }
 
-        _foundationUtil.Keyboard.trapFocus(this.$element);
+      if (this.options.transition === 'push') {
+        this._fixStickyElements();
       }
 
       this._addContentClasses();
@@ -626,38 +730,45 @@ function (_Plugin) {
        */
 
 
-      this.$element.trigger('opened.zf.offcanvas');
+      this.$element.trigger('opened.zf.offCanvas');
+      /**
+       * Fires when the off-canvas menu open transition is done.
+       * @event OffCanvas#openedEnd
+       */
+
+      this.$element.one(Object(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__["transitionend"])(this.$element), function () {
+        _this4.$element.trigger('openedEnd.zf.offCanvas');
+      });
     }
     /**
      * Closes the off-canvas menu.
      * @function
      * @param {Function} cb - optional cb to fire after closure.
+     * @fires OffCanvas#close
      * @fires OffCanvas#closed
      */
 
   }, {
     key: "close",
     value: function close(cb) {
+      var _this5 = this;
+
       if (!this.$element.hasClass('is-open') || this.isRevealed) {
         return;
       }
+      /**
+       * Fires when the off-canvas menu closes.
+       * @event OffCanvas#close
+       */
+
+
+      this.$element.trigger('close.zf.offCanvas');
 
       var _this = this;
 
       this.$element.removeClass('is-open');
-      this.$element.attr('aria-hidden', 'true')
-      /**
-       * Fires when the off-canvas menu opens.
-       * @event OffCanvas#closed
-       */
-      .trigger('closed.zf.offcanvas');
-      this.$content.removeClass('is-open-left is-open-top is-open-right is-open-bottom'); // If `contentScroll` is set to false, remove class and re-enable scrolling on touch devices.
-
-      if (this.options.contentScroll === false) {
-        (0, _jquery.default)('body').removeClass('is-off-canvas-open').off('touchmove', this._stopScrolling);
-        this.$element.off('touchstart', this._recordScrollable);
-        this.$element.off('touchmove', this._stopScrollPropagation);
-      }
+      this.$element.attr('aria-hidden', 'true');
+      this.$content.removeClass('is-open-left is-open-top is-open-right is-open-bottom');
 
       if (this.options.contentOverlay === true) {
         this.$overlay.removeClass('is-visible');
@@ -667,19 +778,42 @@ function (_Plugin) {
         this.$overlay.removeClass('is-closable');
       }
 
-      this.$triggers.attr('aria-expanded', 'false');
+      this.$triggers.attr('aria-expanded', 'false'); // Listen to transitionEnd: add class, re-enable scrolling and release focus when done.
 
-      if (this.options.trapFocus === true) {
-        this.$content.removeAttr('tabindex');
+      this.$element.one(Object(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__["transitionend"])(this.$element), function (e) {
+        _this5.$element.addClass('is-closed');
 
-        _foundationUtil.Keyboard.releaseFocus(this.$element);
-      } // Listen to transitionEnd and add class when done.
+        _this5._removeContentClasses();
+
+        if (_this5.options.transition === 'push') {
+          _this5._unfixStickyElements();
+        } // If `contentScroll` is set to false, remove class and re-enable scrolling on touch devices.
 
 
-      this.$element.one((0, _foundationCore.transitionend)(this.$element), function (e) {
-        _this.$element.addClass('is-closed');
+        if (_this5.options.contentScroll === false) {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('is-off-canvas-open').off('touchmove', _this5._stopScrolling);
 
-        _this._removeContentClasses();
+          _this5.$element.off('touchstart', _this5._recordScrollable);
+
+          _this5.$element.off('touchmove', _this5._stopScrollPropagation);
+
+          _this5.$element.off('touchstart', '[data-off-canvas-scrollbox]', _this5._recordScrollable);
+
+          _this5.$element.off('touchmove', '[data-off-canvas-scrollbox]', _this5._stopScrollPropagation);
+        }
+
+        if (_this5.options.trapFocus === true) {
+          _this5.$content.removeAttr('tabindex');
+
+          _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_2__["Keyboard"].releaseFocus(_this5.$element);
+        }
+        /**
+         * Fires when the off-canvas menu close transition is done.
+         * @event OffCanvas#closed
+         */
+
+
+        _this5.$element.trigger('closed.zf.offCanvas');
       });
     }
     /**
@@ -707,24 +841,23 @@ function (_Plugin) {
   }, {
     key: "_handleKeyboard",
     value: function _handleKeyboard(e) {
-      var _this3 = this;
+      var _this6 = this;
 
-      _foundationUtil.Keyboard.handleKey(e, 'OffCanvas', {
+      _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_2__["Keyboard"].handleKey(e, 'OffCanvas', {
         close: function close() {
-          _this3.close();
+          _this6.close();
 
-          _this3.$lastTrigger.focus();
+          _this6.$lastTrigger.focus();
 
           return true;
         },
         handled: function handled() {
-          e.stopPropagation();
           e.preventDefault();
         }
       });
     }
     /**
-     * Destroys the offcanvas plugin.
+     * Destroys the OffCanvas plugin.
      * @function
      */
 
@@ -732,16 +865,15 @@ function (_Plugin) {
     key: "_destroy",
     value: function _destroy() {
       this.close();
-      this.$element.off('.zf.trigger .zf.offcanvas');
-      this.$overlay.off('.zf.offcanvas');
-      if (this.onLoadListener) (0, _jquery.default)(window).off(this.onLoadListener);
+      this.$element.off('.zf.trigger .zf.offCanvas');
+      this.$overlay.off('.zf.offCanvas');
+      if (this.onLoadListener) jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).off(this.onLoadListener);
     }
   }]);
 
   return OffCanvas;
-}(_foundationCore2.Plugin);
+}(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__["Plugin"]);
 
-exports.OffCanvas = OffCanvas;
 OffCanvas.defaults = {
   /**
    * Allow the user to click outside of the menu to close it.
@@ -784,15 +916,15 @@ OffCanvas.defaults = {
   contentScroll: true,
 
   /**
-   * Amount of time in ms the open and close transition requires. If none selected, pulls from body style.
+   * Amount of time the open and close transition requires, including the appropriate milliseconds (`ms`) or seconds (`s`) unit (e.g. `500ms`, `.75s`) If none selected, pulls from body style.
    * @option
-   * @type {number}
+   * @type {string}
    * @default null
    */
   transitionTime: null,
 
   /**
-   * Type of transition for the offcanvas menu. Options are 'push', 'detached' or 'slide'.
+   * Type of transition for the OffCanvas menu. Options are 'push', 'detached' or 'slide'.
    * @option
    * @type {string}
    * @default push
@@ -808,7 +940,7 @@ OffCanvas.defaults = {
   forceTo: null,
 
   /**
-   * Allow the offcanvas to remain open for certain breakpoints.
+   * Allow the OffCanvas to remain open for certain breakpoints.
    * @option
    * @type {boolean}
    * @default false
@@ -824,6 +956,14 @@ OffCanvas.defaults = {
   revealOn: null,
 
   /**
+   * Breakpoint at which the off-canvas gets moved into canvas content and acts as regular page element.
+   * @option
+   * @type {?string}
+   * @default null
+   */
+  inCanvasOn: null,
+
+  /**
    * Force focus to the offcanvas on open. If true, will focus the opening trigger on close.
    * @option
    * @type {boolean}
@@ -832,7 +972,7 @@ OffCanvas.defaults = {
   autoFocus: true,
 
   /**
-   * Class used to force an offcanvas to remain open. Foundation defaults for this are `reveal-for-large` & `reveal-for-medium`.
+   * Class used to force an OffCanvas to remain open. Foundation defaults for this are `reveal-for-large` & `reveal-for-medium`.
    * @option
    * @type {string}
    * @default reveal-for-
@@ -841,7 +981,7 @@ OffCanvas.defaults = {
   revealClass: 'reveal-for-',
 
   /**
-   * Triggers optional focus trapping when opening an offcanvas. Sets tabindex of [data-off-canvas-content] to -1 for accessibility purposes.
+   * Triggers optional focus trapping when opening an OffCanvas. Sets tabindex of [data-off-canvas-content] to -1 for accessibility purposes.
    * @option
    * @type {boolean}
    * @default false
@@ -849,32 +989,32 @@ OffCanvas.defaults = {
   trapFocus: false
 };
 
+
 /***/ }),
 
 /***/ "./js/foundation.util.triggers.js":
 /*!****************************************!*\
   !*** ./js/foundation.util.triggers.js ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: Triggers */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Triggers", function() { return Triggers; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _foundation_core_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./foundation.core.utils */ "./foundation.core");
+/* harmony import */ var _foundation_core_utils__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_foundation_core_utils__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _foundation_util_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./foundation.util.motion */ "./foundation.util.motion");
+/* harmony import */ var _foundation_util_motion__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_foundation_util_motion__WEBPACK_IMPORTED_MODULE_2__);
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Triggers = void 0;
-
-var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "jquery"));
-
-var _foundationCore = __webpack_require__(/*! ./foundation.core.utils */ "./foundation.core.utils");
-
-var _foundationUtil = __webpack_require__(/*! ./foundation.util.motion */ "./foundation.util.motion");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+
+
+
 
 var MutationObserver = function () {
   var prefixes = ['WebKit', 'Moz', 'O', 'Ms', ''];
@@ -890,7 +1030,7 @@ var MutationObserver = function () {
 
 var triggers = function triggers(el, type) {
   el.data(type).split(' ').forEach(function (id) {
-    (0, _jquery.default)("#".concat(id))[type === 'close' ? 'trigger' : 'triggerHandler']("".concat(type, ".zf.trigger"), [el]);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#".concat(id))[type === 'close' ? 'trigger' : 'triggerHandler']("".concat(type, ".zf.trigger"), [el]);
   });
 };
 
@@ -901,44 +1041,44 @@ var Triggers = {
   },
   Initializers: {}
 };
-exports.Triggers = Triggers;
 Triggers.Listeners.Basic = {
   openListener: function openListener() {
-    triggers((0, _jquery.default)(this), 'open');
+    triggers(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this), 'open');
   },
   closeListener: function closeListener() {
-    var id = (0, _jquery.default)(this).data('close');
+    var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('close');
 
     if (id) {
-      triggers((0, _jquery.default)(this), 'close');
+      triggers(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this), 'close');
     } else {
-      (0, _jquery.default)(this).trigger('close.zf.trigger');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).trigger('close.zf.trigger');
     }
   },
   toggleListener: function toggleListener() {
-    var id = (0, _jquery.default)(this).data('toggle');
+    var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('toggle');
 
     if (id) {
-      triggers((0, _jquery.default)(this), 'toggle');
+      triggers(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this), 'toggle');
     } else {
-      (0, _jquery.default)(this).trigger('toggle.zf.trigger');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).trigger('toggle.zf.trigger');
     }
   },
   closeableListener: function closeableListener(e) {
+    var animation = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('closable'); // Only close the first closable element. See https://git.io/zf-7833
+
     e.stopPropagation();
-    var animation = (0, _jquery.default)(this).data('closable');
 
     if (animation !== '') {
-      _foundationUtil.Motion.animateOut((0, _jquery.default)(this), animation, function () {
-        (0, _jquery.default)(this).trigger('closed.zf');
+      _foundation_util_motion__WEBPACK_IMPORTED_MODULE_2__["Motion"].animateOut(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this), animation, function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).trigger('closed.zf');
       });
     } else {
-      (0, _jquery.default)(this).fadeOut().trigger('closed.zf');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).fadeOut().trigger('closed.zf');
     }
   },
   toggleFocusListener: function toggleFocusListener() {
-    var id = (0, _jquery.default)(this).data('toggle-focus');
-    (0, _jquery.default)("#".concat(id)).triggerHandler('toggle.zf.trigger', [(0, _jquery.default)(this)]);
+    var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('toggle-focus');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#".concat(id)).triggerHandler('toggle.zf.trigger', [jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)]);
   }
 }; // Elements with [data-open] will reveal a plugin that supports it when clicked.
 
@@ -978,7 +1118,7 @@ Triggers.Listeners.Global = {
     if (!MutationObserver) {
       //fallback for IE 9
       $nodes.each(function () {
-        (0, _jquery.default)(this).triggerHandler('resizeme.zf.trigger');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).triggerHandler('resizeme.zf.trigger');
       });
     } //trigger all listening elements and signal a resize event
 
@@ -989,7 +1129,7 @@ Triggers.Listeners.Global = {
     if (!MutationObserver) {
       //fallback for IE 9
       $nodes.each(function () {
-        (0, _jquery.default)(this).triggerHandler('scrollme.zf.trigger');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).triggerHandler('scrollme.zf.trigger');
       });
     } //trigger all listening elements and signal a scroll event
 
@@ -998,9 +1138,9 @@ Triggers.Listeners.Global = {
   },
   closeMeListener: function closeMeListener(e, pluginId) {
     var plugin = e.namespace.split('.')[0];
-    var plugins = (0, _jquery.default)("[data-".concat(plugin, "]")).not("[data-yeti-box=\"".concat(pluginId, "\"]"));
+    var plugins = jquery__WEBPACK_IMPORTED_MODULE_0___default()("[data-".concat(plugin, "]")).not("[data-yeti-box=\"".concat(pluginId, "\"]"));
     plugins.each(function () {
-      var _this = (0, _jquery.default)(this);
+      var _this = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
 
       _this.triggerHandler('close.zf.trigger', [_this]);
     });
@@ -1009,14 +1149,14 @@ Triggers.Listeners.Global = {
 };
 
 Triggers.Initializers.addClosemeListener = function (pluginName) {
-  var yetiBoxes = (0, _jquery.default)('[data-yeti-box]'),
+  var yetiBoxes = jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-yeti-box]'),
       plugNames = ['dropdown', 'tooltip', 'reveal'];
 
   if (pluginName) {
     if (typeof pluginName === 'string') {
       plugNames.push(pluginName);
     } else if (_typeof(pluginName) === 'object' && typeof pluginName[0] === 'string') {
-      plugNames.concat(pluginName);
+      plugNames = plugNames.concat(pluginName);
     } else {
       console.error('Plugin names must be strings');
     }
@@ -1026,14 +1166,14 @@ Triggers.Initializers.addClosemeListener = function (pluginName) {
     var listeners = plugNames.map(function (name) {
       return "closeme.zf.".concat(name);
     }).join(' ');
-    (0, _jquery.default)(window).off(listeners).on(listeners, Triggers.Listeners.Global.closeMeListener);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).off(listeners).on(listeners, Triggers.Listeners.Global.closeMeListener);
   }
 };
 
 function debounceGlobalListener(debounce, trigger, listener) {
   var timer,
       args = Array.prototype.slice.call(arguments, 3);
-  (0, _jquery.default)(window).off(trigger).on(trigger, function (e) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).off(trigger).on(trigger, function (e) {
     if (timer) {
       clearTimeout(timer);
     }
@@ -1045,7 +1185,7 @@ function debounceGlobalListener(debounce, trigger, listener) {
 }
 
 Triggers.Initializers.addResizeListener = function (debounce) {
-  var $nodes = (0, _jquery.default)('[data-resize]');
+  var $nodes = jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-resize]');
 
   if ($nodes.length) {
     debounceGlobalListener(debounce, 'resize.zf.trigger', Triggers.Listeners.Global.resizeListener, $nodes);
@@ -1053,7 +1193,7 @@ Triggers.Initializers.addResizeListener = function (debounce) {
 };
 
 Triggers.Initializers.addScrollListener = function (debounce) {
-  var $nodes = (0, _jquery.default)('[data-scroll]');
+  var $nodes = jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-scroll]');
 
   if ($nodes.length) {
     debounceGlobalListener(debounce, 'scroll.zf.trigger', Triggers.Listeners.Global.scrollListener, $nodes);
@@ -1068,7 +1208,7 @@ Triggers.Initializers.addMutationEventsListener = function ($elem) {
   var $nodes = $elem.find('[data-resize], [data-scroll], [data-mutate]'); //element callback
 
   var listeningElementsMutation = function listeningElementsMutation(mutationRecordsList) {
-    var $target = (0, _jquery.default)(mutationRecordsList[0].target); //trigger the event handler for the element depending on type
+    var $target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(mutationRecordsList[0].target); //trigger the event handler for the element depending on type
 
     switch (mutationRecordsList[0].type) {
       case "attributes":
@@ -1114,7 +1254,7 @@ Triggers.Initializers.addMutationEventsListener = function ($elem) {
 };
 
 Triggers.Initializers.addSimpleListeners = function () {
-  var $document = (0, _jquery.default)(document);
+  var $document = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document);
   Triggers.Initializers.addOpenListener($document);
   Triggers.Initializers.addCloseListener($document);
   Triggers.Initializers.addToggleListener($document);
@@ -1123,7 +1263,7 @@ Triggers.Initializers.addSimpleListeners = function () {
 };
 
 Triggers.Initializers.addGlobalListeners = function () {
-  var $document = (0, _jquery.default)(document);
+  var $document = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document);
   Triggers.Initializers.addMutationEventsListener($document);
   Triggers.Initializers.addResizeListener();
   Triggers.Initializers.addScrollListener();
@@ -1131,7 +1271,7 @@ Triggers.Initializers.addGlobalListeners = function () {
 };
 
 Triggers.init = function ($, Foundation) {
-  (0, _foundationCore.onLoad)($(window), function () {
+  Object(_foundation_core_utils__WEBPACK_IMPORTED_MODULE_1__["onLoad"])($(window), function () {
     if ($.triggersInitialized !== true) {
       Triggers.Initializers.addSimpleListeners();
       Triggers.Initializers.addGlobalListeners();
@@ -1146,6 +1286,8 @@ Triggers.init = function ($, Foundation) {
   }
 };
 
+
+
 /***/ }),
 
 /***/ 9:
@@ -1155,7 +1297,7 @@ Triggers.init = function ($, Foundation) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ncoden/Documents/Documents/Projects/Programmation/Web/2016/Foundation/foundation-sites/js/entries/plugins/foundation.offcanvas.js */"./js/entries/plugins/foundation.offcanvas.js");
+module.exports = __webpack_require__(/*! /Volumes/Data/Development/Foundation/foundation-sites/js/entries/plugins/foundation.offcanvas.js */"./js/entries/plugins/foundation.offcanvas.js");
 
 
 /***/ }),

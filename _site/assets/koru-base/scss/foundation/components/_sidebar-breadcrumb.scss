@@ -1,0 +1,141 @@
+.sidebar-breadcrumb {
+  @include radial-gradient(map-get($base-colors, 'gray'), map-get($base-colors, 'dark-gray'));
+  box-shadow: -5px -5px 24px -4px rgba(map-get($base-colors, 'gray'), .56);
+  padding: 40px 0;
+
+  a {
+    color: map-get($base-colors, 'lightest-gray');
+
+    &:link,
+    &:visited,
+    &:active {
+      color: map-get($base-colors, 'lightest-gray');
+    }
+  }
+
+  span {
+    line-height: 1.35;
+  }
+
+  li {
+    a {
+      padding: 5px 20px 5px 45px;
+      position: relative;
+
+      &::before {
+        @include pseudo-element;
+        border-bottom: 16px solid transparent;
+        border-right-style: solid;
+        border-right-width: 15px;
+        border-top: 16px solid transparent;
+        display: none;
+        height: 0;
+        left: -15px;
+        top: 0;
+        width: 0;
+      }
+
+      &:hover {
+        color: map-get($base-colors, 'lime-green');
+
+        i {
+          &::before {
+            content: '\f140';
+          }
+        }
+      }
+
+      i {
+        left: 20px;
+        padding-top: 6px;
+        position: absolute;
+        top: 0;
+        width: 20px;
+      }
+    }
+
+    &.active {
+      @include uppercase;
+
+      > a {
+        color: map-get($base-colors, 'white');
+      }
+    }
+
+    &:not(:first-child) {
+      ul {
+        li {
+          @include sentence-case;
+
+          a {
+            padding-left: 70px;
+
+            i {
+              font-size: map-get($font-sizes, 'xxxxsmall');
+              left: 45px;
+              padding-top: 10px;
+            }
+
+            &:hover {
+              i {
+                font-size: map-get($font-sizes, 'default');
+                left: 42px;
+                padding-top: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    ul {
+      list-style-type: none;
+      margin-left: 0;
+      padding-left: 0;
+
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  .home {
+    @include uppercase;
+    padding: 5px 20px 5px 45px;
+    position: relative;
+
+    i {
+      left: 20px;
+      padding-top: 6px;
+      position: absolute;
+      top: 0;
+      width: 20px;
+    }
+
+    &:hover {
+      color: map-get($base-colors, 'lime-green');
+
+      i {
+        &::before {
+          content: '\f140';
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: map-get($custom-breakpoints, 'medium')) {
+  .sidebar-breadcrumb {
+    li {
+      &.active {
+        > a {
+          &::before {
+            @include flex;
+          }
+        }
+      }
+    }
+  }
+}
