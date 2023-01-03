@@ -4,7 +4,7 @@ title: Documentation
 ---
 
 <!-- ## Download -->
-## Documentaiton
+## Documentation
 
 <p align="left">
    <a href="https://vapor.readthedocs.io/en/readthedocs/#">
