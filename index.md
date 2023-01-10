@@ -1,11 +1,11 @@
 ---
 layout: frontpage
 title: Home
-banner-title: Vapor 3.7.0 is now live!
-banner-description: Vapor can now be scripted with its Python API, new enhanced rendering for visualization of Lagrangian particle tracking, the display of dataset metadata, and 93 other enhancements and bug fixes.  
+banner-title: Vapor 3.8.0 is now live!
+banner-description: Vapor 3.8.0 introduces Jupyter Widgets, which allow you to interactively navitage your renderings that are generated in Jupyter Notebooks.  You can also create sliders and other widgets to change parameters for your renderings.
 
 banner-button-text: Download here
-banner-button-url: /pages/DownloadsPage.html
+banner-button-url: https://forms.gle/66GDgxjxrEnTewYz5
 ---
 
 # Welcome
