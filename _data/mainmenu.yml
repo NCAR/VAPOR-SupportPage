@@ -24,5 +24,7 @@ menu:
     url: https://visgallery.ucar.edu/category/visualization-software/vapor
   - title: Source Code 
     url: https://github.com/NCAR/VAPOR
+  - title: Citation
+    url: /pages/vaporCitationPage.html
   - title: Get Help
     url: https://vapor.discourse.group
