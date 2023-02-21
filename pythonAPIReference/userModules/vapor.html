@@ -1,0 +1,1311 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>User Modules &#8212;   3.8.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="icon" href="../../_static/vaporVLogo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="vapor.animation module" href="vapor.animation.html" />
+    <link rel="prev" title="Class Reference" href="../classReference.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <img src="../../_static/../../_static/vaporLogoBlack.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">  3.8.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../downloads.html">
+   Downloads
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../announcements/current.html">
+     Current Release
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../downloads/installationInstructions.html">
+     Installation Instructions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../downloads/sampleData.html">
+     Sample Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../downloads/thirdPartyLibraries.html">
+     Third Party Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../dataFormatRequirements.html">
+   Data Format Requirements
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../dataFormatRequirements/nativelySupportedDataFormats.html">
+     Natively Supported Data Formats
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../dataFormatRequirements/dataFormattingInstructions.html">
+     Data Formatting Instructions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../dataFormatRequirements/netCDF/nonCompliantNetCDF.html">
+       Non CF-Compliant NetCDF
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../dataFormatRequirements/netCDF/cfRequirements.html">
+         NetCDF-CF Requirements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../dataFormatRequirements/netCDF/examples/index.html">
+         Examples
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../dataFormatRequirements/rawData.html">
+       Raw Binary Data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../dataFormatRequirements/brickOfValues.html">
+         Brick of Values (BOV)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../dataFormatRequirements/rawToVDC.html">
+         Converting raw binary data into VDC
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../dataFormatRequirements/dataCollectionParticles.html">
+       Data Collection Particles (DCP)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../dataFormatRequirements/vdc.html">
+     Big Data with VDC
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../dataFormatRequirements/vdcConversionCommands.html">
+       VDC Conversion Commands
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../dataFormatRequirements/notesOnDifferentFormats.html">
+     Notes on Different Formats
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../vaporApplicationReference.html">
+   VAPOR Application Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../vaporApplicationReference/quickStartGuide.html">
+     Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../vaporApplicationReference/renderers.html">
+     The Renderers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/basicRendererControls.html">
+       Basic Renderer Controls
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/contourRenderer.html">
+       Contours
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/twoDData.html">
+       2D Data
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../vaporApplicationReference/imageRenderer/index.html">
+       Image Renderer
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../vaporApplicationReference/imageRenderer/makeGeotiff.html">
+         makeGeotiff.py
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/volumeRenderer.html">
+       Volume Renderer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/isosurfaceRenderer.html">
+       Isosurfaces
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/flowRenderer.html">
+       Flow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/sliceRenderer.html">
+       Slices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/barbRenderer.html">
+       Barbs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/wireFrameRenderer.html">
+       Wire Frames
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/modelRenderer.html">
+       3D Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/particleRenderer.html">
+       Particle Renderer
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../vaporApplicationReference/navigationSettings.html">
+     Navigation Settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../vaporApplicationReference/globalSettings.html">
+     Global Settings
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../vaporApplicationReference/otherTools.html">
+     Other Tools
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/otherTools/pythonEngine.html">
+       Python Engine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/otherTools/2dPlots.html">
+       2D Plots
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/otherTools/statistics.html">
+       Statistics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/otherTools/vaporWrfModule.html">
+       The vapor_wrf module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/otherTools/vaporUtilsModule.html">
+       The vapor_utils module
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pythonAPIReference.html">
+   Python API Reference
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloadAndInstallation.html">
+     Download and Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples.html">
+     Examples
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../classReference.html">
+     Class Reference
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active has-children">
+      <a class="current reference internal" href="#">
+       User Modules
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.animation.html">
+         vapor.animation module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.annotations.html">
+         vapor.annotations module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.camera.html">
+         vapor.camera module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.dataset.html">
+         vapor.dataset module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.renderer.html">
+         vapor.renderer module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.session.html">
+         vapor.session module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.transferfunction.html">
+         vapor.transferfunction module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.transform.html">
+         vapor.transform module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.utils.html">
+         vapor.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../devModules/vapor.html">
+       Developer Modules
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.cmake.html">
+         vapor.cmake module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.common.html">
+         vapor.common module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.config.html">
+         vapor.config module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.cppyyDoxygenWrapper.html">
+         vapor.cppyyDoxygenWrapper module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.link.html">
+         vapor.link module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.params.html">
+         vapor.params module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.smartwrapper.html">
+         vapor.smartwrapper module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.utils.html">
+         vapor.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.youtube.com/channel/UCpf-d1GDO1sotzjJ2t_QkDw">
+   YouTube Channel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://vapor.discourse.group">
+   Get Help on Our Forum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../contributing.html">
+   Contributing to Vapor
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../createDataReader.html">
+     Creating a Data Reader
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../createRenderer.html">
+     Creating a Renderer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../citationAndLicense.html">
+   Citation and License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/NCAR/VAPOR"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NCAR/VAPOR/issues/new?title=Issue%20on%20page%20%2FpythonAPIReference/userModules/vapor.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NCAR/VAPOR/edit/main/doc/pythonAPIReference/userModules/vapor.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/pythonAPIReference/userModules/vapor.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-vapor">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>User Modules</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-vapor">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="user-modules">
+<h1>User Modules<a class="headerlink" href="#user-modules" title="Permalink to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vapor.animation.html">vapor.animation module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vapor.animation.html#vapor.animation.Animation"><code class="docutils literal notranslate"><span class="pre">Animation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.animation.html#vapor.animation.Animation.CaptureFrame"><code class="docutils literal notranslate"><span class="pre">Animation.CaptureFrame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.animation.html#vapor.animation.Animation.SaveMP4"><code class="docutils literal notranslate"><span class="pre">Animation.SaveMP4()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.animation.html#vapor.animation.Animation.Show"><code class="docutils literal notranslate"><span class="pre">Animation.Show()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.animation.html#vapor.animation.Animation.ShowInteractive"><code class="docutils literal notranslate"><span class="pre">Animation.ShowInteractive()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vapor.annotations.html">vapor.annotations module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetAxisAnnotationEnabled"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetAxisAnnotationEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetAxisBackgroundColor"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetAxisBackgroundColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetAxisColor"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetAxisColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetAxisDigits"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetAxisDigits</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetAxisFontSize"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetAxisFontSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetAxisOrigin"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetAxisOrigin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetAxisTextHeight"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetAxisTextHeight</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetLatLonAxesEnabled"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetLatLonAxesEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetMaxTics"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetMaxTics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetMinTics"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetMinTics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetNumTics"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetNumTics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetShowAxisArrows"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetShowAxisArrows</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetTicDirs"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetTicDirs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetTicSize"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetTicSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetTicWidth"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetTicWidth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetXTicDir"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetXTicDir</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetYTicDir"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetYTicDir</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.GetZTicDir"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.GetZTicDir</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetAxisAnnotationEnabled"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetAxisAnnotationEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetAxisBackgroundColor"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetAxisBackgroundColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetAxisColor"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetAxisColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetAxisDigits"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetAxisDigits</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetAxisFontSize"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetAxisFontSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetAxisOrigin"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetAxisOrigin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetAxisTextHeight"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetAxisTextHeight</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetLatLonAxesEnabled"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetLatLonAxesEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetMaxTics"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetMaxTics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetMinTics"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetMinTics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetNumTics"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetNumTics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetShowAxisArrows"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetShowAxisArrows</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetTicDirs"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetTicDirs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetTicSize"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetTicSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetTicWidth"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetTicWidth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetXTicDir"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetXTicDir</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetYTicDir"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetYTicDir</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.AxisAnnotation.SetZTicDir"><code class="docutils literal notranslate"><span class="pre">AxisAnnotation.SetZTicDir</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.GetBackgroundColor"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.GetBackgroundColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.GetCornerPosition"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.GetCornerPosition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.GetFontSize"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.GetFontSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.GetNumDigits"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.GetNumDigits</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.GetNumTicks"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.GetNumTicks</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.GetSize"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.GetSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.GetTitle"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.GetTitle</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.GetUseScientificNotation"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.GetUseScientificNotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.IsEnabled"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.IsEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.SetBackgroundColor"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.SetBackgroundColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.SetCornerPosition"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.SetCornerPosition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.SetEnabled"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.SetEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.SetFontSize"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.SetFontSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.SetNumDigits"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.SetNumDigits</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.SetNumTicks"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.SetNumTicks</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.SetSize"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.SetSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.SetTitle"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.SetTitle</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.ColorbarAnnotation.SetUseScientificNotation"><code class="docutils literal notranslate"><span class="pre">ColorbarAnnotation.SetUseScientificNotation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetAxisArrowEnabled"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetAxisArrowEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetAxisArrowSize"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetAxisArrowSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetAxisArrowXPos"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetAxisArrowXPos</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetAxisArrowYPos"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetAxisArrowYPos</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetAxisFontSize"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetAxisFontSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetBackgroundColor"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetBackgroundColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetCurrentAxisDataMgrName"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetCurrentAxisDataMgrName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetDomainColor"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetDomainColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetRegionColor"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetRegionColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetTimeLLX"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetTimeLLX</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetTimeLLY"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetTimeLLY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetTimeSize"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetTimeSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetTimeType"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetTimeType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetUseDomainFrame"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetUseDomainFrame</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.GetUseRegionFrame"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.GetUseRegionFrame</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetAxisArrowEnabled"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetAxisArrowEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetAxisArrowSize"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetAxisArrowSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetAxisArrowXPos"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetAxisArrowXPos</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetAxisArrowYPos"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetAxisArrowYPos</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetAxisFontSize"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetAxisFontSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetBackgroundColor"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetBackgroundColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetCurrentAxisDataMgrName"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetCurrentAxisDataMgrName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetDomainColor"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetDomainColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetTimeColor"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetTimeColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetTimeLLX"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetTimeLLX</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetTimeLLY"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetTimeLLY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetTimeSize"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetTimeSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetTimeType"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetTimeType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetUseDomainFrame"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetUseDomainFrame</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.SetUseRegionFrame"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.SetUseRegionFrame</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.TimeAnnotationType"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.TimeAnnotationType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.TimeAnnotationType.Formatted"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.TimeAnnotationType.Formatted</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.TimeAnnotationType.NoAnnotation"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.TimeAnnotationType.NoAnnotation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.TimeAnnotationType.Timestep"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.TimeAnnotationType.Timestep</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.TimeAnnotationType.User"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.TimeAnnotationType.User</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.annotations.html#vapor.annotations.SceneAnnotation.f"><code class="docutils literal notranslate"><span class="pre">SceneAnnotation.f</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vapor.camera.html">vapor.camera module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera"><code class="docutils literal notranslate"><span class="pre">Camera</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.AlignView"><code class="docutils literal notranslate"><span class="pre">Camera.AlignView()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.GetDirection"><code class="docutils literal notranslate"><span class="pre">Camera.GetDirection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.GetPosition"><code class="docutils literal notranslate"><span class="pre">Camera.GetPosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.GetTarget"><code class="docutils literal notranslate"><span class="pre">Camera.GetTarget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.GetUp"><code class="docutils literal notranslate"><span class="pre">Camera.GetUp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.LookAt"><code class="docutils literal notranslate"><span class="pre">Camera.LookAt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.SetDirection"><code class="docutils literal notranslate"><span class="pre">Camera.SetDirection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.SetPosition"><code class="docutils literal notranslate"><span class="pre">Camera.SetPosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.SetTarget"><code class="docutils literal notranslate"><span class="pre">Camera.SetTarget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.SetUp"><code class="docutils literal notranslate"><span class="pre">Camera.SetUp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.ViewAll"><code class="docutils literal notranslate"><span class="pre">Camera.ViewAll()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.camera.html#vapor.camera.Camera.Zoom"><code class="docutils literal notranslate"><span class="pre">Camera.Zoom()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vapor.dataset.html">vapor.dataset module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetCoordVarNames"><code class="docutils literal notranslate"><span class="pre">Dataset.GetCoordVarNames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetDataRange"><code class="docutils literal notranslate"><span class="pre">Dataset.GetDataRange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetDataVarNames"><code class="docutils literal notranslate"><span class="pre">Dataset.GetDataVarNames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetDatasetTypes"><code class="docutils literal notranslate"><span class="pre">Dataset.GetDatasetTypes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetDimensionLength"><code class="docutils literal notranslate"><span class="pre">Dataset.GetDimensionLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetDimensionNames"><code class="docutils literal notranslate"><span class="pre">Dataset.GetDimensionNames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetName"><code class="docutils literal notranslate"><span class="pre">Dataset.GetName()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetNumTimeSteps"><code class="docutils literal notranslate"><span class="pre">Dataset.GetNumTimeSteps</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetTimeCoordVarName"><code class="docutils literal notranslate"><span class="pre">Dataset.GetTimeCoordVarName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetTransform"><code class="docutils literal notranslate"><span class="pre">Dataset.GetTransform()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetVarCoordVars"><code class="docutils literal notranslate"><span class="pre">Dataset.GetVarCoordVars</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetVarGeometryDim"><code class="docutils literal notranslate"><span class="pre">Dataset.GetVarGeometryDim</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.GetVarTopologyDim"><code class="docutils literal notranslate"><span class="pre">Dataset.GetVarTopologyDim</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.IsTimeVarying"><code class="docutils literal notranslate"><span class="pre">Dataset.IsTimeVarying</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.Dataset.NewRenderer"><code class="docutils literal notranslate"><span class="pre">Dataset.NewRenderer()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.PythonDataset"><code class="docutils literal notranslate"><span class="pre">PythonDataset</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.PythonDataset.AddNumpyData"><code class="docutils literal notranslate"><span class="pre">PythonDataset.AddNumpyData()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.dataset.html#vapor.dataset.PythonDataset.AddXArrayData"><code class="docutils literal notranslate"><span class="pre">PythonDataset.AddXArrayData()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vapor.renderer.html">vapor.renderer module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer"><code class="docutils literal notranslate"><span class="pre">BarbRenderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.GetGrid"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.GetGrid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.GetLengthScale"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.GetLengthScale</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.GetLineThickness"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.GetLineThickness</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.GetXBarbsCount"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.GetXBarbsCount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.GetYBarbsCount"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.GetYBarbsCount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.GetZBarbsCount"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.GetZBarbsCount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.SetGrid"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.SetGrid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.SetLengthScale"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.SetLengthScale</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.SetLineThickness"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.SetLineThickness</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.SetXBarbsCount"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.SetXBarbsCount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.SetYBarbsCount"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.SetYBarbsCount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.SetZBarbsCount"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.SetZBarbsCount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BarbRenderer.VaporName"><code class="docutils literal notranslate"><span class="pre">BarbRenderer.VaporName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BoundingBox"><code class="docutils literal notranslate"><span class="pre">BoundingBox</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BoundingBox.GetExtents"><code class="docutils literal notranslate"><span class="pre">BoundingBox.GetExtents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.BoundingBox.SetExtents"><code class="docutils literal notranslate"><span class="pre">BoundingBox.SetExtents()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Class"><code class="docutils literal notranslate"><span class="pre">Class</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ContourRenderer"><code class="docutils literal notranslate"><span class="pre">ContourRenderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ContourRenderer.GetIsoValues"><code class="docutils literal notranslate"><span class="pre">ContourRenderer.GetIsoValues()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ContourRenderer.SetIsoValues"><code class="docutils literal notranslate"><span class="pre">ContourRenderer.SetIsoValues()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ContourRenderer.VaporName"><code class="docutils literal notranslate"><span class="pre">ContourRenderer.VaporName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer"><code class="docutils literal notranslate"><span class="pre">FlowRenderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.FlowDir"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.FlowDir</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.FlowDir.BACKWARD"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.FlowDir.BACKWARD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.FlowDir.BI_DIR"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.FlowDir.BI_DIR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.FlowDir.FORWARD"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.FlowDir.FORWARD</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.FlowSeedMode"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.FlowSeedMode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.FlowSeedMode.LIST"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.FlowSeedMode.LIST</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.FlowSeedMode.RANDOM"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.FlowSeedMode.RANDOM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.FlowSeedMode.RANDOM_BIAS"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.FlowSeedMode.RANDOM_BIAS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.FlowSeedMode.UNIFORM"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.FlowSeedMode.UNIFORM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetFlowDirection"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetFlowDirection</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetFlowOutputMoreVariables"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetFlowOutputMoreVariables</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetFlowlineOutputFilename"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetFlowlineOutputFilename</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetGridNumOfSeeds"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetGridNumOfSeeds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetIntegrationRegion"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetIntegrationRegion()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetIsSteady"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetIsSteady</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetPeriodic"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetPeriodic</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetPhongAmbient"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetPhongAmbient()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetPhongDiffuse"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetPhongDiffuse()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetPhongShininess"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetPhongShininess()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetPhongSpecular"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetPhongSpecular()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRakeBiasStrength"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRakeBiasStrength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRakeBiasVariable"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRakeBiasVariable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRakeRegion"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRakeRegion()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRandomNumOfSeeds"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRandomNumOfSeeds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderDensityFalloff"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderDensityFalloff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderDensityToneMapping"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderDensityToneMapping()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderFadeTail"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderFadeTail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderFadeTailLength"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderFadeTailLength()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderFadeTailStart"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderFadeTailStart()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderFadeTailStop"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderFadeTailStop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderGeom3D"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderGeom3D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderGlyphOnlyLeading"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderGlyphOnlyLeading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderGlyphStride"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderGlyphStride()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderGlyphType"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderGlyphType()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderRadiusScalar"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderRadiusScalar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderShowStreamDir"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderShowStreamDir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetRenderType"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetRenderType()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetSeedGenMode"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetSeedGenMode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetSeedInjInterval"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetSeedInjInterval</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetSeedInputFilename"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetSeedInputFilename</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetSteadyNumOfSteps"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetSteadyNumOfSteps</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GetVelocityMultiplier"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GetVelocityMultiplier</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GlpyhType"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GlpyhType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GlpyhType.GlpyhTypeArrow"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GlpyhType.GlpyhTypeArrow</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.GlpyhType.GlpyhTypeSphere"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.GlpyhType.GlpyhTypeSphere</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.RenderType"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.RenderType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.RenderType.RenderTypeDensity"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.RenderType.RenderTypeDensity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.RenderType.RenderTypeSamples"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.RenderType.RenderTypeSamples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.RenderType.RenderTypeStream"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.RenderType.RenderTypeStream</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetFlowDirection"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetFlowDirection</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetFlowlineOutputFilename"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetFlowlineOutputFilename</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetGridNumOfSeeds"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetGridNumOfSeeds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetIsSteady"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetIsSteady</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetPeriodic"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetPeriodic</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetPhongAmbient"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetPhongAmbient()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetPhongDiffuse"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetPhongDiffuse()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetPhongShininess"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetPhongShininess()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetPhongSpecular"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetPhongSpecular()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRakeBiasStrength"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRakeBiasStrength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRakeBiasVariable"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRakeBiasVariable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRandomNumOfSeeds"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRandomNumOfSeeds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderDensityFalloff"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderDensityFalloff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderDensityToneMapping"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderDensityToneMapping()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderFadeTail"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderFadeTail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderFadeTailLength"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderFadeTailLength()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderFadeTailStart"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderFadeTailStart()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderFadeTailStop"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderFadeTailStop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderGeom3D"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderGeom3D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderGlyphOnlyLeading"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderGlyphOnlyLeading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderGlyphStride"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderGlyphStride()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderGlyphType"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderGlyphType()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderRadiusScalar"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderRadiusScalar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderShowStreamDir"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderShowStreamDir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetRenderType"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetRenderType()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetSeedGenMode"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetSeedGenMode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetSeedInjInterval"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetSeedInjInterval</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetSeedInputFilename"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetSeedInputFilename</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetSteadyNumOfSteps"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetSteadyNumOfSteps</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.SetVelocityMultiplier"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.SetVelocityMultiplier</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.FlowRenderer.VaporName"><code class="docutils literal notranslate"><span class="pre">FlowRenderer.VaporName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ImageRenderer"><code class="docutils literal notranslate"><span class="pre">ImageRenderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ImageRenderer.GetIgnoreTransparency"><code class="docutils literal notranslate"><span class="pre">ImageRenderer.GetIgnoreTransparency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ImageRenderer.GetImagePath"><code class="docutils literal notranslate"><span class="pre">ImageRenderer.GetImagePath</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ImageRenderer.GetIsGeoRef"><code class="docutils literal notranslate"><span class="pre">ImageRenderer.GetIsGeoRef</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ImageRenderer.ListBuiltinMaps"><code class="docutils literal notranslate"><span class="pre">ImageRenderer.ListBuiltinMaps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ImageRenderer.SetBuiltinMap"><code class="docutils literal notranslate"><span class="pre">ImageRenderer.SetBuiltinMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ImageRenderer.SetIgnoreTransparency"><code class="docutils literal notranslate"><span class="pre">ImageRenderer.SetIgnoreTransparency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ImageRenderer.SetImagePath"><code class="docutils literal notranslate"><span class="pre">ImageRenderer.SetImagePath</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ImageRenderer.SetIsGeoRef"><code class="docutils literal notranslate"><span class="pre">ImageRenderer.SetIsGeoRef</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ImageRenderer.VaporName"><code class="docutils literal notranslate"><span class="pre">ImageRenderer.VaporName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ModelRenderer"><code class="docutils literal notranslate"><span class="pre">ModelRenderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ModelRenderer.GetFile"><code class="docutils literal notranslate"><span class="pre">ModelRenderer.GetFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ModelRenderer.SetFile"><code class="docutils literal notranslate"><span class="pre">ModelRenderer.SetFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ModelRenderer.SlicePlaneOrientationMode"><code class="docutils literal notranslate"><span class="pre">ModelRenderer.SlicePlaneOrientationMode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ModelRenderer.SlicePlaneOrientationMode.Normal"><code class="docutils literal notranslate"><span class="pre">ModelRenderer.SlicePlaneOrientationMode.Normal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ModelRenderer.SlicePlaneOrientationMode.Rotation"><code class="docutils literal notranslate"><span class="pre">ModelRenderer.SlicePlaneOrientationMode.Rotation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.ModelRenderer.VaporName"><code class="docutils literal notranslate"><span class="pre">ModelRenderer.VaporName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer"><code class="docutils literal notranslate"><span class="pre">Renderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetAuxVariableNames"><code class="docutils literal notranslate"><span class="pre">Renderer.GetAuxVariableNames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetColorMapVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.GetColorMapVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetColorbarAnnotation"><code class="docutils literal notranslate"><span class="pre">Renderer.GetColorbarAnnotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetCompressionLevel"><code class="docutils literal notranslate"><span class="pre">Renderer.GetCompressionLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetFieldVariableNames"><code class="docutils literal notranslate"><span class="pre">Renderer.GetFieldVariableNames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetHeightVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.GetHeightVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetPrimaryTransferFunction"><code class="docutils literal notranslate"><span class="pre">Renderer.GetPrimaryTransferFunction()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetRefinementLevel"><code class="docutils literal notranslate"><span class="pre">Renderer.GetRefinementLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetRenderRegion"><code class="docutils literal notranslate"><span class="pre">Renderer.GetRenderRegion()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetTransferFunction"><code class="docutils literal notranslate"><span class="pre">Renderer.GetTransferFunction()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetTransform"><code class="docutils literal notranslate"><span class="pre">Renderer.GetTransform</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.GetVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetXFieldVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.GetXFieldVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetYFieldVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.GetYFieldVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.GetZFieldVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.GetZFieldVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.IsEnabled"><code class="docutils literal notranslate"><span class="pre">Renderer.IsEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.ResetUserExtentsToDataExents"><code class="docutils literal notranslate"><span class="pre">Renderer.ResetUserExtentsToDataExents</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetAuxVariableNames"><code class="docutils literal notranslate"><span class="pre">Renderer.SetAuxVariableNames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetColorMapVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.SetColorMapVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetCompressionLevel"><code class="docutils literal notranslate"><span class="pre">Renderer.SetCompressionLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetDimensions"><code class="docutils literal notranslate"><span class="pre">Renderer.SetDimensions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetEnabled"><code class="docutils literal notranslate"><span class="pre">Renderer.SetEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetFieldVariableNames"><code class="docutils literal notranslate"><span class="pre">Renderer.SetFieldVariableNames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetHeightVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.SetHeightVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetRefinementLevel"><code class="docutils literal notranslate"><span class="pre">Renderer.SetRefinementLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetUseSingleColor"><code class="docutils literal notranslate"><span class="pre">Renderer.SetUseSingleColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.SetVariableName()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetXFieldVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.SetXFieldVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetYFieldVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.SetYFieldVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.SetZFieldVariableName"><code class="docutils literal notranslate"><span class="pre">Renderer.SetZFieldVariableName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.UseSingleColor"><code class="docutils literal notranslate"><span class="pre">Renderer.UseSingleColor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.Renderer.VaporName"><code class="docutils literal notranslate"><span class="pre">Renderer.VaporName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer"><code class="docutils literal notranslate"><span class="pre">SliceRenderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetSampleRate"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetSampleRate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetSliceOffset"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetSliceOffset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetSlicePlaneNormal"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetSlicePlaneNormal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetSlicePlaneNormalX"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetSlicePlaneNormalX()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetSlicePlaneNormalY"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetSlicePlaneNormalY()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetSlicePlaneNormalZ"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetSlicePlaneNormalZ()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetSlicePlaneOrientationMode"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetSlicePlaneOrientationMode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetSlicePlaneOrigin"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetSlicePlaneOrigin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetSlicePlaneRotation"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetSlicePlaneRotation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetXSlicePlaneOrigin"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetXSlicePlaneOrigin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetXSlicePlaneRotation"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetXSlicePlaneRotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetYSlicePlaneOrigin"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetYSlicePlaneOrigin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetYSlicePlaneRotation"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetYSlicePlaneRotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetZSlicePlaneOrigin"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetZSlicePlaneOrigin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.GetZSlicePlaneRotation"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.GetZSlicePlaneRotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetSampleRate"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetSampleRate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetSliceOffset"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetSliceOffset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetSlicePlaneNormalX"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetSlicePlaneNormalX()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetSlicePlaneNormalY"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetSlicePlaneNormalY()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetSlicePlaneNormalZ"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetSlicePlaneNormalZ()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetSlicePlaneOrientationMode"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetSlicePlaneOrientationMode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetXSlicePlaneOrigin"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetXSlicePlaneOrigin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetXSlicePlaneRotation"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetXSlicePlaneRotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetYSlicePlaneOrigin"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetYSlicePlaneOrigin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetYSlicePlaneRotation"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetYSlicePlaneRotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetZSlicePlaneOrigin"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetZSlicePlaneOrigin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SetZSlicePlaneRotation"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SetZSlicePlaneRotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SlicePlaneOrientationMode"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SlicePlaneOrientationMode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SlicePlaneOrientationMode.Normal"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SlicePlaneOrientationMode.Normal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.SlicePlaneOrientationMode.Rotation"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.SlicePlaneOrientationMode.Rotation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.SliceRenderer.VaporName"><code class="docutils literal notranslate"><span class="pre">SliceRenderer.VaporName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.TwoDDataRenderer"><code class="docutils literal notranslate"><span class="pre">TwoDDataRenderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.TwoDDataRenderer.VaporName"><code class="docutils literal notranslate"><span class="pre">TwoDDataRenderer.VaporName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeIsoRenderer"><code class="docutils literal notranslate"><span class="pre">VolumeIsoRenderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeIsoRenderer.GetAlgorithmNames"><code class="docutils literal notranslate"><span class="pre">VolumeIsoRenderer.GetAlgorithmNames()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeIsoRenderer.GetIsoValues"><code class="docutils literal notranslate"><span class="pre">VolumeIsoRenderer.GetIsoValues()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeIsoRenderer.SetIsoValues"><code class="docutils literal notranslate"><span class="pre">VolumeIsoRenderer.SetIsoValues()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeIsoRenderer.VaporName"><code class="docutils literal notranslate"><span class="pre">VolumeIsoRenderer.VaporName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.GetAlgorithm"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.GetAlgorithm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.GetAlgorithmNames"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.GetAlgorithmNames()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.GetLightingEnabled"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.GetLightingEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.GetPhongAmbient"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.GetPhongAmbient</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.GetPhongDiffuse"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.GetPhongDiffuse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.GetPhongShininess"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.GetPhongShininess</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.GetPhongSpecular"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.GetPhongSpecular</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.GetSamplingMultiplier"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.GetSamplingMultiplier</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.GetUseColormapVariable"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.GetUseColormapVariable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.GetVolumeDensity"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.GetVolumeDensity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.SetAlgorithm"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.SetAlgorithm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.SetLightingEnabled"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.SetLightingEnabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.SetPhongAmbient"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.SetPhongAmbient</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.SetPhongDiffuse"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.SetPhongDiffuse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.SetPhongShininess"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.SetPhongShininess</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.SetPhongSpecular"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.SetPhongSpecular</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.SetSamplingMultiplier"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.SetSamplingMultiplier</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.SetUseColormapVariable"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.SetUseColormapVariable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.SetVolumeDensity"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.SetVolumeDensity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.VolumeRenderer.VaporName"><code class="docutils literal notranslate"><span class="pre">VolumeRenderer.VaporName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.WireFrameRenderer"><code class="docutils literal notranslate"><span class="pre">WireFrameRenderer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.renderer.html#vapor.renderer.WireFrameRenderer.VaporName"><code class="docutils literal notranslate"><span class="pre">WireFrameRenderer.VaporName</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vapor.session.html">vapor.session module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vapor.transferfunction.html">vapor.transferfunction module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction"><code class="docutils literal notranslate"><span class="pre">TransferFunction</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.GetMatPlotLibColorbar"><code class="docutils literal notranslate"><span class="pre">TransferFunction.GetMatPlotLibColorbar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.GetMatPlotLibColormap"><code class="docutils literal notranslate"><span class="pre">TransferFunction.GetMatPlotLibColormap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.GetMaxMapValue"><code class="docutils literal notranslate"><span class="pre">TransferFunction.GetMaxMapValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.GetMinMapValue"><code class="docutils literal notranslate"><span class="pre">TransferFunction.GetMinMapValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.GetMinMaxMapValue"><code class="docutils literal notranslate"><span class="pre">TransferFunction.GetMinMaxMapValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.GetOpacityScale"><code class="docutils literal notranslate"><span class="pre">TransferFunction.GetOpacityScale</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.ListBuiltinColormaps"><code class="docutils literal notranslate"><span class="pre">TransferFunction.ListBuiltinColormaps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.LoadBuiltinColormap"><code class="docutils literal notranslate"><span class="pre">TransferFunction.LoadBuiltinColormap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.LoadColormapFromFile"><code class="docutils literal notranslate"><span class="pre">TransferFunction.LoadColormapFromFile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.LoadFromFile"><code class="docutils literal notranslate"><span class="pre">TransferFunction.LoadFromFile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetColorHSVControlPoints"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetColorHSVControlPoints()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetColorHSVList"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetColorHSVList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetColorNormalizedHSVControlPoints"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetColorNormalizedHSVControlPoints()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetColorNormalizedRGBControlPoints"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetColorNormalizedRGBControlPoints()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetColorRGBControlPoints"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetColorRGBControlPoints()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetColorRGBList"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetColorRGBList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetMaxMapValue"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetMaxMapValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetMinMapValue"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetMinMapValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetOpacityControlPoints"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetOpacityControlPoints()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetOpacityList"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetOpacityList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetOpacityNormalizedControlPoints"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetOpacityNormalizedControlPoints()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.SetOpacityScale"><code class="docutils literal notranslate"><span class="pre">TransferFunction.SetOpacityScale</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transferfunction.html#vapor.transferfunction.TransferFunction.ShowMatPlotLibColorbar"><code class="docutils literal notranslate"><span class="pre">TransferFunction.ShowMatPlotLibColorbar()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vapor.transform.html">vapor.transform module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vapor.transform.html#vapor.transform.Transform"><code class="docutils literal notranslate"><span class="pre">Transform</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transform.html#vapor.transform.Transform.GetOrigin"><code class="docutils literal notranslate"><span class="pre">Transform.GetOrigin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transform.html#vapor.transform.Transform.GetRotations"><code class="docutils literal notranslate"><span class="pre">Transform.GetRotations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transform.html#vapor.transform.Transform.GetScales"><code class="docutils literal notranslate"><span class="pre">Transform.GetScales</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transform.html#vapor.transform.Transform.GetTranslations"><code class="docutils literal notranslate"><span class="pre">Transform.GetTranslations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transform.html#vapor.transform.Transform.SetOrigin"><code class="docutils literal notranslate"><span class="pre">Transform.SetOrigin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transform.html#vapor.transform.Transform.SetRotations"><code class="docutils literal notranslate"><span class="pre">Transform.SetRotations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transform.html#vapor.transform.Transform.SetScales"><code class="docutils literal notranslate"><span class="pre">Transform.SetScales</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vapor.transform.html#vapor.transform.Transform.SetTranslations"><code class="docutils literal notranslate"><span class="pre">Transform.SetTranslations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vapor.utils.html">vapor.utils module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vapor.utils.html#vapor.utils.GetMatPlotLibHistogram"><code class="docutils literal notranslate"><span class="pre">GetMatPlotLibHistogram()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.utils.html#vapor.utils.GetSamples"><code class="docutils literal notranslate"><span class="pre">GetSamples()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="vapor.utils.html#vapor.utils.ShowMatPlotLibHistogram"><code class="docutils literal notranslate"><span class="pre">ShowMatPlotLibHistogram()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-vapor">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-vapor" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../classReference.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Class Reference</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="vapor.animation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">vapor.animation module</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+      &copy; Copyright 2023 University Corporation for Atmospheric Research.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>NSIS License &#8212;   3.8.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="icon" href="../_static/vaporVLogo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <img src="../_static/../_static/vaporLogoBlack.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">  3.8.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../downloads.html">
+   Downloads
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../announcements/current.html">
+     Current Release
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloads/installationInstructions.html">
+     Installation Instructions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloads/sampleData.html">
+     Sample Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloads/thirdPartyLibraries.html">
+     Third Party Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../dataFormatRequirements.html">
+   Data Format Requirements
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataFormatRequirements/nativelySupportedDataFormats.html">
+     Natively Supported Data Formats
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dataFormatRequirements/dataFormattingInstructions.html">
+     Data Formatting Instructions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../dataFormatRequirements/netCDF/nonCompliantNetCDF.html">
+       Non CF-Compliant NetCDF
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/netCDF/cfRequirements.html">
+         NetCDF-CF Requirements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/netCDF/examples/index.html">
+         Examples
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../dataFormatRequirements/rawData.html">
+       Raw Binary Data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/brickOfValues.html">
+         Brick of Values (BOV)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/rawToVDC.html">
+         Converting raw binary data into VDC
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dataFormatRequirements/dataCollectionParticles.html">
+       Data Collection Particles (DCP)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dataFormatRequirements/vdc.html">
+     Big Data with VDC
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dataFormatRequirements/vdcConversionCommands.html">
+       VDC Conversion Commands
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataFormatRequirements/notesOnDifferentFormats.html">
+     Notes on Different Formats
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vaporApplicationReference.html">
+   VAPOR Application Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vaporApplicationReference/quickStartGuide.html">
+     Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../vaporApplicationReference/renderers.html">
+     The Renderers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/basicRendererControls.html">
+       Basic Renderer Controls
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/contourRenderer.html">
+       Contours
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/twoDData.html">
+       2D Data
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../vaporApplicationReference/imageRenderer/index.html">
+       Image Renderer
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vaporApplicationReference/imageRenderer/makeGeotiff.html">
+         makeGeotiff.py
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/volumeRenderer.html">
+       Volume Renderer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/isosurfaceRenderer.html">
+       Isosurfaces
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/flowRenderer.html">
+       Flow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/sliceRenderer.html">
+       Slices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/barbRenderer.html">
+       Barbs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/wireFrameRenderer.html">
+       Wire Frames
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/modelRenderer.html">
+       3D Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/particleRenderer.html">
+       Particle Renderer
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vaporApplicationReference/navigationSettings.html">
+     Navigation Settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vaporApplicationReference/globalSettings.html">
+     Global Settings
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../vaporApplicationReference/otherTools.html">
+     Other Tools
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/otherTools/pythonEngine.html">
+       Python Engine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/otherTools/2dPlots.html">
+       2D Plots
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/otherTools/statistics.html">
+       Statistics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/otherTools/vaporWrfModule.html">
+       The vapor_wrf module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/otherTools/vaporUtilsModule.html">
+       The vapor_utils module
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../pythonAPIReference.html">
+   Python API Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pythonAPIReference/downloadAndInstallation.html">
+     Download and Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pythonAPIReference/examples.html">
+     Examples
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../pythonAPIReference/classReference.html">
+     Class Reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../pythonAPIReference/userModules/vapor.html">
+       User Modules
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.animation.html">
+         vapor.animation module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.annotations.html">
+         vapor.annotations module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.camera.html">
+         vapor.camera module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.dataset.html">
+         vapor.dataset module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.renderer.html">
+         vapor.renderer module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.session.html">
+         vapor.session module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.transferfunction.html">
+         vapor.transferfunction module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.transform.html">
+         vapor.transform module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.utils.html">
+         vapor.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../pythonAPIReference/devModules/vapor.html">
+       Developer Modules
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.cmake.html">
+         vapor.cmake module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.common.html">
+         vapor.common module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.config.html">
+         vapor.config module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.cppyyDoxygenWrapper.html">
+         vapor.cppyyDoxygenWrapper module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.link.html">
+         vapor.link module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.params.html">
+         vapor.params module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.smartwrapper.html">
+         vapor.smartwrapper module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.utils.html">
+         vapor.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.youtube.com/channel/UCpf-d1GDO1sotzjJ2t_QkDw">
+   YouTube Channel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://vapor.discourse.group">
+   Get Help on Our Forum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../contributing.html">
+   Contributing to Vapor
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../createDataReader.html">
+     Creating a Data Reader
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../createRenderer.html">
+     Creating a Renderer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../citationAndLicense.html">
+   Citation and License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/NCAR/VAPOR"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NCAR/VAPOR/issues/new?title=Issue%20on%20page%20%2Flicenses/nsisLicense.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NCAR/VAPOR/edit/main/doc/licenses/nsisLicense.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/licenses/nsisLicense.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>NSIS License</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="nsis-license">
+<h1>NSIS License<a class="headerlink" href="#nsis-license" title="Permalink to this heading">#</a></h1>
+<p>Applicable licenses
+All NSIS source code, plug-ins, documentation, examples, header files and graphics, with the exception of the compression modules and where otherwise noted, are licensed under the zlib/libpng license.
+The zlib compression module for NSIS is licensed under the zlib/libpng license.
+The bzip2 compression module for NSIS is licensed under the bzip2 license.
+The lzma compression module for NSIS is licensed under the Common Public License version 1.0.
+zlib/libpng license
+This software is provided ‘as-is’, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.</p>
+<p>Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:</p>
+<p>The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+This notice may not be removed or altered from any source distribution.
+bzip2 license
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR <a href="#id1"><span class="problematic" id="id2">``</span></a>AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<p>Julian Seward, Cambridge, UK.</p>
+<p><a class="reference external" href="mailto:jseward&#37;&#52;&#48;acm&#46;org">jseward<span>&#64;</span>acm<span>&#46;</span>org</a></p>
+<p>Common Public License version 1.0
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS COMMON PUBLIC LICENSE (“AGREEMENT”). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT’S ACCEPTANCE OF THIS AGREEMENT.</p>
+<ol class="arabic simple">
+<li><p>DEFINITIONS</p></li>
+</ol>
+<p>“Contribution” means:</p>
+<ol class="loweralpha simple">
+<li><p>in the case of the initial Contributor, the initial code and documentation distributed under this Agreement, and b) in the case of each subsequent Contributor:</p></li>
+</ol>
+<ol class="lowerroman simple">
+<li><p>changes to the Program, and</p></li>
+<li><p>additions to the Program;</p></li>
+</ol>
+<p>where such changes and/or additions to the Program originate from and are distributed by that particular Contributor. A Contribution ‘originates’ from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor’s behalf. Contributions do not include additions to the Program which: (i) are separate modules of software distributed in conjunction with the Program under their own license agreement, and (ii) are not derivative works of the Program.</p>
+<p>“Contributor” means any person or entity that distributes the Program.</p>
+<p>“Licensed Patents “ mean patent claims licensable by a Contributor which are necessarily infringed by the use or sale of its Contribution alone or when combined with the Program.</p>
+<p>“Program” means the Contributions distributed in accordance with this Agreement.</p>
+<p>“Recipient” means anyone who receives the Program under this Agreement, including all Contributors.</p>
+<ol class="arabic simple" start="2">
+<li><p>GRANT OF RIGHTS</p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.</p></li>
+<li><p>Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in source code and object code form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.</p></li>
+<li><p>Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to distribute the Program, it is Recipient’s responsibility to acquire that license before distributing the Program.</p></li>
+<li><p>Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>REQUIREMENTS</p></li>
+</ol>
+<p>A Contributor may choose to distribute the Program in object code form under its own license agreement, provided that:</p>
+<ol class="loweralpha simple">
+<li><p>it complies with the terms and conditions of this Agreement; and</p></li>
+<li><p>its license agreement:</p></li>
+</ol>
+<ol class="lowerroman simple">
+<li><p>effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;</p></li>
+<li><p>effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;</p></li>
+<li><p>states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party; and</p></li>
+<li><p>states that source code for the Program is available from such Contributor, and informs licensees how to obtain it in a reasonable manner on or through a medium customarily used for software exchange.</p></li>
+</ol>
+<p>When the Program is made available in source code form:</p>
+<ol class="loweralpha simple">
+<li><p>it must be made available under this Agreement; and</p></li>
+<li><p>a copy of this Agreement must be included with each copy of the Program.</p></li>
+</ol>
+<p>Contributors may not remove or alter any copyright notices contained within the Program.</p>
+<p>Each Contributor must identify itself as the originator of its Contribution, if any, in a manner that reasonably allows subsequent Recipients to identify the originator of the Contribution.</p>
+<ol class="arabic simple" start="4">
+<li><p>COMMERCIAL DISTRIBUTION</p></li>
+</ol>
+<p>Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor (“Commercial Contributor”) hereby agrees to defend and indemnify every other Contributor (“Indemnified Contributor”) against any losses, damages and costs (collectively “Losses”) arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must: a) promptly notify the Commercial Contributor in writing of such claim, and b) allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.</p>
+<p>For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Commercial Contributor. If that Commercial Contributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Commercial Contributor’s responsibility alone. Under this section, the Commercial Contributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Commercial Contributor must pay those damages.</p>
+<ol class="arabic simple" start="5">
+<li><p>NO WARRANTY</p></li>
+</ol>
+<p>EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement, including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.</p>
+<ol class="arabic simple" start="6">
+<li><p>DISCLAIMER OF LIABILITY</p></li>
+</ol>
+<p>EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+<ol class="arabic simple" start="7">
+<li><p>GENERAL</p></li>
+</ol>
+<p>If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.</p>
+<p>If Recipient institutes patent litigation against a Contributor with respect to a patent applicable to software (including a cross-claim or counterclaim in a lawsuit), then any patent licenses granted by that Contributor to such Recipient under this Agreement shall terminate as of the date such litigation is filed. In addition, if Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient’s patent(s), then such Recipient’s rights granted under Section 2(b) shall terminate as of the date such litigation is filed.</p>
+<p>All Recipient’s rights under this Agreement shall terminate if it fails to comply with any of the material terms or conditions of this Agreement and does not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If all Recipient’s rights under this Agreement terminate, Recipient agrees to cease use and distribution of the Program as soon as reasonably practicable. However, Recipient’s obligations under this Agreement and any licenses granted by Recipient relating to the Program shall continue and survive.</p>
+<p>Everyone is permitted to copy and distribute copies of this Agreement, but in order to avoid inconsistency the Agreement is copyrighted and may only be modified in the following manner. The Agreement Steward reserves the right to publish new versions (including revisions) of this Agreement from time to time. No one other than the Agreement Steward has the right to modify this Agreement. IBM is the initial Agreement Steward. IBM may assign the responsibility to serve as the Agreement Steward to a suitable separate entity. Each new version of the Agreement will be given a distinguishing version number. The Program (including Contributions) may always be distributed subject to the version of the Agreement under which it was received. In addition, after a new version of the Agreement is published, Contributor may elect to distribute the Program (including its Contributions) under the new version. Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives no rights or licenses to the intellectual property of any Contributor under this Agreement, whether expressly, by implication, estoppel or otherwise. All rights in the Program not expressly granted under this Agreement are reserved.</p>
+<p>This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.</p>
+<p>Special exception for LZMA compression module
+Igor Pavlov and Amir Szekely, the authors of the LZMA compression module for NSIS, expressly permit you to statically or dynamically link your code (or bind by name) to the files from the LZMA compression module for NSIS without subjecting your linked code to the terms of the Common Public license version 1.0. Any modifications or additions to files from the LZMA compression module for NSIS, however, are subject to the terms of the Common Public License version 1.0.</p>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+      &copy; Copyright 2023 University Corporation for Atmospheric Research.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

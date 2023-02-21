@@ -1,0 +1,999 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Basic Renderer Controls &#8212;   3.8.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="icon" href="../_static/vaporVLogo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contours" href="contourRenderer.html" />
+    <link rel="prev" title="The Renderers" href="renderers.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <img src="../_static/../_static/vaporLogoBlack.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">  3.8.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../downloads.html">
+   Downloads
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../announcements/current.html">
+     Current Release
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloads/installationInstructions.html">
+     Installation Instructions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloads/sampleData.html">
+     Sample Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloads/thirdPartyLibraries.html">
+     Third Party Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../dataFormatRequirements.html">
+   Data Format Requirements
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataFormatRequirements/nativelySupportedDataFormats.html">
+     Natively Supported Data Formats
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dataFormatRequirements/dataFormattingInstructions.html">
+     Data Formatting Instructions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../dataFormatRequirements/netCDF/nonCompliantNetCDF.html">
+       Non CF-Compliant NetCDF
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/netCDF/cfRequirements.html">
+         NetCDF-CF Requirements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/netCDF/examples/index.html">
+         Examples
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../dataFormatRequirements/rawData.html">
+       Raw Binary Data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/brickOfValues.html">
+         Brick of Values (BOV)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/rawToVDC.html">
+         Converting raw binary data into VDC
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dataFormatRequirements/dataCollectionParticles.html">
+       Data Collection Particles (DCP)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dataFormatRequirements/vdc.html">
+     Big Data with VDC
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dataFormatRequirements/vdcConversionCommands.html">
+       VDC Conversion Commands
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataFormatRequirements/notesOnDifferentFormats.html">
+     Notes on Different Formats
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../vaporApplicationReference.html">
+   VAPOR Application Reference
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="quickStartGuide.html">
+     Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="renderers.html">
+     The Renderers
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Basic Renderer Controls
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="contourRenderer.html">
+       Contours
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="twoDData.html">
+       2D Data
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="imageRenderer/index.html">
+       Image Renderer
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="imageRenderer/makeGeotiff.html">
+         makeGeotiff.py
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="volumeRenderer.html">
+       Volume Renderer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="isosurfaceRenderer.html">
+       Isosurfaces
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="flowRenderer.html">
+       Flow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="sliceRenderer.html">
+       Slices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="barbRenderer.html">
+       Barbs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="wireFrameRenderer.html">
+       Wire Frames
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="modelRenderer.html">
+       3D Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="particleRenderer.html">
+       Particle Renderer
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="navigationSettings.html">
+     Navigation Settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="globalSettings.html">
+     Global Settings
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="otherTools.html">
+     Other Tools
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="otherTools/pythonEngine.html">
+       Python Engine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="otherTools/2dPlots.html">
+       2D Plots
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="otherTools/statistics.html">
+       Statistics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="otherTools/vaporWrfModule.html">
+       The vapor_wrf module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="otherTools/vaporUtilsModule.html">
+       The vapor_utils module
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../pythonAPIReference.html">
+   Python API Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pythonAPIReference/downloadAndInstallation.html">
+     Download and Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pythonAPIReference/examples.html">
+     Examples
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../pythonAPIReference/classReference.html">
+     Class Reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../pythonAPIReference/userModules/vapor.html">
+       User Modules
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.animation.html">
+         vapor.animation module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.annotations.html">
+         vapor.annotations module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.camera.html">
+         vapor.camera module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.dataset.html">
+         vapor.dataset module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.renderer.html">
+         vapor.renderer module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.session.html">
+         vapor.session module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.transferfunction.html">
+         vapor.transferfunction module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.transform.html">
+         vapor.transform module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.utils.html">
+         vapor.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../pythonAPIReference/devModules/vapor.html">
+       Developer Modules
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.cmake.html">
+         vapor.cmake module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.common.html">
+         vapor.common module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.config.html">
+         vapor.config module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.cppyyDoxygenWrapper.html">
+         vapor.cppyyDoxygenWrapper module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.link.html">
+         vapor.link module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.params.html">
+         vapor.params module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.smartwrapper.html">
+         vapor.smartwrapper module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.utils.html">
+         vapor.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.youtube.com/channel/UCpf-d1GDO1sotzjJ2t_QkDw">
+   YouTube Channel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://vapor.discourse.group">
+   Get Help on Our Forum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../contributing.html">
+   Contributing to Vapor
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../createDataReader.html">
+     Creating a Data Reader
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../createRenderer.html">
+     Creating a Renderer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../citationAndLicense.html">
+   Citation and License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/NCAR/VAPOR"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NCAR/VAPOR/issues/new?title=Issue%20on%20page%20%2FvaporApplicationReference/basicRendererControls.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NCAR/VAPOR/edit/main/doc/vaporApplicationReference/basicRendererControls.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/vaporApplicationReference/basicRendererControls.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-tab">
+   Variables Tab
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appearance-tab">
+   Appearance Tab
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#controlling-color">
+     Controlling Color
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#controlling-opacity">
+     Controlling Opacity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometry-tab">
+   Geometry Tab
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annotation-tab">
+   Annotation Tab
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basic Renderer Controls</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-tab">
+   Variables Tab
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appearance-tab">
+   Appearance Tab
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#controlling-color">
+     Controlling Color
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#controlling-opacity">
+     Controlling Opacity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometry-tab">
+   Geometry Tab
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annotation-tab">
+   Annotation Tab
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="basic-renderer-controls">
+<span id="basicrenderercontrols"></span><h1>Basic Renderer Controls<a class="headerlink" href="#basic-renderer-controls" title="Permalink to this heading">#</a></h1>
+<p>Each of Vapor’s renderers has a common set of controls that will create imagery of your variables according to color, opacity, and region of interest.</p>
+<p>While each renderer is unique, controlling their parameters is mostly the same.  All renderers are controlled by four tabs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#variablestab"><span class="std std-ref">Variables</span></a></p></li>
+<li><p><a class="reference internal" href="#appearancetab"><span class="std std-ref">Appearance</span></a></p></li>
+<li><p><a class="reference internal" href="#geometrytab"><span class="std std-ref">Geometry</span></a></p></li>
+<li><p><a class="reference internal" href="#annotationtab"><span class="std std-ref">Annotation</span></a></p></li>
+</ul>
+</div></blockquote>
+<p>See the <a class="reference internal" href="renderers.html#renderers"><span class="std std-ref">Renderers</span></a> section for more information on how each of these tabs work for a given renderer.  Again, they all operate in the same way for the most part.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/variablesTab.png"><img alt="../_images/variablesTab.png" src="../_images/variablesTab.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Variables tab for the Slice renderer</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="variables-tab">
+<span id="variablestab"></span><h2>Variables Tab<a class="headerlink" href="#variables-tab" title="Permalink to this heading">#</a></h2>
+<p>The Variables Tab allows the user to define what variables are used as input to a renderer.  The options presented to the user in this tab depend on the renderer currently being used.</p>
+<p>Users that have converted their data into <a class="reference internal" href="../dataFormatRequirements/vdc.html#vdc"><span class="std std-ref">VDC</span></a> will have a fidelity controller, which allows them to view compressed data to speed up their rendering time.  Making a visualization interactive lets you change parameters faster, so you can crank up the fidelity of your data for a final visualization after exploring first.</p>
+</section>
+<section id="appearance-tab">
+<span id="appearancetab"></span><h2>Appearance Tab<a class="headerlink" href="#appearance-tab" title="Permalink to this heading">#</a></h2>
+<p>The appearance tab controls the color, opacity, and any renderer-specific parameters of your renderer.  Color and opacity are controlled by the Transfer Function.  Renderer-specific parameters will be grouped together within the Appearance Tab.  See the <a class="reference internal" href="renderers.html#renderers"><span class="std std-ref">Renderers</span></a> section for more info on renderer-specific parameters.</p>
+<p>The Transfer Function consists of a <a class="reference external" href="https://en.wikipedia.org/wiki/Probability_density_function">Probability Density Function (PDF)</a> of your currently selected variable.  Underneath the PDF is a color bar that shows the colors that get applied to the values located directly above it.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/transferFunctionDocumentation.png" src="../_images/transferFunctionDocumentation.png" />
+<figcaption>
+<p><span class="caption-text">Vapor 3’s Transfer Function editor</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In the figure above, we can see that our transfer function is operating on the variable P.  The range of values within the transfer function are -1314.76 to 1268.32.  All values of P less than 1314.76 are colored deep blue.  The coloration transitions into red at the high end of the PDF, until becoming saturated at values of 1268.32 and higher.</p>
+<p>Below the histogram is a button to update the histogram, which is calculated only when the user requests it to save on compute time.  Options to change the color interpolation type are also available.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/TFOptions.png"><img alt="../_images/TFOptions.png" src="../_images/TFOptions.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Additional options for the Transfer Function</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="controlling-color">
+<span id="controllingcolor"></span><h3>Controlling Color<a class="headerlink" href="#controlling-color" title="Permalink to this heading">#</a></h3>
+<p>Vapor’s default color map is called CoolWarm.  This is arbitrary, and may not suit your needs.  Vapor bundles several other color maps that can be found by pressing the “Load TF” button at the top of the Appearance tab.</p>
+<p>The colors in the color map be moved by creating a color-control-point, and dragging it.  To create a new color-control-point, right click on the Colorbar, and then click “New Color Control Point.”  The color at this control point may now be dragged to suit your needs.</p>
+<figure class="align-center" id="id4">
+<img alt="../_images/colorControlPoint.gif" src="../_images/colorControlPoint.gif" />
+<figcaption>
+<p><span class="caption-text">Adding and moving color control points in the Colorbar</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>These control points may also be given direct color values by either double clicking them, or right-clicking and selecting “Edit color control point”.  After a color has been changed, Vapor will interpolate between control points to give a smooth color transition.</p>
+</section>
+<section id="controlling-opacity">
+<h3>Controlling Opacity<a class="headerlink" href="#controlling-opacity" title="Permalink to this heading">#</a></h3>
+<p>Opacity is controlled by the green line on top of the PDF.  The higher this green line is on the PDF’s Y axis, the more opaque the colors will be at that point.  For example, the green bar is set to Y=0 over the blue values in the image below.  All of these values will be masked out.  The green bar then ramps up, and the values become more opaque, until we reach full opacity in the red region.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/opacityMap.png"><img alt="../_images/opacityMap.png" src="../_images/opacityMap.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Blue values are hiden completely.  White values ramp up from transparent to opaque, and red values are fully opaque.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="geometry-tab">
+<span id="geometrytab"></span><h2>Geometry Tab<a class="headerlink" href="#geometry-tab" title="Permalink to this heading">#</a></h2>
+<p>The Geometry tab controls where your renderer is drawing, within the space of your simulation.  By excluding regions of data from being drawn, occluded features may be seen more clearly. Compute time will also be reduced, as well as the memory needed for a given renderer.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/geometryWidget.png"><img alt="../_images/geometryWidget.png" src="../_images/geometryWidget.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Coordinate selector in the Geometry Tab</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you have a region of interest in another renderer, that region can be copied in the Geometry tab.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/copyRegionWidget.png"><img alt="../_images/copyRegionWidget.png" src="../_images/copyRegionWidget.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Copy geometry from one renderer to another</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Users can apply transforms to scale, translate, and rotate their renderers on X, Y, or Z.  The origin used for these transforms may also be adjusted.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/transformTable.png"><img alt="../_images/transformTable.png" src="../_images/transformTable.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Transformation options within the Geometry widget</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p id="regionmousemode">Users may also control the geometry of their renderer by using the <cite>Region Mouse Mode</cite>, located at the top left corner of the application.  This will enable a red box with handlebars that can be right-clicked to grow or shrink the region being rendered on any axis.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/selectRegionMouseMode.png"><img alt="../_images/selectRegionMouseMode.png" src="../_images/selectRegionMouseMode.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text">Select the Region Mouse Mode for interactive geometry adjustment</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="../_images/regionMouseMode.png"><img alt="../_images/regionMouseMode.png" src="../_images/regionMouseMode.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Interactive geometry controls alongside a Barb renderer, after activating the Region Mouse Mode</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="annotation-tab">
+<span id="annotationtab"></span><h2>Annotation Tab<a class="headerlink" href="#annotation-tab" title="Permalink to this heading">#</a></h2>
+<p>Quantifying the colors to your viewers can be done by adding a colorbar in the Annotation tab.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/colorbarTab.png"><img alt="../_images/colorbarTab.png" src="../_images/colorbarTab.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Colorbar size and position controlls, located in the Annotation tab</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id12">
+<img alt="../_images/colorbar.png" src="../_images/colorbar.png" />
+<figcaption>
+<p><span class="caption-text">An exmaple colorbar</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="renderers.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The Renderers</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="contourRenderer.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contours</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+      &copy; Copyright 2023 University Corporation for Atmospheric Research.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

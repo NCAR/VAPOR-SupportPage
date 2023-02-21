@@ -1,0 +1,796 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Boost License &#8212;   3.8.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="icon" href="../_static/vaporVLogo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <img src="../_static/../_static/vaporLogoBlack.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">  3.8.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../downloads.html">
+   Downloads
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../announcements/current.html">
+     Current Release
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloads/installationInstructions.html">
+     Installation Instructions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloads/sampleData.html">
+     Sample Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloads/thirdPartyLibraries.html">
+     Third Party Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../dataFormatRequirements.html">
+   Data Format Requirements
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataFormatRequirements/nativelySupportedDataFormats.html">
+     Natively Supported Data Formats
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dataFormatRequirements/dataFormattingInstructions.html">
+     Data Formatting Instructions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../dataFormatRequirements/netCDF/nonCompliantNetCDF.html">
+       Non CF-Compliant NetCDF
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/netCDF/cfRequirements.html">
+         NetCDF-CF Requirements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/netCDF/examples/index.html">
+         Examples
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../dataFormatRequirements/rawData.html">
+       Raw Binary Data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/brickOfValues.html">
+         Brick of Values (BOV)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../dataFormatRequirements/rawToVDC.html">
+         Converting raw binary data into VDC
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dataFormatRequirements/dataCollectionParticles.html">
+       Data Collection Particles (DCP)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../dataFormatRequirements/vdc.html">
+     Big Data with VDC
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dataFormatRequirements/vdcConversionCommands.html">
+       VDC Conversion Commands
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataFormatRequirements/notesOnDifferentFormats.html">
+     Notes on Different Formats
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../vaporApplicationReference.html">
+   VAPOR Application Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vaporApplicationReference/quickStartGuide.html">
+     Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../vaporApplicationReference/renderers.html">
+     The Renderers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/basicRendererControls.html">
+       Basic Renderer Controls
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/contourRenderer.html">
+       Contours
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/twoDData.html">
+       2D Data
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../vaporApplicationReference/imageRenderer/index.html">
+       Image Renderer
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vaporApplicationReference/imageRenderer/makeGeotiff.html">
+         makeGeotiff.py
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/volumeRenderer.html">
+       Volume Renderer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/isosurfaceRenderer.html">
+       Isosurfaces
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/flowRenderer.html">
+       Flow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/sliceRenderer.html">
+       Slices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/barbRenderer.html">
+       Barbs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/wireFrameRenderer.html">
+       Wire Frames
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/modelRenderer.html">
+       3D Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/particleRenderer.html">
+       Particle Renderer
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vaporApplicationReference/navigationSettings.html">
+     Navigation Settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../vaporApplicationReference/globalSettings.html">
+     Global Settings
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../vaporApplicationReference/otherTools.html">
+     Other Tools
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/otherTools/pythonEngine.html">
+       Python Engine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/otherTools/2dPlots.html">
+       2D Plots
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/otherTools/statistics.html">
+       Statistics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/otherTools/vaporWrfModule.html">
+       The vapor_wrf module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vaporApplicationReference/otherTools/vaporUtilsModule.html">
+       The vapor_utils module
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../pythonAPIReference.html">
+   Python API Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pythonAPIReference/downloadAndInstallation.html">
+     Download and Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pythonAPIReference/examples.html">
+     Examples
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../pythonAPIReference/classReference.html">
+     Class Reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../pythonAPIReference/userModules/vapor.html">
+       User Modules
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.animation.html">
+         vapor.animation module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.annotations.html">
+         vapor.annotations module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.camera.html">
+         vapor.camera module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.dataset.html">
+         vapor.dataset module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.renderer.html">
+         vapor.renderer module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.session.html">
+         vapor.session module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.transferfunction.html">
+         vapor.transferfunction module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.transform.html">
+         vapor.transform module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/userModules/vapor.utils.html">
+         vapor.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../pythonAPIReference/devModules/vapor.html">
+       Developer Modules
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.cmake.html">
+         vapor.cmake module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.common.html">
+         vapor.common module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.config.html">
+         vapor.config module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.cppyyDoxygenWrapper.html">
+         vapor.cppyyDoxygenWrapper module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.link.html">
+         vapor.link module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.params.html">
+         vapor.params module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.smartwrapper.html">
+         vapor.smartwrapper module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../pythonAPIReference/devModules/vapor.utils.html">
+         vapor.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.youtube.com/channel/UCpf-d1GDO1sotzjJ2t_QkDw">
+   YouTube Channel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://vapor.discourse.group">
+   Get Help on Our Forum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../contributing.html">
+   Contributing to Vapor
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../createDataReader.html">
+     Creating a Data Reader
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../createRenderer.html">
+     Creating a Renderer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../citationAndLicense.html">
+   Citation and License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/NCAR/VAPOR"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NCAR/VAPOR/issues/new?title=Issue%20on%20page%20%2Flicenses/boostLicense.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NCAR/VAPOR/edit/main/doc/licenses/boostLicense.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/licenses/boostLicense.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Boost License</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="boost-license">
+<h1>Boost License<a class="headerlink" href="#boost-license" title="Permalink to this heading">#</a></h1>
+<p>Boost Software License - Version 1.0 - August 17th, 2003</p>
+<p>Permission is hereby granted, free of charge, to any person or organization
+obtaining a copy of the software and accompanying documentation covered by
+this license (the “Software”) to use, reproduce, display, distribute,
+execute, and transmit the Software, and to prepare derivative works of the
+Software, and to permit third-parties to whom the Software is furnished to
+do so, all subject to the following:</p>
+<p>The copyright notices in the Software and this entire statement, including
+the above license grant, this restriction and the following disclaimer,
+must be included in all copies of the Software, in whole or in part, and
+all derivative works of the Software, unless such copies or derivative
+works are solely in the form of machine-executable object code generated by
+a source language processor.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+      &copy; Copyright 2023 University Corporation for Atmospheric Research.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,3137 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>vapor.annotations module &#8212;   3.8.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="icon" href="../../_static/vaporVLogo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="vapor.camera module" href="vapor.camera.html" />
+    <link rel="prev" title="vapor.animation module" href="vapor.animation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <img src="../../_static/../../_static/vaporLogoBlack.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">  3.8.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../downloads.html">
+   Downloads
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../announcements/current.html">
+     Current Release
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../downloads/installationInstructions.html">
+     Installation Instructions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../downloads/sampleData.html">
+     Sample Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../downloads/thirdPartyLibraries.html">
+     Third Party Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../dataFormatRequirements.html">
+   Data Format Requirements
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../dataFormatRequirements/nativelySupportedDataFormats.html">
+     Natively Supported Data Formats
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../dataFormatRequirements/dataFormattingInstructions.html">
+     Data Formatting Instructions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../dataFormatRequirements/netCDF/nonCompliantNetCDF.html">
+       Non CF-Compliant NetCDF
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../dataFormatRequirements/netCDF/cfRequirements.html">
+         NetCDF-CF Requirements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../dataFormatRequirements/netCDF/examples/index.html">
+         Examples
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../dataFormatRequirements/rawData.html">
+       Raw Binary Data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../dataFormatRequirements/brickOfValues.html">
+         Brick of Values (BOV)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../dataFormatRequirements/rawToVDC.html">
+         Converting raw binary data into VDC
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../dataFormatRequirements/dataCollectionParticles.html">
+       Data Collection Particles (DCP)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../dataFormatRequirements/vdc.html">
+     Big Data with VDC
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../dataFormatRequirements/vdcConversionCommands.html">
+       VDC Conversion Commands
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../dataFormatRequirements/notesOnDifferentFormats.html">
+     Notes on Different Formats
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../vaporApplicationReference.html">
+   VAPOR Application Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../vaporApplicationReference/quickStartGuide.html">
+     Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../vaporApplicationReference/renderers.html">
+     The Renderers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/basicRendererControls.html">
+       Basic Renderer Controls
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/contourRenderer.html">
+       Contours
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/twoDData.html">
+       2D Data
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../vaporApplicationReference/imageRenderer/index.html">
+       Image Renderer
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../vaporApplicationReference/imageRenderer/makeGeotiff.html">
+         makeGeotiff.py
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/volumeRenderer.html">
+       Volume Renderer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/isosurfaceRenderer.html">
+       Isosurfaces
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/flowRenderer.html">
+       Flow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/sliceRenderer.html">
+       Slices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/barbRenderer.html">
+       Barbs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/wireFrameRenderer.html">
+       Wire Frames
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/modelRenderer.html">
+       3D Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/particleRenderer.html">
+       Particle Renderer
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../vaporApplicationReference/navigationSettings.html">
+     Navigation Settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../vaporApplicationReference/globalSettings.html">
+     Global Settings
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../vaporApplicationReference/otherTools.html">
+     Other Tools
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/otherTools/pythonEngine.html">
+       Python Engine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/otherTools/2dPlots.html">
+       2D Plots
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/otherTools/statistics.html">
+       Statistics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/otherTools/vaporWrfModule.html">
+       The vapor_wrf module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vaporApplicationReference/otherTools/vaporUtilsModule.html">
+       The vapor_utils module
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pythonAPIReference.html">
+   Python API Reference
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../downloadAndInstallation.html">
+     Download and Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples.html">
+     Examples
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../classReference.html">
+     Class Reference
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="vapor.html">
+       User Modules
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.animation.html">
+         vapor.animation module
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         vapor.annotations module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.camera.html">
+         vapor.camera module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.dataset.html">
+         vapor.dataset module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.renderer.html">
+         vapor.renderer module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.session.html">
+         vapor.session module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.transferfunction.html">
+         vapor.transferfunction module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.transform.html">
+         vapor.transform module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vapor.utils.html">
+         vapor.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../devModules/vapor.html">
+       Developer Modules
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.cmake.html">
+         vapor.cmake module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.common.html">
+         vapor.common module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.config.html">
+         vapor.config module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.cppyyDoxygenWrapper.html">
+         vapor.cppyyDoxygenWrapper module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.link.html">
+         vapor.link module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.params.html">
+         vapor.params module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.smartwrapper.html">
+         vapor.smartwrapper module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../devModules/vapor.utils.html">
+         vapor.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.youtube.com/channel/UCpf-d1GDO1sotzjJ2t_QkDw">
+   YouTube Channel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://vapor.discourse.group">
+   Get Help on Our Forum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../contributing.html">
+   Contributing to Vapor
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../createDataReader.html">
+     Creating a Data Reader
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../createRenderer.html">
+     Creating a Renderer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../citationAndLicense.html">
+   Citation and License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/NCAR/VAPOR"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NCAR/VAPOR/issues/new?title=Issue%20on%20page%20%2FpythonAPIReference/userModules/vapor.annotations.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NCAR/VAPOR/edit/main/doc/pythonAPIReference/userModules/vapor.annotations.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/pythonAPIReference/userModules/vapor.annotations.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     AxisAnnotation
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisAnnotationEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisAnnotationEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisDigits">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisDigits
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisOrigin">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisOrigin
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisTextHeight">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisTextHeight
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetLatLonAxesEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetLatLonAxesEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetMaxTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetMaxTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetMinTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetMinTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetNumTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetNumTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetShowAxisArrows">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetShowAxisArrows
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetTicDirs">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetTicDirs
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetTicSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetTicSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetTicWidth">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetTicWidth
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetXTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetXTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetYTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetYTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetZTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetZTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisAnnotationEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisAnnotationEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisDigits">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisDigits
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisOrigin">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisOrigin
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisTextHeight">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisTextHeight
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetLatLonAxesEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetLatLonAxesEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetMaxTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetMaxTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetMinTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetMinTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetNumTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetNumTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetShowAxisArrows">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetShowAxisArrows
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetTicDirs">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetTicDirs
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetTicSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetTicSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetTicWidth">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetTicWidth
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetXTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetXTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetYTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetYTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetZTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetZTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ColorbarAnnotation
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetCornerPosition">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetCornerPosition
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetNumDigits">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetNumDigits
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetNumTicks">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetNumTicks
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetTitle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetTitle
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetUseScientificNotation">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetUseScientificNotation()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.IsEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.IsEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetCornerPosition">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetCornerPosition
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetNumDigits">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetNumDigits
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetNumTicks">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetNumTicks
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetTitle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetTitle
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetUseScientificNotation">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetUseScientificNotation()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SceneAnnotation
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetAxisArrowEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetAxisArrowEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetAxisArrowSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetAxisArrowSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetAxisArrowXPos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetAxisArrowXPos
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetAxisArrowYPos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetAxisArrowYPos
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetAxisFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetAxisFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetCurrentAxisDataMgrName">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetCurrentAxisDataMgrName
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetDomainColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetDomainColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetRegionColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetRegionColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetTimeLLX">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetTimeLLX
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetTimeLLY">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetTimeLLY
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetTimeSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetTimeSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetTimeType">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetTimeType
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetUseDomainFrame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetUseDomainFrame
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetUseRegionFrame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetUseRegionFrame
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetAxisArrowEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetAxisArrowEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetAxisArrowSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetAxisArrowSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetAxisArrowXPos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetAxisArrowXPos
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetAxisArrowYPos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetAxisArrowYPos
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetAxisFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetAxisFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetCurrentAxisDataMgrName">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetCurrentAxisDataMgrName
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetDomainColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetDomainColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetTimeColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetTimeColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetTimeLLX">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetTimeLLX
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetTimeLLY">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetTimeLLY
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetTimeSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetTimeSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetTimeType">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetTimeType
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetUseDomainFrame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetUseDomainFrame
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetUseRegionFrame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetUseRegionFrame
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.TimeAnnotationType
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.Formatted">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SceneAnnotation.TimeAnnotationType.Formatted
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.NoAnnotation">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SceneAnnotation.TimeAnnotationType.NoAnnotation
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.Timestep">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SceneAnnotation.TimeAnnotationType.Timestep
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.User">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SceneAnnotation.TimeAnnotationType.User
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.f">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.f
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>vapor.annotations module</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     AxisAnnotation
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisAnnotationEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisAnnotationEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisDigits">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisDigits
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisOrigin">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisOrigin
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetAxisTextHeight">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetAxisTextHeight
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetLatLonAxesEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetLatLonAxesEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetMaxTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetMaxTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetMinTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetMinTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetNumTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetNumTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetShowAxisArrows">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetShowAxisArrows
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetTicDirs">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetTicDirs
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetTicSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetTicSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetTicWidth">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetTicWidth
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetXTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetXTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetYTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetYTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.GetZTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.GetZTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisAnnotationEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisAnnotationEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisDigits">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisDigits
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisOrigin">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisOrigin
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetAxisTextHeight">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetAxisTextHeight
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetLatLonAxesEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetLatLonAxesEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetMaxTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetMaxTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetMinTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetMinTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetNumTics">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetNumTics
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetShowAxisArrows">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetShowAxisArrows
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetTicDirs">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetTicDirs
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetTicSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetTicSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetTicWidth">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetTicWidth
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetXTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetXTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetYTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetYTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.AxisAnnotation.SetZTicDir">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       AxisAnnotation.SetZTicDir
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ColorbarAnnotation
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetCornerPosition">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetCornerPosition
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetNumDigits">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetNumDigits
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetNumTicks">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetNumTicks
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetTitle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetTitle
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.GetUseScientificNotation">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.GetUseScientificNotation()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.IsEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.IsEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetCornerPosition">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetCornerPosition
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetNumDigits">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetNumDigits
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetNumTicks">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetNumTicks
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetTitle">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetTitle
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.ColorbarAnnotation.SetUseScientificNotation">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ColorbarAnnotation.SetUseScientificNotation()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SceneAnnotation
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetAxisArrowEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetAxisArrowEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetAxisArrowSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetAxisArrowSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetAxisArrowXPos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetAxisArrowXPos
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetAxisArrowYPos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetAxisArrowYPos
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetAxisFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetAxisFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetCurrentAxisDataMgrName">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetCurrentAxisDataMgrName
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetDomainColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetDomainColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetRegionColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetRegionColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetTimeLLX">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetTimeLLX
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetTimeLLY">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetTimeLLY
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetTimeSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetTimeSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetTimeType">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetTimeType
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetUseDomainFrame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetUseDomainFrame
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.GetUseRegionFrame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.GetUseRegionFrame
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetAxisArrowEnabled">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetAxisArrowEnabled
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetAxisArrowSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetAxisArrowSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetAxisArrowXPos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetAxisArrowXPos
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetAxisArrowYPos">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetAxisArrowYPos
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetAxisFontSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetAxisFontSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetBackgroundColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetBackgroundColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetCurrentAxisDataMgrName">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetCurrentAxisDataMgrName
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetDomainColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetDomainColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetTimeColor">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetTimeColor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetTimeLLX">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetTimeLLX
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetTimeLLY">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetTimeLLY
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetTimeSize">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetTimeSize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetTimeType">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetTimeType
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetUseDomainFrame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetUseDomainFrame
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.SetUseRegionFrame">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.SetUseRegionFrame
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.TimeAnnotationType
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.Formatted">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SceneAnnotation.TimeAnnotationType.Formatted
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.NoAnnotation">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SceneAnnotation.TimeAnnotationType.NoAnnotation
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.Timestep">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SceneAnnotation.TimeAnnotationType.Timestep
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.User">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SceneAnnotation.TimeAnnotationType.User
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vapor.annotations.SceneAnnotation.f">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SceneAnnotation.f
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="module-vapor.annotations">
+<span id="vapor-annotations-module"></span><h1>vapor.annotations module<a class="headerlink" href="#module-vapor.annotations" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vapor.annotations.</span></span><span class="sig-name descname"><span class="pre">AxisAnnotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ParamsBase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vapor.annotations.AxisAnnotation" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../devModules/vapor.params.html#vapor.params.ParamsWrapper" title="vapor.params.ParamsWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParamsWrapper</span></code></a></p>
+<p>Wraps VAPoR::AxisAnnotation
+class that indicates location and direction of view</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetAxisAnnotationEnabled">
+<span class="sig-name descname"><span class="pre">GetAxisAnnotationEnabled</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetAxisAnnotationEnabled" title="Permalink to this definition">#</a></dt>
+<dd><p>bool VAPoR::AxisAnnotation::GetAxisAnnotationEnabled()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetAxisBackgroundColor">
+<span class="sig-name descname"><span class="pre">GetAxisBackgroundColor</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetAxisBackgroundColor" title="Permalink to this definition">#</a></dt>
+<dd><p>vector&lt;double&gt; VAPoR::AxisAnnotation::GetAxisBackgroundColor()</p>
+<p>void VAPoR::AxisAnnotation::GetAxisBackgroundColor(float bgColor[])</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetAxisColor">
+<span class="sig-name descname"><span class="pre">GetAxisColor</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetAxisColor" title="Permalink to this definition">#</a></dt>
+<dd><p>vector&lt;double&gt; VAPoR::AxisAnnotation::GetAxisColor()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetAxisDigits">
+<span class="sig-name descname"><span class="pre">GetAxisDigits</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetAxisDigits" title="Permalink to this definition">#</a></dt>
+<dd><p>long VAPoR::AxisAnnotation::GetAxisDigits()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetAxisFontSize">
+<span class="sig-name descname"><span class="pre">GetAxisFontSize</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetAxisFontSize" title="Permalink to this definition">#</a></dt>
+<dd><p>int VAPoR::AxisAnnotation::GetAxisFontSize()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetAxisOrigin">
+<span class="sig-name descname"><span class="pre">GetAxisOrigin</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetAxisOrigin" title="Permalink to this definition">#</a></dt>
+<dd><p>vector&lt;double&gt; VAPoR::AxisAnnotation::GetAxisOrigin()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetAxisTextHeight">
+<span class="sig-name descname"><span class="pre">GetAxisTextHeight</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetAxisTextHeight" title="Permalink to this definition">#</a></dt>
+<dd><p>long VAPoR::AxisAnnotation::GetAxisTextHeight()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetLatLonAxesEnabled">
+<span class="sig-name descname"><span class="pre">GetLatLonAxesEnabled</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetLatLonAxesEnabled" title="Permalink to this definition">#</a></dt>
+<dd><p>bool VAPoR::AxisAnnotation::GetLatLonAxesEnabled()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetMaxTics">
+<span class="sig-name descname"><span class="pre">GetMaxTics</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetMaxTics" title="Permalink to this definition">#</a></dt>
+<dd><p>vector&lt;double&gt; VAPoR::AxisAnnotation::GetMaxTics()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetMinTics">
+<span class="sig-name descname"><span class="pre">GetMinTics</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetMinTics" title="Permalink to this definition">#</a></dt>
+<dd><p>vector&lt;double&gt; VAPoR::AxisAnnotation::GetMinTics()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetNumTics">
+<span class="sig-name descname"><span class="pre">GetNumTics</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetNumTics" title="Permalink to this definition">#</a></dt>
+<dd><p>vector&lt;double&gt; VAPoR::AxisAnnotation::GetNumTics()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetShowAxisArrows">
+<span class="sig-name descname"><span class="pre">GetShowAxisArrows</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetShowAxisArrows" title="Permalink to this definition">#</a></dt>
+<dd><p>bool VAPoR::AxisAnnotation::GetShowAxisArrows()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetTicDirs">
+<span class="sig-name descname"><span class="pre">GetTicDirs</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetTicDirs" title="Permalink to this definition">#</a></dt>
+<dd><p>vector&lt;double&gt; VAPoR::AxisAnnotation::GetTicDirs()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetTicSize">
+<span class="sig-name descname"><span class="pre">GetTicSize</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetTicSize" title="Permalink to this definition">#</a></dt>
+<dd><p>vector&lt;double&gt; VAPoR::AxisAnnotation::GetTicSize()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetTicWidth">
+<span class="sig-name descname"><span class="pre">GetTicWidth</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetTicWidth" title="Permalink to this definition">#</a></dt>
+<dd><p>double VAPoR::AxisAnnotation::GetTicWidth()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetXTicDir">
+<span class="sig-name descname"><span class="pre">GetXTicDir</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetXTicDir" title="Permalink to this definition">#</a></dt>
+<dd><p>int VAPoR::AxisAnnotation::GetXTicDir()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetYTicDir">
+<span class="sig-name descname"><span class="pre">GetYTicDir</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetYTicDir" title="Permalink to this definition">#</a></dt>
+<dd><p>int VAPoR::AxisAnnotation::GetYTicDir()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.GetZTicDir">
+<span class="sig-name descname"><span class="pre">GetZTicDir</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.GetZTicDir" title="Permalink to this definition">#</a></dt>
+<dd><p>int VAPoR::AxisAnnotation::GetZTicDir()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetAxisAnnotationEnabled">
+<span class="sig-name descname"><span class="pre">SetAxisAnnotationEnabled</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetAxisAnnotationEnabled" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetAxisAnnotationEnabled(bool val)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetAxisBackgroundColor">
+<span class="sig-name descname"><span class="pre">SetAxisBackgroundColor</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetAxisBackgroundColor" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetAxisBackgroundColor(vector&lt; double &gt; color)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetAxisColor">
+<span class="sig-name descname"><span class="pre">SetAxisColor</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetAxisColor" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetAxisColor(vector&lt; double &gt; color)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetAxisDigits">
+<span class="sig-name descname"><span class="pre">SetAxisDigits</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetAxisDigits" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetAxisDigits(long val)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetAxisFontSize">
+<span class="sig-name descname"><span class="pre">SetAxisFontSize</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetAxisFontSize" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetAxisFontSize(int size)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetAxisOrigin">
+<span class="sig-name descname"><span class="pre">SetAxisOrigin</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetAxisOrigin" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetAxisOrigin(vector&lt; double &gt; orig)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetAxisTextHeight">
+<span class="sig-name descname"><span class="pre">SetAxisTextHeight</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetAxisTextHeight" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetAxisTextHeight(long val)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetLatLonAxesEnabled">
+<span class="sig-name descname"><span class="pre">SetLatLonAxesEnabled</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetLatLonAxesEnabled" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetLatLonAxesEnabled(bool val)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetMaxTics">
+<span class="sig-name descname"><span class="pre">SetMaxTics</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetMaxTics" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetMaxTics(vector&lt; double &gt; ticmaxs)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetMinTics">
+<span class="sig-name descname"><span class="pre">SetMinTics</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetMinTics" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetMinTics(vector&lt; double &gt; ticmins)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetNumTics">
+<span class="sig-name descname"><span class="pre">SetNumTics</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetNumTics" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetNumTics(vector&lt; double &gt; ticnums)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetShowAxisArrows">
+<span class="sig-name descname"><span class="pre">SetShowAxisArrows</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetShowAxisArrows" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetShowAxisArrows(bool val)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetTicDirs">
+<span class="sig-name descname"><span class="pre">SetTicDirs</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetTicDirs" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetTicDirs(vector&lt; double &gt; ticdirs)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetTicSize">
+<span class="sig-name descname"><span class="pre">SetTicSize</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetTicSize" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetTicSize(vector&lt; double &gt; ticsizes)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetTicWidth">
+<span class="sig-name descname"><span class="pre">SetTicWidth</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetTicWidth" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetTicWidth(double val)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetXTicDir">
+<span class="sig-name descname"><span class="pre">SetXTicDir</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetXTicDir" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetXTicDir(double dir)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetYTicDir">
+<span class="sig-name descname"><span class="pre">SetYTicDir</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetYTicDir" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetYTicDir(double dir)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.AxisAnnotation.SetZTicDir">
+<span class="sig-name descname"><span class="pre">SetZTicDir</span></span><a class="headerlink" href="#vapor.annotations.AxisAnnotation.SetZTicDir" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AxisAnnotation::SetZTicDir(double dir)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vapor.annotations.</span></span><span class="sig-name descname"><span class="pre">ColorbarAnnotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ParamsBase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../devModules/vapor.params.html#vapor.params.ParamsWrapper" title="vapor.params.ParamsWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParamsWrapper</span></code></a></p>
+<p>Wraps VAPoR::ColorbarPbase
+Settings for color bar displayed in scene Intended to be used in any Params class.
+The ColorbarPbase class is a ParamsBase class that manages the settings associated with a color bar. There is a corresponding ColorbarFrame class in the GUI that manages display of these settings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.GetBackgroundColor">
+<span class="sig-name descname"><span class="pre">GetBackgroundColor</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.GetBackgroundColor" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>vector&lt;double&gt; VAPoR::ColorbarPbase::GetBackgroundColor()</dt><dd><p>Get the background color as an rgb triple</p>
+</dd>
+<dt>Returns</dt><dd><p>rgb color</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.GetCornerPosition">
+<span class="sig-name descname"><span class="pre">GetCornerPosition</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.GetCornerPosition" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>vector&lt;double&gt; VAPoR::ColorbarPbase::GetCornerPosition()</dt><dd><p>Get the X,Y corner (upper left) coordinates Relative to [0,1]</p>
+</dd>
+<dt>Returns</dt><dd><p>pair of x,y coordinates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.GetFontSize">
+<span class="sig-name descname"><span class="pre">GetFontSize</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.GetFontSize" title="Permalink to this definition">#</a></dt>
+<dd><p>long VAPoR::ColorbarPbase::GetFontSize()
+Determine colorbar text size</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.GetNumDigits">
+<span class="sig-name descname"><span class="pre">GetNumDigits</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.GetNumDigits" title="Permalink to this definition">#</a></dt>
+<dd><p>long VAPoR::ColorbarPbase::GetNumDigits()
+Determine colorbar num digits to display</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.GetNumTicks">
+<span class="sig-name descname"><span class="pre">GetNumTicks</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.GetNumTicks" title="Permalink to this definition">#</a></dt>
+<dd><p>long VAPoR::ColorbarPbase::GetNumTicks()
+Determine colorbar num tics</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.GetSize">
+<span class="sig-name descname"><span class="pre">GetSize</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.GetSize" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>vector&lt;double&gt; VAPoR::ColorbarPbase::GetSize()</dt><dd><p>Get the X,Y size Relative to [0,1]</p>
+</dd>
+<dt>Returns</dt><dd><p>pair of x,y sizes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.GetTitle">
+<span class="sig-name descname"><span class="pre">GetTitle</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.GetTitle" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>string VAPoR::ColorbarPbase::GetTitle()</dt><dd><p>Get the title text (displayed after variable name)</p>
+</dd>
+<dt>Returns</dt><dd><p>title</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.GetUseScientificNotation">
+<span class="sig-name descname"><span class="pre">GetUseScientificNotation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.GetUseScientificNotation" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.IsEnabled">
+<span class="sig-name descname"><span class="pre">IsEnabled</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.IsEnabled" title="Permalink to this definition">#</a></dt>
+<dd><p>bool VAPoR::ColorbarPbase::IsEnabled()
+Determine if colorbar is enabled</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.SetBackgroundColor">
+<span class="sig-name descname"><span class="pre">SetBackgroundColor</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.SetBackgroundColor" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>void VAPoR::ColorbarPbase::SetBackgroundColor(vector&lt; double &gt; color)</dt><dd><p>Set the background color as an rgb triple</p>
+</dd>
+<dt>Parameters</dt><dd><p>color = (r,g,b)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.SetCornerPosition">
+<span class="sig-name descname"><span class="pre">SetCornerPosition</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.SetCornerPosition" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>void VAPoR::ColorbarPbase::SetCornerPosition(vector&lt; double &gt; posn)</dt><dd><p>Set the X,Y corner (upper left) coordinates Relative to [0,1]</p>
+</dd>
+<dt>Parameters</dt><dd><p>posn = x,y coordinates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.SetEnabled">
+<span class="sig-name descname"><span class="pre">SetEnabled</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.SetEnabled" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>void VAPoR::ColorbarPbase::SetEnabled(bool val)</dt><dd><p>Enable or disable colorbar</p>
+</dd>
+<dt>Parameters</dt><dd><p>bool true if enabled</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.SetFontSize">
+<span class="sig-name descname"><span class="pre">SetFontSize</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.SetFontSize" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>void VAPoR::ColorbarPbase::SetFontSize(long val)</dt><dd><p>Set colorbar text size</p>
+</dd>
+<dt>Parameters</dt><dd><p>val text point size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.SetNumDigits">
+<span class="sig-name descname"><span class="pre">SetNumDigits</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.SetNumDigits" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>void VAPoR::ColorbarPbase::SetNumDigits(long val)</dt><dd><p>Set colorbar number of digits</p>
+</dd>
+<dt>Parameters</dt><dd><p>val number of digits</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.SetNumTicks">
+<span class="sig-name descname"><span class="pre">SetNumTicks</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.SetNumTicks" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>void VAPoR::ColorbarPbase::SetNumTicks(long val)</dt><dd><p>Set colorbar number of tic marks</p>
+</dd>
+<dt>Parameters</dt><dd><p>val number of tics</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.SetSize">
+<span class="sig-name descname"><span class="pre">SetSize</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.SetSize" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>void VAPoR::ColorbarPbase::SetSize(vector&lt; double &gt; sz)</dt><dd><p>Set the X,Y sizes Relative to [0,1]</p>
+</dd>
+<dt>Parameters</dt><dd><p>posn = x,y sizes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.SetTitle">
+<span class="sig-name descname"><span class="pre">SetTitle</span></span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.SetTitle" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>void VAPoR::ColorbarPbase::SetTitle(string text)</dt><dd><p>Set the title text</p>
+</dd>
+<dt>Parameters</dt><dd><p>text to display</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vapor.annotations.ColorbarAnnotation.SetUseScientificNotation">
+<span class="sig-name descname"><span class="pre">SetUseScientificNotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vapor.annotations.ColorbarAnnotation.SetUseScientificNotation" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vapor.annotations.</span></span><span class="sig-name descname"><span class="pre">SceneAnnotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ParamsBase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vapor.annotations.SceneAnnotation" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../devModules/vapor.params.html#vapor.params.ParamsWrapper" title="vapor.params.ParamsWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParamsWrapper</span></code></a></p>
+<p>Wraps VAPoR::AnnotationParams
+A class for describing visual features displayed in the visualizer.
+The AnnotationParams class controls various features displayed in the visualizers There is a global AnnotationParams , that is shared by all windows whose vizfeature is set to “global”. There is also a local AnnotationParams for each window, that users can select whenever there are multiple windows. When local settings are used, they only affect one currently active visualizer. The AnnotationParams class also has several methods that are useful in setting up data requests from the DataMgr .</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetAxisArrowEnabled">
+<span class="sig-name descname"><span class="pre">GetAxisArrowEnabled</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetAxisArrowEnabled" title="Permalink to this definition">#</a></dt>
+<dd><p>bool VAPoR::AnnotationParams::GetAxisArrowEnabled()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetAxisArrowSize">
+<span class="sig-name descname"><span class="pre">GetAxisArrowSize</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetAxisArrowSize" title="Permalink to this definition">#</a></dt>
+<dd><p>double VAPoR::AnnotationParams::GetAxisArrowSize()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetAxisArrowXPos">
+<span class="sig-name descname"><span class="pre">GetAxisArrowXPos</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetAxisArrowXPos" title="Permalink to this definition">#</a></dt>
+<dd><p>double VAPoR::AnnotationParams::GetAxisArrowXPos()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetAxisArrowYPos">
+<span class="sig-name descname"><span class="pre">GetAxisArrowYPos</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetAxisArrowYPos" title="Permalink to this definition">#</a></dt>
+<dd><p>double VAPoR::AnnotationParams::GetAxisArrowYPos()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetAxisFontSize">
+<span class="sig-name descname"><span class="pre">GetAxisFontSize</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetAxisFontSize" title="Permalink to this definition">#</a></dt>
+<dd><p>int VAPoR::AnnotationParams::GetAxisFontSize()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetBackgroundColor">
+<span class="sig-name descname"><span class="pre">GetBackgroundColor</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetBackgroundColor" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::GetBackgroundColor(double color[3])</p>
+<p>void VAPoR::AnnotationParams::GetBackgroundColor(std::vector&lt; double &gt; &amp;color)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetCurrentAxisDataMgrName">
+<span class="sig-name descname"><span class="pre">GetCurrentAxisDataMgrName</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetCurrentAxisDataMgrName" title="Permalink to this definition">#</a></dt>
+<dd><p>string VAPoR::AnnotationParams::GetCurrentAxisDataMgrName()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetDomainColor">
+<span class="sig-name descname"><span class="pre">GetDomainColor</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetDomainColor" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::GetDomainColor(double color[3])</p>
+<p>void VAPoR::AnnotationParams::GetDomainColor(std::vector&lt; double &gt; &amp;color)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetRegionColor">
+<span class="sig-name descname"><span class="pre">GetRegionColor</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetRegionColor" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::GetRegionColor(double color[3])</p>
+<p>void VAPoR::AnnotationParams::GetRegionColor(std::vector&lt; double &gt; &amp;color)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetTimeLLX">
+<span class="sig-name descname"><span class="pre">GetTimeLLX</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetTimeLLX" title="Permalink to this definition">#</a></dt>
+<dd><p>double VAPoR::AnnotationParams::GetTimeLLX()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetTimeLLY">
+<span class="sig-name descname"><span class="pre">GetTimeLLY</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetTimeLLY" title="Permalink to this definition">#</a></dt>
+<dd><p>double VAPoR::AnnotationParams::GetTimeLLY()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetTimeSize">
+<span class="sig-name descname"><span class="pre">GetTimeSize</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetTimeSize" title="Permalink to this definition">#</a></dt>
+<dd><p>int VAPoR::AnnotationParams::GetTimeSize()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetTimeType">
+<span class="sig-name descname"><span class="pre">GetTimeType</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetTimeType" title="Permalink to this definition">#</a></dt>
+<dd><p>int VAPoR::AnnotationParams::GetTimeType()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetUseDomainFrame">
+<span class="sig-name descname"><span class="pre">GetUseDomainFrame</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetUseDomainFrame" title="Permalink to this definition">#</a></dt>
+<dd><p>bool VAPoR::AnnotationParams::GetUseDomainFrame()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.GetUseRegionFrame">
+<span class="sig-name descname"><span class="pre">GetUseRegionFrame</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.GetUseRegionFrame" title="Permalink to this definition">#</a></dt>
+<dd><p>bool VAPoR::AnnotationParams::GetUseRegionFrame()</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetAxisArrowEnabled">
+<span class="sig-name descname"><span class="pre">SetAxisArrowEnabled</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetAxisArrowEnabled" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetAxisArrowEnabled(bool enabled)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetAxisArrowSize">
+<span class="sig-name descname"><span class="pre">SetAxisArrowSize</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetAxisArrowSize" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetAxisArrowSize(double pos)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetAxisArrowXPos">
+<span class="sig-name descname"><span class="pre">SetAxisArrowXPos</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetAxisArrowXPos" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetAxisArrowXPos(double pos)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetAxisArrowYPos">
+<span class="sig-name descname"><span class="pre">SetAxisArrowYPos</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetAxisArrowYPos" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetAxisArrowYPos(double pos)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetAxisFontSize">
+<span class="sig-name descname"><span class="pre">SetAxisFontSize</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetAxisFontSize" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetAxisFontSize(int size)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetBackgroundColor">
+<span class="sig-name descname"><span class="pre">SetBackgroundColor</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetBackgroundColor" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetBackgroundColor(std::vector&lt; double &gt; color)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetCurrentAxisDataMgrName">
+<span class="sig-name descname"><span class="pre">SetCurrentAxisDataMgrName</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetCurrentAxisDataMgrName" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetCurrentAxisDataMgrName(string dataMgr=”default”)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetDomainColor">
+<span class="sig-name descname"><span class="pre">SetDomainColor</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetDomainColor" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetDomainColor(vector&lt; double &gt; color)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetTimeColor">
+<span class="sig-name descname"><span class="pre">SetTimeColor</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetTimeColor" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetTimeColor(std::vector&lt; double &gt; color)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetTimeLLX">
+<span class="sig-name descname"><span class="pre">SetTimeLLX</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetTimeLLX" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetTimeLLX(double llx)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetTimeLLY">
+<span class="sig-name descname"><span class="pre">SetTimeLLY</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetTimeLLY" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetTimeLLY(double lly)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetTimeSize">
+<span class="sig-name descname"><span class="pre">SetTimeSize</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetTimeSize" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetTimeSize(int size)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetTimeType">
+<span class="sig-name descname"><span class="pre">SetTimeType</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetTimeType" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetTimeType(int type)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetUseDomainFrame">
+<span class="sig-name descname"><span class="pre">SetUseDomainFrame</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetUseDomainFrame" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetUseDomainFrame(bool onOff)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.SetUseRegionFrame">
+<span class="sig-name descname"><span class="pre">SetUseRegionFrame</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.SetUseRegionFrame" title="Permalink to this definition">#</a></dt>
+<dd><p>void VAPoR::AnnotationParams::SetUseRegionFrame(bool onOff)</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.TimeAnnotationType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TimeAnnotationType</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.TimeAnnotationType.Formatted">
+<span class="sig-name descname"><span class="pre">Formatted</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.Formatted" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.TimeAnnotationType.NoAnnotation">
+<span class="sig-name descname"><span class="pre">NoAnnotation</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.NoAnnotation" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.TimeAnnotationType.Timestep">
+<span class="sig-name descname"><span class="pre">Timestep</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.Timestep" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.TimeAnnotationType.User">
+<span class="sig-name descname"><span class="pre">User</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#vapor.annotations.SceneAnnotation.TimeAnnotationType.User" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vapor.annotations.SceneAnnotation.f">
+<span class="sig-name descname"><span class="pre">f</span></span><a class="headerlink" href="#vapor.annotations.SceneAnnotation.f" title="Permalink to this definition">#</a></dt>
+<dd><p>std::vector&lt;double&gt; VAPoR::AnnotationParams::GetTimeColor()</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="vapor.animation.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">vapor.animation module</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="vapor.camera.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">vapor.camera module</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+      &copy; Copyright 2023 University Corporation for Atmospheric Research.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
