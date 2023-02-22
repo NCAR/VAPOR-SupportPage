@@ -7,7 +7,7 @@ title: Documentation
 ## Documentation
 
 <p align="left">
-   <a href="https://ncar.github.io/VaporWebsite/index.html">
+   <a href="https://ncar.github.io/VaporDocumentationWebsite/index.html">
    <img src="../images/vap_gui_doc.png" 
    alt="Trulli" 
    style="width:50%"></a>
