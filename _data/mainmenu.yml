@@ -10,16 +10,16 @@ menu:
     url: /pages/QuickStartPage.html
     submenu:
       - title: VAPOR GUI Quick Start
-        url: https://vapor.readthedocs.io/en/readthedocs/quickStartGuide.html
+        url: https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference/quickStartGuide.html
       - title: VAPOR Python Quick Start
         url: /pages/vaporPythonDownloads.html
   - title: Documentation
     url: /pages/DocumentationPage.html
     submenu:
       - title: VAPOR GUI Documentation
-        url: https://vapor.readthedocs.io/en/readthedocs/#
+        url: https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference.html
       - title: VAPOR Python Documentation
-        url: /pages/pythonDocumentation.html
+        url: https://ncar.github.io/VaporDocumentationWebsite/pythonAPIReference/classReference.html
   - title: Gallery
     url: https://visgallery.ucar.edu/category/visualization-software/vapor
   - title: Source Code 
