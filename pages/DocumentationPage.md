@@ -7,14 +7,14 @@ title: Documentation
 ## Documentation
 
 <p align="left">
-   <a href="https://vapor.readthedocs.io/en/readthedocs/#">
+   <a href="https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference.html">
    <img src="../images/vap_gui_doc.png" 
    alt="Trulli" 
    style="width:50%"></a>
 </p>
 
 <p align="left">
-   <a href="../pages/NoPage.html">
+   <a href="https://ncar.github.io/VaporDocumentationWebsite/pythonAPIReference/classReference.html">
    <img src="../images/vap_py_doc.png" 
    alt="Trulli" 
    style="width:50%"></a>
