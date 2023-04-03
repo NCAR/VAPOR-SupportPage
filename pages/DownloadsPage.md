@@ -7,7 +7,7 @@ title: Download
 ## Download and Install
 
 <p align="left">
-   <a href="https://docs.google.com/forms/d/e/1FAIpQLSdej3yFMIIqtgW0JIpmzntzfTfmgCujnWmzocmi40WZiRO9kA/viewform">
+   <a href="https://forms.gle/DnhTS4yVCSoyMG7T9">
    <img src="../images/vaporGUI.png" 
    alt="Trulli" 
    style="width:50%"></a>
