@@ -7,7 +7,7 @@ title: Quick Start
 ## Quick Start Guides
 
 <p align="left">
-   <a href="https://vapor.readthedocs.io/en/readthedocs/quickStartGuide.html">
+   <a href="https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference/quickStartGuide.html">
    <img src="../images/vap_gui_quickstart.png" 
    alt="Trulli" 
    style="width:50%"></a>

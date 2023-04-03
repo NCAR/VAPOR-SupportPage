@@ -1,8 +1,8 @@
 ---
 layout: frontpage
 title: Home
-banner-title: Vapor 3.8.0 is now live!
-banner-description: Vapor 3.8.0 introduces Jupyter Widgets, which allow you to interactively navitage your renderings that are generated in Jupyter Notebooks.  You can also create sliders and other widgets to change parameters for your renderings.
+banner-title: Vapor 3.8.1 is now live!
+banner-description: 
 
 banner-button-text: Download here
 banner-button-url: https://forms.gle/66GDgxjxrEnTewYz5

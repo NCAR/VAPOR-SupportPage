@@ -13,4 +13,4 @@ For journal articles, proceedings, etc., we request the citation for both the ar
 
 ##### Example
 - **Li S, Jaroszynski S, Pearse S, Orf L, Clyne J. VAPOR: A Visualization Package Tailored to Analyze Simulation Data in Earth System Science. Atmosphere. 2019; 10(9):488. [https://doi.org/10.3390/atmos10090488](https://doi.org/10.3390/atmos10090488)**
-- **Visualization & Analysis Systems Technologies. (2023) Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers (VAPOR version 3.8.0) [Software]. Boulder, CO: UCAR/NCAR - Computational and Information System Lab. [doi:10.5281/zenodo.7551613](https://zenodo.org/record/7551613)**
+- **Visualization & Analysis Systems Technologies. (2023) Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers (VAPOR version 3.8.0) [Software]. Boulder, CO: UCAR/NCAR - Computational and Information System Lab. [doi:10.5281/zenodo.7779648](https://zenodo.org/record/7779648)**
