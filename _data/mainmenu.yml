@@ -3,7 +3,7 @@ menu:
     url: /pages/DownloadsPage.html
     submenu:
       - title: VAPOR GUI
-        url: https://docs.google.com/forms/d/e/1FAIpQLSdej3yFMIIqtgW0JIpmzntzfTfmgCujnWmzocmi40WZiRO9kA/viewform
+        url: https://docs.google.com/forms/d/e/1FAIpQLSegMR3smGk5GLw6jgamH_h9EdX-GcKfkz2XuTH5Nmpfbjmuiw/viewform?fbzx=-5212719770065535083
       - title: VAPOR Python
         url: /pages/vaporPythonDownloads.html
   - title: Quick Start Guide
