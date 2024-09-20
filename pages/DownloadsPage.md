@@ -22,8 +22,8 @@ title: Download
 
 ### Supported Platforms
 
-||**MacOS**|**MacOS (M1*)**|**Linux**|**Linux (CentOS)**|**Windows**|
-| **VAPOR GUI**    	|✅|✅|✅|✅|✅|
-| **VAPOR Python** 	|✅|✅|✅|✅|⛔️|
+||**MacOS**|**MacOS (M1*)**|**Linux**|**Windows**|
+| **VAPOR GUI**    	|✅|✅|✅|✅|
+| **VAPOR Python** 	|✅|✅|✅|⛔️|
 
 **Non-native support.*
