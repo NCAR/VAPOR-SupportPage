@@ -22,7 +22,7 @@ title: Download
 
 ### Supported Platforms
 
-||**MacOS**|**MacOS (M1*)**|**Linux**|**Windows**|
+||**MacOSx86**|**appleSilicon**|**Linux**|**Windows**|
 | **VAPOR GUI**    	|✅|✅|✅|✅|
 | **VAPOR Python** 	|✅|✅|✅|⛔️|
 
