@@ -2,7 +2,7 @@
 layout: frontpage
 title: Home
 banner-button-text: VAPOR Documentation
-banner-button-url: https://ncar.github.io/VaporDocumentationWebsite/downloads.html
+banner-button-url: https://vapordocumentationwebsite.readthedocs.io/en/latest/downloads.html
 ---
 
 # Welcome

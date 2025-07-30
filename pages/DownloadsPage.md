@@ -7,7 +7,7 @@ title: Download
 ## Download and Install
 
 <p align="left">
-   <a href="https://ncar.github.io/VaporDocumentationWebsite/downloads.html">
+   <a href="https://vapordocumentationwebsite.readthedocs.io/en/latest/downloads.html">
    <img src="../images/vaporGUI.png" 
    alt="Trulli" 
    style="width:50%"></a>
